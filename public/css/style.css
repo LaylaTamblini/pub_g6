@@ -74,6 +74,7 @@ html {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--black);
   background-color: var(--white);
+  scroll-behavior: smooth;
 }
 
 *,
@@ -118,6 +119,11 @@ h1 {
   font-size: 4rem;
   font-weight: 800;
 }
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 7rem;
+  }
+}
 
 h2 {
   font-family: "Quantico", sans-serif;
@@ -145,6 +151,18 @@ h3 {
   font-weight: 600;
   border-radius: 0.5rem;
   background-color: var(--primary);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar-button {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-black);
 }
 
 header {
@@ -248,12 +266,49 @@ header nav .menu-burger {
   max-width: 600px;
   height: 100%;
 }
+@media screen and (min-width: 1200px) {
+  .hero div {
+    max-width: 620px;
+  }
+}
 .hero p {
   font-size: 1.5rem;
   margin: 1rem 0 2rem 0;
 }
+@media screen and (min-width: 1200px) {
+  .hero p {
+    font-size: 2.25rem;
+  }
+}
 .hero .img-hero {
   display: none;
+}
+@media screen and (min-width: 1200px) {
+  .hero .img-hero {
+    display: contents;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+  }
+  .hero div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+  }
+  .hero div img {
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }
 
 .menu {

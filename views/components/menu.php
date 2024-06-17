@@ -1,10 +1,10 @@
-<section class="menu">
+<section class="menu" id="menu">
 
     <section class="categorie-menu">
         <h2>Nos entrées</h2>
 
         <article class="item-menu">
-            <img src="public/images/placeholder.svg" alt="">
+            <img src="public/img/placeholder.svg" alt="">
 
             <div class="pills-menu">
                 <div class="sous-categories">

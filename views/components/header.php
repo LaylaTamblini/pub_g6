@@ -1,14 +1,14 @@
-<header>
+<header id="header">
     <nav>
-        <a href="#" class="logo">Pub G6</a>
+        <a href="index" class="logo">Pub G6</a>
     </nav>
 
     <nav>
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index">Accueil</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#aPropos">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         
         <span class="material-icons menu-burger" @click="toggleMenu" v-cloak>
@@ -21,10 +21,10 @@
 <section class="panel" v-if="panel" v-cloak>
     <nav>
         <ul>
-            <li><a href="#" @click="toggleMenu()">Accueil</a></li>
-            <li><a href="#" @click="toggleMenu()">Menu</a></li>
-            <li><a href="#" @click="toggleMenu()">À propos</a></li>
-            <li><a href="#" @click="toggleMenu()">Contact</a></li>
+            <li><a href="index">Accueil</a></li>
+            <li><a href="#menu" @click="toggleMenu()">Menu</a></li>
+            <li><a href="#aPropos" @click="toggleMenu()">À propos</a></li>
+            <li><a href="#contact" @click="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
