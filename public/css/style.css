@@ -71,10 +71,15 @@ html {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+header {
+  background-color: var(--black);
 }/*# sourceMappingURL=style.css.map */
