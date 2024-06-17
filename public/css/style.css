@@ -102,11 +102,13 @@ header {
   background-color: var(--black);
   min-height: 56px;
   padding: 1rem;
+  box-shadow: 1px 1px 10px var(--black);
+  position: sticky;
 }
 header nav ul {
   display: none;
 }
-header nav i {
+header nav .menu-burger {
   font-size: 3rem;
   color: var(--primary);
 }/*# sourceMappingURL=style.css.map */
