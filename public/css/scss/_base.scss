@@ -47,6 +47,19 @@ h1 {
 	font-weight: 800;
 }
 
+h2 {
+	font-family: "Quantico", sans-serif;
+	font-weight: 700;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	letter-spacing: -0.2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
 .bold {
 	font-weight: 800;
 }
@@ -57,6 +70,6 @@ h1 {
 	padding: 1rem 2rem;
 	font-size: 1.2rem;
 	font-weight: 600;
-	border-radius: 0.5rem;
+	border-radius: $border-radius;
 	background-color: var(--primary);
 }

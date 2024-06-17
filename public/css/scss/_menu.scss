@@ -1,0 +1,47 @@
+.menu {
+    @include setFlex(column, center, center);
+    width: 100%;
+    padding: 6rem 1rem;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+
+    .categorie-menu {
+        & h2 {
+            padding-bottom: 6rem;
+        }
+
+        .item-menu {
+            & img {
+                width: 300px;
+                height: 300px;
+                border-radius: $border-radius;
+                object-fit: cover;
+            }
+
+            .pills-menu {
+                @include setFlex(row, space-between, flex-start);
+                margin: 1rem 0;
+                
+                .sous-categories {
+
+                }
+
+                p {
+                    padding: 0.5rem 1rem;
+                    border-radius: $border-radius;
+                    color: var(--black);
+                    background-color: var(--primary);
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+
+            .description {
+                display: none;
+            }
+        }
+    }
+}
