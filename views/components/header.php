@@ -41,7 +41,7 @@
                 Saint-Jérôme (Québec) 
                 J7Z 5A2
             </address>
-            <p>450-436-1531</p>
+            <a href="tel:4504361531">450-436-1531</a>
         </div>
     </section>
 </section>
