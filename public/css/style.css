@@ -80,6 +80,33 @@ html {
   box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.logo {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  color: var(--primary);
+}
+
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--black);
+  min-height: 56px;
+  padding: 1rem;
+}
+header nav ul {
+  display: none;
+}
+header nav i {
+  font-size: 3rem;
+  color: var(--primary);
 }/*# sourceMappingURL=style.css.map */

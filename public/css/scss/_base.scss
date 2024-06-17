@@ -10,3 +10,17 @@ html {
 *::after {
 	box-sizing: inherit;
 }
+
+a {
+	text-decoration: none;
+	color: var(--black);
+}
+
+.logo {
+	font-family: "Quantico", sans-serif;
+	font-weight: 700;
+	font-size: 3rem;
+	text-transform: uppercase;
+	letter-spacing: -0.2rem;
+	color: var(--primary);
+}
