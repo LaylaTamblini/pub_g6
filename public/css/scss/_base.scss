@@ -30,3 +30,9 @@ a {
 	letter-spacing: -0.2rem;
 	color: var(--primary);
 }
+
+.medias {
+	@include setFlex(row, space-between, center);
+	font-size: 2rem;
+	width: 9rem;
+}

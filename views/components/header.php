@@ -30,17 +30,28 @@
 
     <section class="infos-panel">
         <div class="medias">
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter-x"></i>
-            <i class="bi bi-instagram"></i>
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="bi bi-facebook"></i>
+            </a>
+            
+            <a href="https://x.com/" target="_blank">
+                <i class="bi bi-twitter-x"></i>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="bi bi-instagram"></i>
+            </a>
         </div>
 
-        <div class="coordonnees">
+        <div class="coordo-panel">
             <address>
-                297, rue St-Georges, 
-                Saint-Jérôme (Québec) 
-                J7Z 5A2
+                <a href="https://maps.app.goo.gl/57r7Hm2uGvza4cvk8" target="_blank">
+                    <span>297, rue St-Georges,</span>
+                    <span>Saint-Jérôme (Québec)</span>
+                    <span>J7Z 5A2,</span>
+                </a>
             </address>
+
             <a href="tel:4504361531">450-436-1531</a>
         </div>
     </section>
