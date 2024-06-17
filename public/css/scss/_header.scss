@@ -1,10 +1,13 @@
 header {
     @include setFlex(row, space-between, center);
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: var(--black);
     min-height: 56px;
     padding: 1rem;
     box-shadow: 1px 1px 10px var(--black);
-    position: sticky;
+    z-index: 1;
 
     nav {
         ul{
@@ -37,4 +40,11 @@ header {
             }
         }
     }
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 82px;
+    padding: 1rem;
 }

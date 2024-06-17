@@ -72,12 +72,18 @@ html {
   font-size: 16px;
   line-height: 1.5;
   font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--black);
+  background-color: var(--white);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+[v-cloak] {
+  display: none;
 }
 
 a {
@@ -99,11 +105,14 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--black);
   min-height: 56px;
   padding: 1rem;
   box-shadow: 1px 1px 10px var(--black);
-  position: sticky;
+  z-index: 1;
 }
 header nav ul {
   display: none;
@@ -131,6 +140,40 @@ header nav .menu-burger {
 }
 @media screen and (min-width: 1200px) {
   header nav .menu-burger {
+    display: none;
+  }
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 82px;
+  padding: 1rem;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  z-index: 0;
+  top: 82px;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  padding: 1rem;
+  background-color: var(--white);
+}
+.panel ul li {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.panel ul li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .panel {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */
