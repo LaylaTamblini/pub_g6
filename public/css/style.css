@@ -464,4 +464,39 @@ header nav .menu-burger {
     align-items: center;
     text-align: start;
   }
+}
+
+.infos-pub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5rem 1rem;
+}
+.infos-pub div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.infos-pub div img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.infos-pub div p {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .infos-pub div p {
+    font-size: 2.25rem;
+  }
+}
+.infos-pub .no-pad p {
+  margin: 2rem 0 0 0;
 }/*# sourceMappingURL=style.css.map */
