@@ -377,7 +377,7 @@ header nav .menu-burger {
   width: 100%;
   padding: 5rem 1rem;
   text-align: center;
-  background-color: var(--light-black);
+  background-color: var(--black);
   color: var(--white);
 }
 .menu .categorie-menu h3 {

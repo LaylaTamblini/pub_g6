@@ -6,6 +6,7 @@
     <?php include("views/components/menu.php") ?>
     <?php include("views/components/apropos.php") ?>
     <?php include("views/components/marquee.php") ?>
+    <?php include("views/components/infos_pub.php") ?>
 </main>
 
 <?php include("views/components/foot.php") ?>
