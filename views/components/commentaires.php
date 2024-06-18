@@ -10,6 +10,6 @@
             </span>
         </div>
     
-        <p class="nom-client">- Nom du client</p>
+        <p class="nom-client">- Nom duu client</p>
     </div>
 </section>
