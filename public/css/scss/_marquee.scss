@@ -4,6 +4,7 @@
     user-select: none;
     gap: $gap;
     background-color: var(--primary);
+    z-index: -100;
 }
   
 .marquee-content {
@@ -12,6 +13,7 @@
     flex-shrink: 0;
     min-width: 100%;
     gap: $gap;
+    z-index: 0;
 
     @media screen and (min-width: 1200px) {
         justify-content: center;
