@@ -1,7 +1,7 @@
 <section class="menu" id="menu">
 
     <section class="categorie-menu">
-        <h2>Nos entrées</h2>
+        <h3>Nos entrées</h3>
 
         <article class="item-menu">
             <img src="public/img/placeholder.svg" alt="">
@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <h3>Nom du plat</h3>
+            <h4>Nom du plat</h4>
 
             <p class="description">
                 Voici la description du plat.
