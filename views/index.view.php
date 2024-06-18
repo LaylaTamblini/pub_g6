@@ -7,6 +7,7 @@
     <?php include("views/components/apropos.php") ?>
     <?php include("views/components/marquee.php") ?>
     <?php include("views/components/infos_pub.php") ?>
+    <?php include("views/components/commentaires.php") ?>
 </main>
 
 <?php include("views/components/foot.php") ?>

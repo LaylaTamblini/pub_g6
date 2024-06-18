@@ -421,7 +421,7 @@ header nav .menu-burger {
   background-color: var(--primary);
 }
 .a-propos div {
-  max-width: 600px;
+  max-width: 400px;
 }
 .a-propos div p {
   font-size: 1.5rem;
@@ -442,12 +442,22 @@ header nav .menu-burger {
     margin: 0 0 1rem 0;
   }
 }
+@media screen and (min-width: 1200px) {
+  .a-propos div {
+    max-width: 600px;
+  }
+}
 .a-propos .img-apropos img {
   width: 300px;
   height: 400px;
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .a-propos .img-apropos img {
+    margin-left: 4rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .a-propos .img-apropos img {
@@ -456,7 +466,7 @@ header nav .menu-burger {
     margin-left: 4rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .a-propos {
     display: flex;
     flex-direction: row;
@@ -480,23 +490,94 @@ header nav .menu-burger {
   justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 600px;
 }
 .infos-pub div img {
-  width: 100%;
+  width: 300px;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.5rem;
 }
+@media screen and (min-width: 1024px) {
+  .infos-pub div img {
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .infos-pub div img {
+    width: 350px;
+    height: 350px;
+  }
+}
 .infos-pub div p {
   margin: 2rem 0;
   font-size: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .infos-pub div p {
+    margin: 0;
+  }
 }
 @media screen and (min-width: 1200px) {
   .infos-pub div p {
     font-size: 2.25rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .infos-pub div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .infos-pub div {
+    max-width: 1100px;
+  }
+}
 .infos-pub .no-pad p {
   margin: 2rem 0 0 0;
+}
+@media screen and (min-width: 1024px) {
+  .infos-pub .no-pad p {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .infos-pub .no-pad {
+    margin-top: 1rem;
+  }
+}
+
+.commentaires {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5rem 1rem;
+  text-align: center;
+  color: var(--white);
+  background-image: url("../img/groupe_bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.commentaires .commentaire-client {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+@media screen and (min-width: 1200px) {
+  .commentaires .commentaire-client {
+    font-size: 2.25rem;
+  }
+}
+.commentaires div {
+  color: var(--primary);
+}
+.commentaires .nom-client {
+  font-style: italic;
 }/*# sourceMappingURL=style.css.map */
