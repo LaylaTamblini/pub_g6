@@ -684,29 +684,56 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 1rem;
+  padding: 6rem 2rem;
   text-align: center;
-  height: 90vh;
+  height: 100%;
 }
-footer .nav-footer div:not(:last-child) {
+footer .top-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+footer .top-footer .nav-footer div:not(:last-child) {
   margin-bottom: 1rem;
 }
-footer .nav-footer .coordo-panel {
+footer .top-footer .nav-footer .coordo-panel {
   text-decoration: underline;
 }
-footer .nav-footer .coordo-panel address {
+footer .top-footer .nav-footer .coordo-panel address {
   margin-bottom: 0.5rem;
 }
-footer .img-footer {
+footer .top-footer .img-footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 3rem 0;
 }
-footer .img-footer .full-logo {
+footer .top-footer .img-footer .full-logo {
   margin-top: 1rem;
   width: 200px;
+}
+@media screen and (min-width: 600px) {
+  footer .top-footer .img-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  footer .top-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: start;
+    margin-bottom: 4rem;
+  }
 }
 footer .admin {
   display: flex;
@@ -729,4 +756,14 @@ footer .admin .admin-icon a {
   padding: 0.3rem;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+  footer .admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1000px;
+  }
 }/*# sourceMappingURL=style.css.map */

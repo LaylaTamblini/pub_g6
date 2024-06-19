@@ -1,5 +1,5 @@
 <footer>
-    <div>
+    <div class="top-footer">
         <div class="nav-footer">
             <div>
                 <h5>Navigation</h5>

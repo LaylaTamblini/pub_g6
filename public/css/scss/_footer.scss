@@ -1,39 +1,56 @@
 footer {
     @include setFlex(column, center, center);
-    padding: $padding-section 1rem;
+    padding: $padding-section 2rem;
     text-align: center;
-    height: 90vh;
+    height: 100%;
 
-    .nav-footer {
-
-        & div {
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
-        }
-        .coordo-panel {
-            text-decoration: underline;
-
-            address {
-                margin-bottom: 0.5rem;
-            }
-        }
-    }
-
-    .img-footer {
+    .top-footer {
         @include setFlex(column, center, center);
-        margin: 3rem 0;
+        width: 100%;
+        max-width: 1000px;
 
-        .full-logo {
-            margin-top: 1rem;
-            width: 200px;
+        .nav-footer {
+    
+            & div {
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .coordo-panel {
+                text-decoration: underline;
+    
+                address {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    
+        .img-footer {
+            @include setFlex(column, center, center);
+            margin: 3rem 0;
+    
+            .full-logo {
+                margin-top: 1rem;
+                width: 200px;
+            }
+
+            @media screen and (min-width: 600px) {
+                @include setFlex(column, center, flex-end);
+                margin: 0;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            @include setFlex(row, space-between, flex-start);
+            text-align: start;
+            margin-bottom: 4rem;
         }
     }
+
 
     .admin {
         @include setFlex(row, space-between, flex-end);
-        // width: 100%;
-        // max-width: 900px;
 
         .copyright {
             font-size: 1rem;
@@ -50,6 +67,12 @@ footer {
                 border-radius: $border-radius;
                 cursor: pointer;
             }
+        }
+
+        @media screen and (min-width: 600px) {
+            @include setFlex(row, space-between, flex-start);
+            width: 100%;
+            max-width: 1000px;
         }
     }
 }
