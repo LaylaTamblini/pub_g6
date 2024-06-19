@@ -159,7 +159,7 @@ h4 {
 
 h5 {
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 p {
@@ -686,11 +686,47 @@ footer {
   align-items: center;
   padding: 6rem 1rem;
   text-align: center;
+  height: 90vh;
 }
 footer .nav-footer div:not(:last-child) {
   margin-bottom: 1rem;
 }
+footer .nav-footer .coordo-panel {
+  text-decoration: underline;
+}
 footer .nav-footer .coordo-panel address {
   margin-bottom: 0.5rem;
-  text-decoration: underline;
+}
+footer .img-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+footer .img-footer .full-logo {
+  margin-top: 1rem;
+  width: 200px;
+}
+footer .admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer .admin .copyright {
+  font-size: 1rem;
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+footer .admin .admin-icon a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

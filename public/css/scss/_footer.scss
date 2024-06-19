@@ -2,6 +2,7 @@ footer {
     @include setFlex(column, center, center);
     padding: $padding-section 1rem;
     text-align: center;
+    height: 90vh;
 
     .nav-footer {
 
@@ -11,9 +12,43 @@ footer {
             }
         }
         .coordo-panel {
+            text-decoration: underline;
+
             address {
                 margin-bottom: 0.5rem;
-                text-decoration: underline;
+            }
+        }
+    }
+
+    .img-footer {
+        @include setFlex(column, center, center);
+        margin: 3rem 0;
+
+        .full-logo {
+            margin-top: 1rem;
+            width: 200px;
+        }
+    }
+
+    .admin {
+        @include setFlex(row, space-between, flex-end);
+        // width: 100%;
+        // max-width: 900px;
+
+        .copyright {
+            font-size: 1rem;
+            font-family: "Quantico", sans-serif;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+
+        .admin-icon {
+            a {
+                @include setFlex(column, center, center);
+                background-color: var(--primary);
+                padding: 0.3rem;
+                border-radius: $border-radius;
+                cursor: pointer;
             }
         }
     }
