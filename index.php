@@ -15,7 +15,6 @@ ini_set("display_errors", $mode);
 ini_set("display_startup_errors", $mode);
 error_reporting(E_ALL);
 
-
 // URL à traiter
 $path = $_GET["path"] ?? "index";
 $path = trim($path, "/");
