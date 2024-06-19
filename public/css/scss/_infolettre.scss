@@ -1,0 +1,63 @@
+.infolettre {
+    @include setFlex(column, center, center);
+    width: 100%;
+    padding: $padding-section 1rem;
+    text-align: center;
+    background-color: var(--primary);
+
+    & div {
+        span {
+            display: block;
+        }
+    }
+
+    form {
+        @include setFlex(column, center, center);
+        margin-top: 2rem;
+        width: 100%;
+        
+        .inputs {
+            @include setFlex(column, center, center);
+            width: 100%;
+
+            input {
+                width: 100%;
+                max-width: 600px;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            input[type=text], input[type=email] {
+                padding: 1rem 2rem;
+                border-radius: $border-radius;
+                border: 2px solid var(--black);
+                background-color: transparent;
+                color: var(--black);
+                font-family: "Plus Jakarta Sans", sans-serif;
+
+                &::placeholder {
+                    color: var(--light-black);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        input[type=submit] {
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            border: none;
+            border-radius: $border-radius;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: var(--black);
+            color: var(--white);
+            font-weight: 500;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+    }
+}

@@ -142,6 +142,11 @@ h3 {
   text-transform: uppercase;
   letter-spacing: -0.2rem;
 }
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 3rem;
+  }
+}
 
 h4 {
   font-size: 1.5rem;
@@ -166,8 +171,6 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
   border-radius: 0.5rem;
   background-color: var(--primary);
 }
@@ -614,4 +617,69 @@ header nav .menu-burger {
   .contact {
     text-align: start;
   }
+}
+
+.infolettre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 6rem 1rem;
+  text-align: center;
+  background-color: var(--primary);
+}
+.infolettre div span {
+  display: block;
+}
+.infolettre form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+.infolettre form .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.infolettre form .inputs input {
+  width: 100%;
+  max-width: 600px;
+}
+.infolettre form .inputs input:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.infolettre form .inputs input[type=text], .infolettre form .inputs input[type=email] {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--black);
+  background-color: transparent;
+  color: var(--black);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.infolettre form .inputs input[type=text]::-moz-placeholder, .infolettre form .inputs input[type=email]::-moz-placeholder {
+  color: var(--light-black);
+}
+.infolettre form .inputs input[type=text]::placeholder, .infolettre form .inputs input[type=email]::placeholder {
+  color: var(--light-black);
+}
+.infolettre form .inputs input[type=text]:focus, .infolettre form .inputs input[type=email]:focus {
+  outline: none;
+}
+.infolettre form input[type=submit] {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }/*# sourceMappingURL=style.css.map */
