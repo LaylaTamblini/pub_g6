@@ -339,6 +339,13 @@ p {
 .menu .categorie-menu .item-menu .description {
   display: none;
 }
+@media screen and (min-width: 1024px) {
+  .menu .categorie-menu .item-menu .description {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+}
 
 .a-propos {
   display: flex;
