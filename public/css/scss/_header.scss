@@ -17,6 +17,10 @@ header {
                 a {
                     color: var(--primary);
                     font-weight: 600;
+
+                    &:hover {
+                        border-bottom: solid 2px var(--primary);
+                    }
                 }
 
                 &:not(:last-child) {

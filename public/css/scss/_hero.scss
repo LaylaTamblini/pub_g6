@@ -19,6 +19,14 @@
         margin: 1rem 0 2rem 0;
     }
 
+    a {
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: var(--primary-hover);
+        }
+    }
+
     .img-hero {
         display: none;
 

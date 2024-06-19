@@ -15,13 +15,35 @@ footer {
                 &:not(:last-child) {
                     margin-bottom: 1rem;
                 }
+
+                nav {
+                    ul{
+                        li{
+                            &:not(:last-child) {
+                                margin-bottom: 0.2rem;
+                            }
+
+                            a {
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             .coordo-panel {
                 text-decoration: underline;
     
                 address {
-                    margin-bottom: 0.5rem;
+                    margin-bottom: 0.8rem;
+                    span {
+                        &:not(:last-child) {
+                            margin-bottom: 0.2rem;
+                        }
+                    }
                 }
             }
         }
@@ -65,7 +87,12 @@ footer {
                 background-color: var(--primary);
                 padding: 0.3rem;
                 border-radius: $border-radius;
+                transition: all 0.2s ease-in-out;
                 cursor: pointer;
+
+                &:hover {
+                    background-color: var(--primary-hover);
+                }
             }
         }
 

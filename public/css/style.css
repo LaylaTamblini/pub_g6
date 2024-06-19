@@ -55,8 +55,10 @@ table {
 
 :root {
   --primary:#F9D43E;
+  --primary-hover:#e4c138;
   --white:#ECECEC;
   --black:#202020;
+  --black-hover:#131313;
   --light-black:#404040;
   --gray:#DCDCDC;
 }
@@ -266,6 +268,12 @@ p {
 }
 .hero p {
   margin: 1rem 0 2rem 0;
+}
+.hero a {
+  transition: all 0.2s ease-in-out;
+}
+.hero a:hover {
+  background-color: var(--primary-hover);
 }
 .hero .img-hero {
   display: none;
@@ -541,6 +549,9 @@ header nav ul li a {
   color: var(--primary);
   font-weight: 600;
 }
+header nav ul li a:hover {
+  border-bottom: solid 2px var(--primary);
+}
 header nav ul li:not(:last-child) {
   margin-right: 1.5rem;
 }
@@ -684,6 +695,11 @@ header nav .menu-burger {
   background-color: var(--black);
   color: var(--white);
   font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.infolettre form input[type=submit]:hover {
+  background-color: var(--black-hover);
 }
 
 footer {
@@ -706,11 +722,20 @@ footer .top-footer {
 footer .top-footer .nav-footer div:not(:last-child) {
   margin-bottom: 1rem;
 }
+footer .top-footer .nav-footer div nav ul li:not(:last-child) {
+  margin-bottom: 0.2rem;
+}
+footer .top-footer .nav-footer div nav ul li a:hover {
+  text-decoration: underline;
+}
 footer .top-footer .nav-footer .coordo-panel {
   text-decoration: underline;
 }
 footer .top-footer .nav-footer .coordo-panel address {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+footer .top-footer .nav-footer .coordo-panel address span:not(:last-child) {
+  margin-bottom: 0.2rem;
 }
 footer .top-footer .img-footer {
   display: flex;
@@ -762,7 +787,11 @@ footer .admin .admin-icon a {
   background-color: var(--primary);
   padding: 0.3rem;
   border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+footer .admin .admin-icon a:hover {
+  background-color: var(--primary-hover);
 }
 @media screen and (min-width: 600px) {
   footer .admin {
