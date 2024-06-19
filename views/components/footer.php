@@ -47,7 +47,9 @@
             </div>
     
             <div class="full-logo">
-                <img src="public/img/logo.svg" alt="">
+                <a href="index">
+                    <img src="public/img/logo.svg" alt="">
+                </a>
             </div>
         </div>
     </div>
