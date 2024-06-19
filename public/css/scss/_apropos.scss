@@ -8,14 +8,6 @@
     & div {
         max-width: 400px;
 
-        p {
-            font-size: 1.5rem;
-        
-            @media screen and (min-width: 1200px) {
-                font-size: 2.25rem;
-            }
-        }
-
         h2 {
             margin: 2rem 0 1rem 0;
 

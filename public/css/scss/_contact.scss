@@ -1,0 +1,24 @@
+.contact {
+    @include setFlex(column, center, center);
+    width: 100%;
+    padding: $padding-section 1rem;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--primary);
+
+    & div {
+        max-width: 1200px;
+
+        p {
+            margin: 1rem 0 2rem 0;
+        }
+        
+        iframe {
+            border-radius: $border-radius;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        text-align: start;
+     }
+}

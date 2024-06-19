@@ -148,6 +148,15 @@ h4 {
   font-weight: 600;
 }
 
+p {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1200px) {
+  p {
+    font-size: 2.25rem;
+  }
+}
+
 .bold {
   font-weight: 800;
 }
@@ -246,14 +255,6 @@ h4 {
     display: block;
   }
 }
-.hero div p {
-  font-size: 1.5rem;
-}
-@media screen and (min-width: 1200px) {
-  .hero div p {
-    font-size: 2.25rem;
-  }
-}
 .hero p {
   margin: 1rem 0 2rem 0;
 }
@@ -317,6 +318,7 @@ h4 {
   margin: 1rem 0;
 }
 .menu .categorie-menu .item-menu .pills-menu p {
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: var(--black);
@@ -341,14 +343,6 @@ h4 {
 }
 .a-propos div {
   max-width: 400px;
-}
-.a-propos div p {
-  font-size: 1.5rem;
-}
-@media screen and (min-width: 1200px) {
-  .a-propos div p {
-    font-size: 2.25rem;
-  }
 }
 .a-propos div h2 {
   margin: 2rem 0 1rem 0;
@@ -431,16 +425,10 @@ h4 {
 }
 .infos-pub div p {
   margin: 2rem 0;
-  font-size: 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .infos-pub div p {
     margin: 0;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .infos-pub div p {
-    font-size: 2.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -508,6 +496,7 @@ h4 {
 }
 .commentaires .content .nom-client {
   font-style: italic;
+  font-size: 1rem;
 }
 .commentaires .overlay {
   position: absolute;
@@ -599,4 +588,30 @@ header nav .menu-burger {
 }
 .panel .infos-panel .coordo-panel span {
   display: block;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 6rem 1rem;
+  text-align: center;
+  background-color: var(--black);
+  color: var(--primary);
+}
+.contact div {
+  max-width: 1200px;
+}
+.contact div p {
+  margin: 1rem 0 2rem 0;
+}
+.contact div iframe {
+  border-radius: 0.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .contact {
+    text-align: start;
+  }
 }/*# sourceMappingURL=style.css.map */
