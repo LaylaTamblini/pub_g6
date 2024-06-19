@@ -1,6 +1,6 @@
 <section class="infolettre">
     <div>
-        <h3><span>Ne ratez</span> aucune miette</h3>
+        <h3><span class="block">Ne ratez</span> aucune miette</h3>
         <p>Abonnez-vous à notre infolettre 📫</p>
     </div>
 

@@ -1,0 +1,20 @@
+footer {
+    @include setFlex(column, center, center);
+    padding: $padding-section 1rem;
+    text-align: center;
+
+    .nav-footer {
+
+        & div {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+        .coordo-panel {
+            address {
+                margin-bottom: 0.5rem;
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -115,6 +115,10 @@ main {
   width: 9rem;
 }
 
+.block {
+  display: block;
+}
+
 h1 {
   font-size: 5.5rem;
   font-weight: 800;
@@ -151,6 +155,11 @@ h3 {
 h4 {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+h5 {
+  font-weight: 800;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -254,9 +263,6 @@ p {
   .hero div {
     max-width: 700px;
   }
-  .hero div h1 span {
-    display: block;
-  }
 }
 .hero p {
   margin: 1rem 0 2rem 0;
@@ -349,9 +355,6 @@ p {
 }
 .a-propos div h2 {
   margin: 2rem 0 1rem 0;
-}
-.a-propos div h2 span {
-  display: block;
 }
 @media screen and (min-width: 1200px) {
   .a-propos div h2 {
@@ -589,9 +592,6 @@ header nav .menu-burger {
 .panel .infos-panel .coordo-panel address {
   margin: 2rem 0 1rem 0;
 }
-.panel .infos-panel .coordo-panel span {
-  display: block;
-}
 
 .contact {
   display: flex;
@@ -628,9 +628,6 @@ header nav .menu-burger {
   padding: 6rem 1rem;
   text-align: center;
   background-color: var(--primary);
-}
-.infolettre div span {
-  display: block;
 }
 .infolettre form {
   display: flex;
@@ -676,10 +673,24 @@ header nav .menu-burger {
   margin-top: 2rem;
   border: none;
   border-radius: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
   background-color: var(--black);
   color: var(--white);
-  font-weight: 500;
   font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+footer .nav-footer div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+footer .nav-footer .coordo-panel address {
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

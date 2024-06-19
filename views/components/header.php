@@ -46,9 +46,9 @@
         <div class="coordo-panel">
             <address>
                 <a href="https://maps.app.goo.gl/57r7Hm2uGvza4cvk8" target="_blank">
-                    <span>297, rue St-Georges,</span>
-                    <span>Saint-Jérôme (Québec)</span>
-                    <span>J7Z 5A2,</span>
+                    <span class="block">297, rue St-Georges,</span>
+                    <span class="block">Saint-Jérôme (Québec)</span>
+                    <span class="block">J7Z 5A2,</span>
                 </a>
             </address>
 

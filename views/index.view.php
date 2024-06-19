@@ -12,4 +12,5 @@
     <?php include("views/components/infolettre.php") ?>
 </main>
 
+<?php include("views/components/footer.php") ?>
 <?php include("views/components/foot.php") ?>
