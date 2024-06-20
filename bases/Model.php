@@ -8,7 +8,7 @@ class Model
     protected $table = null;
 
     /**
-     * Retourne la connexion
+     * Retourne la connexion.
      *
      * @return PDO
      */
@@ -42,7 +42,7 @@ class Model
     }
 
     /**
-     * Retourne toutes les entrées, false si aucun résultat
+     * Retourne toutes les entrées, false si aucun résultat.
      *
      * @return array|false
      */
@@ -58,9 +58,9 @@ class Model
     }
 
     /**
-     * Retourne une entrée en fonction d'un id
+     * Retourne une entrée en fonction d'un id.
      *
-     * @param integer $id L'id ciblé
+     * @param integer $id
      * @return object|false
      */
     public function parId(int $id) : object|false
@@ -76,5 +76,25 @@ class Model
         ]);
 
         return $requete->fetch();
+    }
+
+    /**
+     * Supprime une entrée en fonction d'un id.
+     *
+     * @param integer $id
+     * 
+     * @return bool
+     */
+    public function supprimer(int $id) : bool {
+        $sql = "
+            DELETE FROM $this->table
+            WHERE id = :id
+        ";
+        
+        $requete = $this->pdo()->prepare($sql);
+
+        return $requete->execute([
+            ":id" => $id
+        ]);
     }
 }

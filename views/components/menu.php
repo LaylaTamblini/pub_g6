@@ -1,28 +1,38 @@
 <section class="menu" id="menu">
 
+    <?php foreach($categories as $categorie): ?>
     <section class="categorie-menu">
-        <h3>Nos entrées</h3>
+        <h3><?= $categorie->titre ?></h3>
 
-        <article class="item-menu">
-            <img src="public/img/placeholder.svg" alt="">
+        <?php foreach ($plats as $plat):  ?>
+            <?php if ($plat->categorie_titre == $categorie->titre): ?>
 
-            <div class="pills-menu">
-                <div class="sous-categories">
-                    <p>Viande</p>
-                    <p>Végé</p>
-                </div>
-    
-                <div class="prix">
-                    <p>$99.99</p>
-                </div>
-            </div>
+                <article class="item-menu">
+                    <img src="public/img/placeholder.svg" alt="">
 
-            <h4>Nom du plat</h4>
+                    <div class="pills-menu">
+                        <div class="sous-categories">
+                            <p>Viande</p>
+                            <p>Végé</p>
+                        </div>
+            
+                        <div class="prix">
+                            <p><?= $plat->prix ?></p>
+                        </div>
+                    </div>
 
-            <p class="description">
-                Voici la description du plat.
-            </p>
-        </article>
+                    <h4><?= $plat->titre ?></h4>
+
+                    <p class="description">
+                    <?= $plat->description ?>
+                    </p>
+                </article>
+
+            <?php endif ?>
+        <?php endforeach ?>
+        
     </section>
+    <?php endforeach ?>
+
 
 </section>
