@@ -6,5 +6,8 @@
  * Format: url => [Controller, méthode]
  */
 $routes = [
-    "index" => ["PlatController", "index"],
+    // Affiche la page d'accueil
+    "index" => ["DefautController", "index"],
+    // Affiche le login de la page d'administration
+    "login" => ["DefautController", "login"],
 ];
