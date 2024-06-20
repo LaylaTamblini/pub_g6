@@ -1,38 +1,49 @@
-<section class="menu" id="menu">
+<section class="menu-complet" id="menu">
 
     <?php foreach($categories as $categorie): ?>
-    <section class="categorie-menu">
-        <h3><?= $categorie->titre ?></h3>
+        <section class="menu">
 
-        <?php foreach ($plats as $plat):  ?>
-            <?php if ($plat->categorie_titre == $categorie->titre): ?>
+            <h3>
+                <?= $categorie->titre ?>
+            </h3>
 
-                <article class="item-menu">
-                    <img src="public/img/placeholder.svg" alt="">
+            <div class="items">
+                <?php foreach ($plats as $plat):  ?>
+                    <?php if ($plat->categorie_titre == $categorie->titre): ?>
 
-                    <div class="pills-menu">
-                        <div class="sous-categories">
-                            <p>Viande</p>
-                            <p>Végé</p>
-                        </div>
-            
-                        <div class="prix">
-                            <p><?= $plat->prix ?></p>
-                        </div>
-                    </div>
+                        <article class="item">
+                            <!-- Image -->
+                            <img src="public/img/placeholder.svg" alt="">
 
-                    <h4><?= $plat->titre ?></h4>
+                            <!-- Tags -->
+                            <div class="pills">
+                                <div class="tags">
+                                    <p>Viande</p>
+                                    <p>Végé</p>
+                                </div>
 
-                    <p class="description">
-                    <?= $plat->description ?>
-                    </p>
-                </article>
+                                <!-- Prix -->
+                                <div class="prix">
+                                    <p><?= $plat->prix ?></p>
+                                </div>
+                            </div>
 
-            <?php endif ?>
-        <?php endforeach ?>
-        
-    </section>
+                            <!-- Nom du plat -->
+                            <h4>
+                                <?= $plat->titre ?>
+                            </h4>
+
+                            <!-- Description -->
+                            <p class="description">
+                                <?= $plat->description ?>
+                            </p>
+                        </article>
+                        
+                    <?php endif ?>
+                <?php endforeach ?>
+            </div>
+
+        </section>
     <?php endforeach ?>
-
 
 </section>

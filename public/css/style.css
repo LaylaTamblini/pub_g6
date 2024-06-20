@@ -306,53 +306,89 @@ p {
   }
 }
 
-.menu {
+.menu-complet {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 6rem 1rem;
   text-align: center;
-  background-color: var(--black);
   color: var(--white);
+  background-color: var(--black);
 }
-.menu .categorie-menu h3 {
-  padding-bottom: 6rem;
+.menu-complet .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 6rem 0;
 }
-.menu .categorie-menu .item-menu img {
+.menu-complet .menu .items {
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-top: 6rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .menu-complet .menu .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-complet .menu .items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.menu-complet .menu .items .item {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.menu-complet .menu .items .item img {
   width: 300px;
   height: 300px;
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.menu .categorie-menu .item-menu .pills-menu {
+.menu-complet .menu .items .item .pills {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   margin: 1rem 0;
 }
-.menu .categorie-menu .item-menu .pills-menu p {
+.menu-complet .menu .items .item .pills p {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: var(--black);
   background-color: var(--primary);
 }
-.menu .categorie-menu .item-menu .pills-menu p:not(:last-of-type) {
+.menu-complet .menu .items .item .pills p:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
-.menu .categorie-menu .item-menu .description {
+.menu-complet .menu .items .item h4 {
+  margin-bottom: 1rem;
+  height: 40px;
+}
+.menu-complet .menu .items .item .description {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  .menu .categorie-menu .item-menu .description {
+  .menu-complet .menu .items .item .description {
     display: block;
-    margin-top: 0.5rem;
     font-size: 1rem;
   }
+}
+
+.menu:nth-of-type(2n) {
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .a-propos {
