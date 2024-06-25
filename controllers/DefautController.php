@@ -6,6 +6,7 @@ use Bases\Controller;
 
 use Models\Dish;
 use Models\Category;
+use Models\Comment;
 
 class DefautController extends Controller {
     /**
@@ -15,6 +16,7 @@ class DefautController extends Controller {
         $this->view("index", [
             "dishes" => (new Dish)->allWithCategoryAndSubcategory(),
             "categories" => (new Category)->all(),
+            "comments" => (new Comment)->all(),
             "title" => "Accueil"
         ]);
     }

@@ -2,14 +2,29 @@
     <div class="overlay"></div>
 
     <div class="content">
-        <p class="comment">" Pub G6 est ma destination favorite lorsque je veux recevoir des invités. Fiables et toujours une ambiance très agréable. "</p>
+
+        <?php
+            $random_key = array_rand($comments);
+            $random_comment = $comments[$random_key];
+        ?>
+
+        <p class="comment">
+            <?= $random_comment->text ?>
+        </p>
     
         <div>
-            <span class="material-icons">
-                star
-            </span>
+            <?php for ($i = 0; $i < floor($random_comment->rate); $i++): ?>
+                <i class="bi bi-star-fill"></i>
+            <?php endfor; ?>
+
+            <!-- Si "rate" comporte une décimale -->
+            <?php if (fmod($random_comment->rate, 1) > 0): ?>
+                <i class="bi bi-star-half"></i>
+            <?php endif; ?>
         </div>
     
-        <p class="name">- Nom du client</p>
+        <p class="name">
+            - <?= $random_comment->firstname ?> <?= $random_comment->lastname ?>
+        </p>
     </div>
 </section>
