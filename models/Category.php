@@ -4,7 +4,7 @@ namespace Models;
 
 use Bases\Model;
 
-class Categorie extends Model {
+class Category extends Model {
     protected $table = "categories"; 
 
 }

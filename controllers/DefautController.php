@@ -4,8 +4,8 @@ namespace Controllers;
 
 use Bases\Controller;
 
-use Models\Plat;
-use Models\Categorie;
+use Models\Dish;
+use Models\Category;
 
 class DefautController extends Controller {
     /**
@@ -13,9 +13,9 @@ class DefautController extends Controller {
      */
     public function index() {
         $this->vue("index", [
-            "plats" => (new Plat)->toutAvecCategorieEtSousCategorie(),
-            "categories" => (new Categorie)->tout(),
-            "titre" => "Accueil"
+            "dishes" => (new Dish)->toutAvecCategorieEtSousCategorie(),
+            "categories" => (new Category)->tout(),
+            "title" => "Accueil"
         ]);
     }
 
@@ -24,7 +24,7 @@ class DefautController extends Controller {
      */
     public function login() {
         $this->vue("administration/login", [
-            "titre" => "Login"
+            "title" => "Login"
         ]);
     }
 }

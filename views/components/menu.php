@@ -1,15 +1,15 @@
 <section class="menu-complet" id="menu">
 
-    <?php foreach($categories as $categorie): ?>
+    <?php foreach($categories as $category): ?>
         <section class="menu">
 
             <h3>
-                <?= $categorie->titre ?>
+                <?= $category->name ?>
             </h3>
 
             <div class="items">
-                <?php foreach ($plats as $plat):  ?>
-                    <?php if ($plat->categorie_titre == $categorie->titre): ?>
+                <?php foreach ($dishes as $dish):  ?>
+                    <?php if ($dish->category_name == $category->name): ?>
 
                         <article class="item">
                             <!-- Image -->
@@ -18,26 +18,26 @@
                             <!-- Tags -->
                             <div class="pills">
                                 <div class="tags">
-                                    <?php $sousCategories = explode(',', $plat->sous_categories_titres); ?>
-                                    <?php foreach ($sousCategories as $sousCategorie): ?>
-                                        <p><?= $sousCategorie ?></p>
+                                    <?php $subcategories = explode(',', $dish->subcategories_name); ?>
+                                    <?php foreach ($subcategories as $subcategory): ?>
+                                        <p><?= $subcategory ?></p>
                                     <?php endforeach; ?>
                                 </div>
 
                                 <!-- Prix -->
                                 <div class="prix">
-                                    <p><?= $plat->prix ?></p>
+                                    <p><?= $dish->price ?></p>
                                 </div>
                             </div>
 
                             <!-- Nom du plat -->
                             <h4>
-                                <?= $plat->titre ?>
+                                <?= $dish->name ?>
                             </h4>
 
                             <!-- Description -->
                             <p class="description">
-                                <?= $plat->description ?>
+                                <?= $dish->description ?>
                             </p>
                         </article>
                         
