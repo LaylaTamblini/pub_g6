@@ -12,7 +12,7 @@ class DefautController extends Controller {
      * Affiche la page d'accueil.
      */
     public function index() {
-        $this->vue("index", [
+        $this->view("index", [
             "dishes" => (new Dish)->allWithCategoryAndSubcategory(),
             "categories" => (new Category)->all(),
             "title" => "Accueil"
@@ -23,7 +23,7 @@ class DefautController extends Controller {
      * Affiche la page de connexion à l'administration.
      */
     public function login() {
-        $this->vue("administration/login", [
+        $this->view("admin/login", [
             "title" => "Login"
         ]);
     }

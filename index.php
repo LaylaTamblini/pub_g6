@@ -29,7 +29,7 @@ if(isset($routes[$path])){
 
 } else {
     $controller = "\Bases\Controller";
-    $methode = "erreur404";
+    $methode = "error404";
     http_response_code(404);
 }
 

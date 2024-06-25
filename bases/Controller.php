@@ -8,9 +8,9 @@ class Controller {
      * 
      * @return void
      */
-    public function erreur404() {
-        $this->vue("erreurs/404", [
-            "titre" => "Page introuvable"
+    public function error404() {
+        $this->view("errors/404", [
+            "title" => "Page introuvable"
         ]);
     }
 
@@ -20,7 +20,7 @@ class Controller {
      * @param string $url
      * @return void
      */
-    protected function rediriger($url) {
+    protected function redirect($url) {
         header("location: $url");
         exit();
     }
@@ -32,7 +32,7 @@ class Controller {
      * @param array $donnees
      * @return void
      */
-    protected function vue($chemin, $donnees = []){
+    protected function view($chemin, $donnees = []){
         extract($donnees);
         include("views/$chemin.view.php");
     }
