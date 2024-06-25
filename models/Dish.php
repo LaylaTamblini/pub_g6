@@ -7,7 +7,7 @@ use Bases\Model;
 class Dish extends Model {
     protected $table = "dishes";
     
-    public function toutAvecCategorieEtSousCategorie() {
+    public function allWithCategoryAndSubcategory() {
         $sql = "
             SELECT dishes.*,
                 categories.name AS category_name,

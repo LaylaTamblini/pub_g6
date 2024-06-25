@@ -46,7 +46,7 @@ class Model
      *
      * @return array|false
      */
-    public function tout() {
+    public function all() {
         $sql = "SELECT *
                 FROM $this->table";
 
@@ -63,7 +63,7 @@ class Model
      * @param integer $id
      * @return object|false
      */
-    public function parId(int $id) : object|false
+    public function byId(int $id) : object|false
     {
         $sql = "SELECT *
                 FROM $this->table
@@ -85,7 +85,7 @@ class Model
      * 
      * @return bool
      */
-    public function supprimer(int $id) : bool {
+    public function destroy(int $id) : bool {
         $sql = "
             DELETE FROM $this->table
             WHERE id = :id

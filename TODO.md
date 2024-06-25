@@ -3,3 +3,5 @@
 3. Ajouter over scale sur icones médias
 4. Interchanger logo et icones médias dans footer
 5. Changer titres dans $this->vue
+
+<!-- Last insert pdo pour récupérer l'id du dernier id -->

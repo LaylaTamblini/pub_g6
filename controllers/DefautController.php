@@ -13,8 +13,8 @@ class DefautController extends Controller {
      */
     public function index() {
         $this->vue("index", [
-            "dishes" => (new Dish)->toutAvecCategorieEtSousCategorie(),
-            "categories" => (new Category)->tout(),
+            "dishes" => (new Dish)->allWithCategoryAndSubcategory(),
+            "categories" => (new Category)->all(),
             "title" => "Accueil"
         ]);
     }
