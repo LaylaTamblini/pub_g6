@@ -1,11 +1,11 @@
-.menu-complet {
+.menu {
     @include setFlex(column, center, center);
     width: 100%;
     text-align: center;
     color: var(--white);
     background-color: var(--black);
 
-    .menu {
+    .menu-category {
         @include setFlex(column, center, center);
         width: 100%;
         padding: $padding-section 0;
@@ -41,6 +41,7 @@
                 .pills {
                     @include setFlex(row, space-between, flex-start);
                     margin: 1rem 0;
+                    height: 5rem;
 
                     p {
                         font-size: 1rem;
@@ -73,7 +74,7 @@
     }
 }
 
-.menu:nth-of-type(2n) {
+.menu-category:nth-of-type(2n) {
     background-color: var(--white);
     color: var(--black);
 }

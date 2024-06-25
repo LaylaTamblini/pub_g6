@@ -316,7 +316,7 @@ p {
   }
 }
 
-.menu-complet {
+.menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -326,7 +326,7 @@ p {
   color: var(--white);
   background-color: var(--black);
 }
-.menu-complet .menu {
+.menu .menu-category {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -334,7 +334,7 @@ p {
   width: 100%;
   padding: 6rem 0;
 }
-.menu-complet .menu .items {
+.menu .menu-category .items {
   display: grid;
   justify-content: center;
   align-items: flex-start;
@@ -345,58 +345,59 @@ p {
   gap: 2rem;
 }
 @media screen and (min-width: 1024px) {
-  .menu-complet .menu .items {
+  .menu .menu-category .items {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (min-width: 1200px) {
-  .menu-complet .menu .items {
+  .menu .menu-category .items {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.menu-complet .menu .items .item {
+.menu .menu-category .items .item {
   max-width: 300px;
   margin: 0 auto;
 }
-.menu-complet .menu .items .item img {
+.menu .menu-category .items .item img {
   width: 300px;
   height: 300px;
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.menu-complet .menu .items .item .pills {
+.menu .menu-category .items .item .pills {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   margin: 1rem 0;
+  height: 5rem;
 }
-.menu-complet .menu .items .item .pills p {
+.menu .menu-category .items .item .pills p {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: var(--black);
   background-color: var(--primary);
 }
-.menu-complet .menu .items .item .pills p:not(:last-of-type) {
+.menu .menu-category .items .item .pills p:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
-.menu-complet .menu .items .item h4 {
+.menu .menu-category .items .item h4 {
   margin-bottom: 1rem;
   height: 40px;
 }
-.menu-complet .menu .items .item .description {
+.menu .menu-category .items .item .description {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  .menu-complet .menu .items .item .description {
+  .menu .menu-category .items .item .description {
     display: block;
     font-size: 1rem;
   }
 }
 
-.menu:nth-of-type(2n) {
+.menu-category:nth-of-type(2n) {
   background-color: var(--white);
   color: var(--black);
 }

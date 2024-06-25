@@ -1,7 +1,7 @@
-<section class="menu-complet" id="menu">
+<section class="menu" id="menu">
 
     <?php foreach($categories as $category): ?>
-        <section class="menu">
+        <section class="menu-category">
 
             <h3>
                 <?= $category->name ?>
