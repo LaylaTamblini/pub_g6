@@ -24,14 +24,7 @@
         display: none;
     }
 
-    .infos-panel {
-        width: 100%;
-
-        .coordo-panel {
-            text-decoration: underline;
-            address {
-                margin: 2rem 0 1rem 0;
-            }
-        }
+    .link-panel {
+        margin-top: 1rem;
     }
 }

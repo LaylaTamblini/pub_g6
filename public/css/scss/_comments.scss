@@ -1,4 +1,4 @@
-.commentaires {
+.comments {
     @include setFlex(column, center, center);
     position: relative;
     width: 100%;
@@ -14,7 +14,7 @@
         z-index: 1;
         max-width: 600px;
         
-        .commentaire-client {
+        .comment {
             font-size: 1.5rem;
             line-height: 1.8rem;
             font-weight: 700;
@@ -30,7 +30,7 @@
             margin: 2rem 0;
         }
     
-        .nom-client {
+        .name {
             font-style: italic;
             font-size: 1rem;
         }

@@ -7,7 +7,7 @@
         <ul>
             <li><a href="index">Accueil</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#aPropos">À propos</a></li>
+            <li><a href="#about">À propos</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         
@@ -23,7 +23,7 @@
         <ul>
             <li><a href="index">Accueil</a></li>
             <li><a href="#menu" @click="toggleMenu()">Menu</a></li>
-            <li><a href="#aPropos" @click="toggleMenu()">À propos</a></li>
+            <li><a href="#about" @click="toggleMenu()">À propos</a></li>
             <li><a href="#contact" @click="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
@@ -43,7 +43,7 @@
             </a>
         </div>
 
-        <div class="coordo-panel">
+        <div class="link-panel">
             <address>
                 <a href="https://maps.app.goo.gl/57r7Hm2uGvza4cvk8" target="_blank">
                     <span class="block">297, rue St-Georges,</span>

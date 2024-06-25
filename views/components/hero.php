@@ -1,4 +1,4 @@
-<section class="hero" id="hero">
+<section class="hero">
     <div>
         <h1><span class="block">Tire-toi</span> une bûche!</h1>
         <p>Bienvenue au Pub G6, un établissement qui séduit les gourmets depuis <span class="bold">20 ans</span> 🍺</p>

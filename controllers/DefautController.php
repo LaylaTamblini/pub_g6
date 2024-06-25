@@ -13,9 +13,9 @@ class DefautController extends Controller {
      */
     public function index() {
         $this->vue("index", [
-            "plats" => (new Plat)->toutAvecCategorie(),
+            "plats" => (new Plat)->toutAvecCategorieEtSousCategorie(),
             "categories" => (new Categorie)->tout(),
-            "titre" => "Accueil du PUB G6"
+            "titre" => "Accueil"
         ]);
     }
 
@@ -24,7 +24,7 @@ class DefautController extends Controller {
      */
     public function login() {
         $this->vue("administration/login", [
-            "titre" => "Administration | Login"
+            "titre" => "Login"
         ]);
     }
 }

@@ -103,7 +103,19 @@ p {
 	display: block;
 	width: fit-content;
 	padding: 1rem 2rem;
-
 	border-radius: $border-radius;
 	background-color: var(--primary);
+}
+
+.link-panel {
+	text-decoration: underline;
+
+	address {
+		margin-bottom: 0.8rem;
+		span {
+			&:not(:last-child) {
+				margin-bottom: 0.2rem;
+			}
+		}
+	}
 }

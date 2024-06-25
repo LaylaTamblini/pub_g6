@@ -4,12 +4,12 @@
 <main>
     <?php include("views/components/hero.php") ?>
     <?php include("views/components/menu.php") ?>
-    <?php include("views/components/apropos.php") ?>
+    <?php include("views/components/about.php") ?>
     <?php include("views/components/marquee.php") ?>
-    <?php include("views/components/infos_pub.php") ?>
-    <?php include("views/components/commentaires.php") ?>
+    <?php include("views/components/history.php") ?>
+    <?php include("views/components/comments.php") ?>
     <?php include("views/components/contact.php") ?>
-    <?php include("views/components/infolettre.php") ?>
+    <?php include("views/components/newsletter.php") ?>
 </main>
 
 <?php include("views/components/footer.php") ?>

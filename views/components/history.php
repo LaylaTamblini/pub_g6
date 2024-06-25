@@ -1,4 +1,4 @@
-<section class="infos-pub">
+<section class="history">
     <div>
         <div>
             <img src="public/img/infos_pub1.jpg" alt="">

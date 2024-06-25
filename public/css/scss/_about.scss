@@ -1,4 +1,4 @@
-.a-propos {
+.about {
     @include setFlex(column-reverse, center, center);
     width: 100%;
     padding: $padding-section 1rem;
@@ -21,7 +21,7 @@
         }
     }
 
-    .img-apropos {
+    .about-img {
         
         & img {
             width: 300px;

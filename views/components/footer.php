@@ -8,7 +8,7 @@
                     <ul>
                         <li><a href="index">Accueil</a></li>
                         <li><a href="#menu">Menu</a></li>
-                        <li><a href="#aPropos">À propos</a></li>
+                        <li><a href="#about">À propos</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -17,7 +17,7 @@
             <div>
                 <h5>Nous rejoindre</h5>
         
-                <div class="coordo-panel">
+                <div class="link-panel">
                     <address>
                         <a href="https://maps.app.goo.gl/57r7Hm2uGvza4cvk8" target="_blank">
                             <span class="block">297, rue St-Georges,</span>
@@ -32,6 +32,12 @@
         </div> 
     
         <div class="img-footer">
+            <div class="full-logo">
+                <a href="index">
+                    <img src="public/img/logo.svg" alt="">
+                </a>
+            </div>
+
             <div class="medias">
                 <a href="https://www.facebook.com/" target="_blank">
                     <i class="bi bi-facebook"></i>
@@ -43,12 +49,6 @@
         
                 <a href="https://www.instagram.com/" target="_blank">
                     <i class="bi bi-instagram"></i>
-                </a>
-            </div>
-    
-            <div class="full-logo">
-                <a href="index">
-                    <img src="public/img/logo.svg" alt="">
                 </a>
             </div>
         </div>

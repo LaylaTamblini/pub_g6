@@ -18,8 +18,10 @@
                             <!-- Tags -->
                             <div class="pills">
                                 <div class="tags">
-                                    <p>Viande</p>
-                                    <p>Végé</p>
+                                    <?php $sousCategories = explode(',', $plat->sous_categories_titres); ?>
+                                    <?php foreach ($sousCategories as $sousCategorie): ?>
+                                        <p><?= $sousCategorie ?></p>
+                                    <?php endforeach; ?>
                                 </div>
 
                                 <!-- Prix -->

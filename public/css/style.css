@@ -186,6 +186,16 @@ p {
   background-color: var(--primary);
 }
 
+.link-panel {
+  text-decoration: underline;
+}
+.link-panel address {
+  margin-bottom: 0.8rem;
+}
+.link-panel address span:not(:last-child) {
+  margin-bottom: 0.2rem;
+}
+
 ::-webkit-scrollbar {
   background-color: var(--black);
 }
@@ -391,7 +401,7 @@ p {
   color: var(--black);
 }
 
-.a-propos {
+.about {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -401,23 +411,23 @@ p {
   text-align: center;
   background-color: var(--primary);
 }
-.a-propos div {
+.about div {
   max-width: 400px;
 }
-.a-propos div h2 {
+.about div h2 {
   margin: 2rem 0 1rem 0;
 }
 @media screen and (min-width: 1200px) {
-  .a-propos div h2 {
+  .about div h2 {
     margin: 0 0 1rem 0;
   }
 }
 @media screen and (min-width: 1200px) {
-  .a-propos div {
+  .about div {
     max-width: 600px;
   }
 }
-.a-propos .img-apropos img {
+.about .about-img img {
   width: 300px;
   height: 400px;
   border-radius: 0.5rem;
@@ -425,19 +435,19 @@ p {
      object-fit: cover;
 }
 @media screen and (min-width: 1024px) {
-  .a-propos .img-apropos img {
+  .about .about-img img {
     margin-left: 4rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .a-propos .img-apropos img {
+  .about .about-img img {
     width: 400px;
     height: 550px;
     margin-left: 4rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .a-propos {
+  .about {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -446,7 +456,7 @@ p {
   }
 }
 
-.infos-pub {
+.history {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -454,7 +464,7 @@ p {
   width: 100%;
   padding: 6rem 1rem;
 }
-.infos-pub div {
+.history div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -462,7 +472,7 @@ p {
   text-align: center;
   max-width: 600px;
 }
-.infos-pub div img {
+.history div img {
   width: 300px;
   height: 300px;
   -o-object-fit: cover;
@@ -470,26 +480,26 @@ p {
   border-radius: 0.5rem;
 }
 @media screen and (min-width: 1024px) {
-  .infos-pub div img {
+  .history div img {
     margin-right: 2rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .infos-pub div img {
+  .history div img {
     width: 350px;
     height: 350px;
   }
 }
-.infos-pub div p {
+.history div p {
   margin: 2rem 0;
 }
 @media screen and (min-width: 1024px) {
-  .infos-pub div p {
+  .history div p {
     margin: 0;
   }
 }
 @media screen and (min-width: 1024px) {
-  .infos-pub div {
+  .history div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -499,25 +509,25 @@ p {
   }
 }
 @media screen and (min-width: 1200px) {
-  .infos-pub div {
+  .history div {
     max-width: 1100px;
   }
 }
-.infos-pub .no-pad p {
+.history .no-pad p {
   margin: 2rem 0 0 0;
 }
 @media screen and (min-width: 1024px) {
-  .infos-pub .no-pad p {
+  .history .no-pad p {
     margin: 0;
   }
 }
 @media screen and (min-width: 1024px) {
-  .infos-pub .no-pad {
+  .history .no-pad {
     margin-top: 1rem;
   }
 }
 
-.commentaires {
+.comments {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -532,30 +542,30 @@ p {
   background-position: center;
   background-size: cover;
 }
-.commentaires .content {
+.comments .content {
   z-index: 1;
   max-width: 600px;
 }
-.commentaires .content .commentaire-client {
+.comments .content .comment {
   font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 700;
 }
 @media screen and (min-width: 1200px) {
-  .commentaires .content .commentaire-client {
+  .comments .content .comment {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 }
-.commentaires .content div {
+.comments .content div {
   color: var(--primary);
   margin: 2rem 0;
 }
-.commentaires .content .nom-client {
+.comments .content .name {
   font-style: italic;
   font-size: 1rem;
 }
-.commentaires .overlay {
+.comments .overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -637,14 +647,8 @@ header nav .menu-burger {
     display: none;
   }
 }
-.panel .infos-panel {
-  width: 100%;
-}
-.panel .infos-panel .coordo-panel {
-  text-decoration: underline;
-}
-.panel .infos-panel .coordo-panel address {
-  margin: 2rem 0 1rem 0;
+.panel .link-panel {
+  margin-top: 1rem;
 }
 
 .contact {
@@ -761,17 +765,8 @@ footer .top-footer .nav-footer div:not(:last-child) {
 footer .top-footer .nav-footer div nav ul li:not(:last-child) {
   margin-bottom: 0.2rem;
 }
-footer .top-footer .nav-footer div nav ul li a:hover {
+footer .top-footer .nav-footer div nav ul li a {
   text-decoration: underline;
-}
-footer .top-footer .nav-footer .coordo-panel {
-  text-decoration: underline;
-}
-footer .top-footer .nav-footer .coordo-panel address {
-  margin-bottom: 0.8rem;
-}
-footer .top-footer .nav-footer .coordo-panel address span:not(:last-child) {
-  margin-bottom: 0.2rem;
 }
 footer .top-footer .img-footer {
   display: flex;
@@ -781,7 +776,7 @@ footer .top-footer .img-footer {
   margin: 3rem 0;
 }
 footer .top-footer .img-footer .full-logo {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   width: 200px;
 }
 @media screen and (min-width: 600px) {
@@ -814,6 +809,11 @@ footer .admin .copyright {
   font-family: "Quantico", sans-serif;
   font-weight: 700;
   margin-right: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  footer .admin .copyright {
+    font-size: 1.5rem;
+  }
 }
 footer .admin .admin-icon a {
   display: flex;
