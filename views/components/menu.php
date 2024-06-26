@@ -13,7 +13,11 @@
 
                         <article class="item">
                             <!-- Image -->
-                            <img src="public/img/placeholder.svg" alt="">
+                            <?php if($dish->image): ?>
+                                <img src="<?= $dish->image ?>" alt="">
+                            <?php else: ?>
+                                <img src="public/img/placeholder.png" alt="">
+                            <?php endif; ?>
 
                             <!-- Tags -->
                             <div class="pills">
