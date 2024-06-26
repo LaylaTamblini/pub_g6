@@ -14,9 +14,13 @@
                         <article class="item">
                             <!-- Image -->
                             <?php if($dish->image): ?>
-                                <img src="<?= $dish->image ?>" alt="">
+                                <?php if($dish->alt): ?>
+                                    <img loading="lazy" src="<?= $dish->image ?>" alt="<?= $dish->alt ?>">
+                                <?php else: ?>
+                                        <img loading="lazy" src="<?= $dish->image ?>" alt="Plat du menu Pub G6">
+                                <?php endif; ?>
                             <?php else: ?>
-                                <img src="public/img/placeholder.png" alt="">
+                                <img loading="lazy" src="public/img/placeholder.png" alt="Image non disponible pour ce plat">
                             <?php endif; ?>
 
                             <!-- Tags -->

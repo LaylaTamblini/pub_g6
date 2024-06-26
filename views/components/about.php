@@ -5,6 +5,6 @@
     </div>
     
     <div class="about-img">
-        <img src="public/img/pub_apropos.jpg" alt="">
+        <img loading="lazy" src="public/img/pub_apropos.jpg" alt="Bâtiment rustique du Pub G6 avec une terrasse et des parasols jaunes">
     </div>
 </section>

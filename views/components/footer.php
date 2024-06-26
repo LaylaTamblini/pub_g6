@@ -34,7 +34,7 @@
         <div class="img-footer">
             <div class="full-logo">
                 <a href="index">
-                    <img src="public/img/logo.svg" alt="">
+                    <img src="public/img/logo.svg" alt="Logo du Pub G6 dans une boîte avec bordure et le nom du pub au centre">
                 </a>
             </div>
 

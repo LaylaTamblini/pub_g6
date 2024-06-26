@@ -1,4 +1,4 @@
-<section class="comments">
+<section class="comments" title="Groupe de clients au Pub G6 trinquant avec des chopes de bière">
     <div class="overlay"></div>
 
     <div class="content">

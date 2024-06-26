@@ -6,6 +6,6 @@
     </div>
 
     <div class="img-hero">
-        <img src="public/img/bieres_hero.png" alt="">
+        <img loading="lazy" src="public/img/bieres_hero.png" alt="Deux bières en rotation avec des éclaboussures de mousse">
     </div>
 </section>
