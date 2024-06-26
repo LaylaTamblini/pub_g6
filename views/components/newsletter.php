@@ -1,4 +1,4 @@
-<section class="infolettre">
+<section class="newsletter">
     <div>
         <h3><span class="block">Ne ratez</span> aucune miette</h3>
         <p>Abonnez-vous à notre infolettre 📫</p>

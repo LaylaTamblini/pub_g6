@@ -28,6 +28,12 @@
         & div {
             color: var(--primary);
             margin: 2rem 0;
+
+            i {
+                &:not(:last-child) {
+                    margin-right: 0.3rem;
+                }
+            }
         }
     
         .name {

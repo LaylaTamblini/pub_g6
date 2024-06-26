@@ -1,9 +1,15 @@
-.infolettre {
+.newsletter {
     @include setFlex(column, center, center);
     width: 100%;
     padding: $padding-section 1rem;
     text-align: center;
     background-color: var(--primary);
+
+    & div {
+        p {
+            font-size: 1.2rem;
+        }
+    }
 
     form {
         @include setFlex(column, center, center);

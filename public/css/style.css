@@ -342,7 +342,7 @@ p {
   width: fit-content;
   padding-top: 6rem;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 5rem;
 }
 @media screen and (min-width: 1024px) {
   .menu .menu-category .items {
@@ -562,6 +562,9 @@ p {
   color: var(--primary);
   margin: 2rem 0;
 }
+.comments .content div i:not(:last-child) {
+  margin-right: 0.3rem;
+}
 .comments .content .name {
   font-style: italic;
   font-size: 1rem;
@@ -600,7 +603,7 @@ header nav ul li a:hover {
   border-bottom: solid 2px var(--primary);
 }
 header nav ul li:not(:last-child) {
-  margin-right: 1.5rem;
+  margin-right: 3rem;
 }
 @media screen and (min-width: 1200px) {
   header nav ul {
@@ -664,10 +667,12 @@ header nav .menu-burger {
   color: var(--primary);
 }
 .contact div {
+  width: 100%;
   max-width: 1200px;
 }
 .contact div p {
   margin: 1rem 0 2rem 0;
+  max-width: 900px;
 }
 .contact div iframe {
   border-radius: 0.5rem;
@@ -678,7 +683,7 @@ header nav .menu-burger {
   }
 }
 
-.infolettre {
+.newsletter {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -688,7 +693,10 @@ header nav .menu-burger {
   text-align: center;
   background-color: var(--primary);
 }
-.infolettre form {
+.newsletter div p {
+  font-size: 1.2rem;
+}
+.newsletter form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -696,21 +704,21 @@ header nav .menu-burger {
   margin-top: 2rem;
   width: 100%;
 }
-.infolettre form .inputs {
+.newsletter form .inputs {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.infolettre form .inputs input {
+.newsletter form .inputs input {
   width: 100%;
   max-width: 600px;
 }
-.infolettre form .inputs input:not(:last-child) {
+.newsletter form .inputs input:not(:last-child) {
   margin-bottom: 0.5rem;
 }
-.infolettre form .inputs input[type=text], .infolettre form .inputs input[type=email] {
+.newsletter form .inputs input[type=text], .newsletter form .inputs input[type=email] {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   border: 2px solid var(--black);
@@ -718,16 +726,16 @@ header nav .menu-burger {
   color: var(--black);
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.infolettre form .inputs input[type=text]::-moz-placeholder, .infolettre form .inputs input[type=email]::-moz-placeholder {
+.newsletter form .inputs input[type=text]::-moz-placeholder, .newsletter form .inputs input[type=email]::-moz-placeholder {
   color: var(--light-black);
 }
-.infolettre form .inputs input[type=text]::placeholder, .infolettre form .inputs input[type=email]::placeholder {
+.newsletter form .inputs input[type=text]::placeholder, .newsletter form .inputs input[type=email]::placeholder {
   color: var(--light-black);
 }
-.infolettre form .inputs input[type=text]:focus, .infolettre form .inputs input[type=email]:focus {
+.newsletter form .inputs input[type=text]:focus, .newsletter form .inputs input[type=email]:focus {
   outline: none;
 }
-.infolettre form input[type=submit] {
+.newsletter form input[type=submit] {
   padding: 1rem 2rem;
   margin-top: 2rem;
   border: none;
@@ -739,7 +747,7 @@ header nav .menu-burger {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.infolettre form input[type=submit]:hover {
+.newsletter form input[type=submit]:hover {
   background-color: var(--black-hover);
 }
 
@@ -802,19 +810,14 @@ footer .top-footer .img-footer .full-logo {
 footer .admin {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 footer .admin .copyright {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: "Quantico", sans-serif;
   font-weight: 700;
   margin-right: 1rem;
-}
-@media screen and (min-width: 1024px) {
-  footer .admin .copyright {
-    font-size: 1.5rem;
-  }
 }
 footer .admin .admin-icon a {
   display: flex;
