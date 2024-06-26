@@ -25,7 +25,7 @@ class DefautController extends Controller {
      * Affiche la page de connexion à l'administration.
      */
     public function login() {
-        $this->view("admin/login", [
+        $this->view("login", [
             "title" => "Login"
         ]);
     }

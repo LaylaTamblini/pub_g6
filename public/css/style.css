@@ -198,6 +198,27 @@ p {
   margin-bottom: 0.2rem;
 }
 
+.img-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+.img-footer .full-logo {
+  margin-bottom: 1rem;
+  width: 200px;
+}
+@media screen and (min-width: 600px) {
+  .img-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+  }
+}
+
 ::-webkit-scrollbar {
   background-color: var(--black);
 }
@@ -697,60 +718,6 @@ header nav .menu-burger {
   text-align: center;
   background-color: var(--primary);
 }
-.newsletter form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  width: 100%;
-}
-.newsletter form .inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.newsletter form .inputs input {
-  width: 100%;
-  max-width: 600px;
-}
-.newsletter form .inputs input:not(:last-child) {
-  margin-bottom: 0.5rem;
-}
-.newsletter form .inputs input[type=text], .newsletter form .inputs input[type=email] {
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  border: 2px solid var(--black);
-  background-color: transparent;
-  color: var(--black);
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-.newsletter form .inputs input[type=text]::-moz-placeholder, .newsletter form .inputs input[type=email]::-moz-placeholder {
-  color: var(--light-black);
-}
-.newsletter form .inputs input[type=text]::placeholder, .newsletter form .inputs input[type=email]::placeholder {
-  color: var(--light-black);
-}
-.newsletter form .inputs input[type=text]:focus, .newsletter form .inputs input[type=email]:focus {
-  outline: none;
-}
-.newsletter form input[type=submit] {
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  background-color: var(--black);
-  color: var(--white);
-  font-family: "Plus Jakarta Sans", sans-serif;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-.newsletter form input[type=submit]:hover {
-  background-color: var(--black-hover);
-}
 
 footer {
   display: flex;
@@ -777,26 +744,6 @@ footer .top-footer .nav-footer div nav ul li:not(:last-child) {
 }
 footer .top-footer .nav-footer div nav ul li a {
   text-decoration: underline;
-}
-footer .top-footer .img-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem 0;
-}
-footer .top-footer .img-footer .full-logo {
-  margin-bottom: 1rem;
-  width: 200px;
-}
-@media screen and (min-width: 600px) {
-  footer .top-footer .img-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 0;
-  }
 }
 @media screen and (min-width: 600px) {
   footer .top-footer {
@@ -871,4 +818,81 @@ footer .admin .admin-icon a:hover {
 
 .success i {
   color: var(--success);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+form .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+form .inputs input {
+  width: 100%;
+  max-width: 600px;
+}
+form .inputs input:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+form .inputs input[type=text], form .inputs input[type=email], form .inputs input[type=password] {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--black);
+  background-color: transparent;
+  color: var(--black);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+form .inputs input[type=text]::-moz-placeholder, form .inputs input[type=email]::-moz-placeholder, form .inputs input[type=password]::-moz-placeholder {
+  color: var(--light-black);
+}
+form .inputs input[type=text]::placeholder, form .inputs input[type=email]::placeholder, form .inputs input[type=password]::placeholder {
+  color: var(--light-black);
+}
+form .inputs input[type=text]:focus, form .inputs input[type=email]:focus, form .inputs input[type=password]:focus {
+  outline: none;
+}
+form input[type=submit] {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+form input[type=submit]:hover {
+  background-color: var(--black-hover);
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  height: 100vh;
+  margin: 0;
+  padding: 6rem 1rem;
+}
+.login .full-logo {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+.login a {
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+.login h4 {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

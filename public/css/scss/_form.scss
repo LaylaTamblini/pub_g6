@@ -1,0 +1,53 @@
+form {
+    @include setFlex(column, center, center);
+    margin-top: 2rem;
+    width: 100%;
+    
+    .inputs {
+        @include setFlex(column, center, center);
+        width: 100%;
+
+        input {
+            width: 100%;
+            max-width: 600px;
+
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        input[type=text], input[type=email], input[type=password] {
+            padding: 1rem 2rem;
+            border-radius: $border-radius;
+            border: 2px solid var(--black);
+            background-color: transparent;
+            color: var(--black);
+            font-family: "Plus Jakarta Sans", sans-serif;
+
+            &::placeholder {
+                color: var(--light-black);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    input[type=submit] {
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        border: none;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        background-color: var(--black);
+        color: var(--white);
+        font-family: "Plus Jakarta Sans", sans-serif;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: var(--black-hover);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.login {
+    @include setFlex(column, center, center);
+    background-color: var(--primary);
+    height: 100vh;
+    margin: 0;
+    padding: $padding-section 1rem;
+
+    .full-logo {
+        width: 300px;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        margin-top: 1rem;
+        text-decoration: underline;
+    }
+
+    & h4 {
+        text-align: center;
+    }
+}
