@@ -10,4 +10,6 @@ $routes = [
     "index" => ["DefautController", "index"],
     // Affiche le login de la page d'administration
     "login" => ["DefautController", "login"],
+    
+    "insert-subscriber" => ["SubscriberController", "store"],
 ];
