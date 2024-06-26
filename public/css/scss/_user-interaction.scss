@@ -1,0 +1,30 @@
+.user-interaction {
+    @include setFlex(row, space-between, center);
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: $border-radius;
+    background-color: var(--white);
+    text-align: start;
+    
+    & p {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+
+    & i {
+        font-size: 1.5rem;
+    }
+}
+
+.error {
+    i {
+        color: var(--error);
+    }
+}
+
+.success {
+    i {
+        color: var(--success);
+    }
+}

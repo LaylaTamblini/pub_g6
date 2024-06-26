@@ -14,7 +14,7 @@ class SubscriberController extends Controller {
             empty($_POST["lastname"]) ||
             empty($_POST["email"])) {
 
-            $this->redirect("index#newsletter?required_inputs");
+            $this->redirect("index?required_inputs#newsletter");
         }
 
         $success = (new Subscriber)->insert(
@@ -25,10 +25,10 @@ class SubscriberController extends Controller {
 
         // Si erreur, pas faute d'utilisateur
         if(!$success) {
-            $this->redirect("index#newsletter?registration_failed");
+            $this->redirect("index?registration_failed#newsletter");
         }
 
-        $this->redirect("index#newsletter?registration_successful");
+        $this->redirect("index?registration_successful#newsletter");
     }
 
 }

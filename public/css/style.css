@@ -61,6 +61,8 @@ table {
   --black-hover:#131313;
   --light-black:#404040;
   --gray:#DCDCDC;
+  --error: #F21628;
+  --success: #22C52D;
 }
 
 /**
@@ -70,7 +72,7 @@ table {
  * Permet d'ajouter une bordure rouge sur un élément.
  */
 html {
-  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
@@ -693,9 +695,6 @@ header nav .menu-burger {
   text-align: center;
   background-color: var(--primary);
 }
-.newsletter div p {
-  font-size: 1.2rem;
-}
 .newsletter form {
   display: flex;
   flex-direction: column;
@@ -842,4 +841,32 @@ footer .admin .admin-icon a:hover {
     width: 100%;
     max-width: 1000px;
   }
+}
+
+.user-interaction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  text-align: start;
+}
+.user-interaction p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.user-interaction i {
+  font-size: 1.5rem;
+}
+
+.error i {
+  color: var(--error);
+}
+
+.success i {
+  color: var(--success);
 }/*# sourceMappingURL=style.css.map */
