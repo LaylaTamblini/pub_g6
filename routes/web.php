@@ -14,4 +14,6 @@ $routes = [
     "insert-subscriber" => ["SubscriberController", "store"],
     // Traite la connexion d'un membre
     "connect-member" => ["MemberController", "connect"],
+    // Traite la déconnexion d'un membre
+    "disconnect-member" => ["MemberController", "disconnect"],
 ];

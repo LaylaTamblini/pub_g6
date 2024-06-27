@@ -19,7 +19,7 @@
 
     <nav class="links-nav">
         <a href="#">Retourner sur le site</a>
-        <a href="#">Se déconnecter</a>
+        <a href="disconnect-member">Se déconnecter</a>
     </nav>
 
 </header>
@@ -36,6 +36,6 @@
 
     <div class="link-panel">
         <a href="#">Retourner sur le site</a>
-        <a href="#">Se déconnecter</a>
+        <a href="disconnect-member">Se déconnecter</a>
     </div>
 </section>

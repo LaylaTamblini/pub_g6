@@ -24,7 +24,20 @@ class MemberController extends Controller {
 
         $_SESSION["user_id"] = $user->id;
 
-        $this->redirect("admin?succes_connexion");
+        $this->redirect("admin?connection_successful");
+    }
+
+    /**
+     * Traite la déconnexion d'un utilisateur.
+     */
+    public function disconnect() {
+        // Protection de la route
+        if(empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        session_destroy();
+        $this->redirect("login?logout_successful");
     }
 
 }
