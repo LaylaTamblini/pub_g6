@@ -895,4 +895,53 @@ form input[type=submit]:hover {
 }
 .login h4 {
   text-align: center;
+}
+
+.header-admin {
+  background-color: var(--gray);
+}
+.header-admin .logo {
+  color: var(--black);
+}
+.header-admin nav ul li a {
+  color: var(--black);
+}
+.header-admin nav ul li a:hover {
+  border-bottom: solid 2px var(--light-black);
+}
+@media screen and (min-width: 1200px) {
+  .header-admin nav ul li:not(:last-child) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-admin nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+.header-admin nav .menu-burger {
+  color: var(--black);
+}
+.header-admin .links-nav {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .header-admin .links-nav {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-<header id="header">
+<header>
     <nav>
         <a href="index" class="logo">Pub G6</a>
     </nav>

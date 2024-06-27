@@ -1,0 +1,51 @@
+.header-admin {
+    background-color: var(--gray);
+
+    .logo {
+        color: var(--black);
+    }
+
+    nav {
+        ul {
+            li {
+                a {
+                    color: var(--black);
+
+                    &:hover {
+                        border-bottom: solid 2px var(--light-black);
+                    }
+                }
+
+                @media screen and (min-width: 1200px) {
+                    &:not(:last-child) {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                @include setFlex(column, center, center);
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        .menu-burger {
+            color: var(--black);
+        }
+    }
+
+    .links-nav {
+        display: none;
+
+        @media screen and (min-width: 1200px) {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        @include setFlex(column, space-between, center);
+        width: 20%;
+        height: 100%;
+    }
+}

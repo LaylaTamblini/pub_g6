@@ -8,8 +8,10 @@ use Models\Subscriber;
 
 class SubscriberController extends Controller {
 
+    /**
+     * Traite l'enregistrement d'un abonné à l'infolettre dans la base de donnée.
+     */
     public function store() {
-
         if(empty($_POST["firstname"]) || 
             empty($_POST["lastname"]) ||
             empty($_POST["email"])) {
@@ -22,8 +24,7 @@ class SubscriberController extends Controller {
             $_POST["lastname"],
             $_POST["email"]
         );
-
-        // Si erreur, pas faute d'utilisateur
+        
         if(!$success) {
             $this->redirect("index?registration_failed#newsletter");
         }

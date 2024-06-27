@@ -13,7 +13,21 @@
 
     <h4>Connexion à l'administration</h4>
 
-    <form action="insert-subscriber" method="POST">
+    <?php if(isset($_GET["required_inputs"])): ?>
+        <div class="user-interaction error">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <p>Veuillez remplir tous les champs pour vous connecter</p>
+        </div>
+    <?php endif ?>
+
+    <?php if(isset($_GET["invalid_information"])): ?>
+        <div class="user-interaction error">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <p>Veuillez vérifier vos identifiants</p>
+        </div>
+    <?php endif ?>
+
+    <form action="connect-member" method="POST">
         <div class="inputs">
             <input type="email" name="email" placeholder="Adresse courriel">
             <input type="password" name="password" placeholder="Mot de passe">

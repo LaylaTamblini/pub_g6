@@ -8,7 +8,7 @@ use Models\Dish;
 use Models\Category;
 use Models\Comment;
 
-class DefautController extends Controller {
+class DisplayController extends Controller {
     /**
      * Affiche la page d'accueil.
      */
@@ -27,6 +27,15 @@ class DefautController extends Controller {
     public function login() {
         $this->view("login", [
             "title" => "Login"
+        ]);
+    }
+
+    /**
+     * Affiche la page d'accueil de l'administration.
+     */
+    public function admin() {
+        $this->view("admin", [
+            "title" => "Administration"
         ]);
     }
 }
