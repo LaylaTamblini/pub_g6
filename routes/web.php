@@ -15,5 +15,5 @@ $routes = [
     // Traite la connexion d'un membre
     "connect-member" => ["MemberController", "connect"],
     // Traite la déconnexion d'un membre
-    "disconnect-member" => ["MemberController", "disconnect"],
+    "disconnect-member" => ["MemberController", "disconnect"]
 ];

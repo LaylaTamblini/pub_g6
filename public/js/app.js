@@ -5,6 +5,7 @@ createApp({
         return {
             panel: false,
             menuIcon: "menu",
+            sectAdmin: "categories"
         }
     },
     methods: {
@@ -20,7 +21,8 @@ createApp({
                 // Voir alternative vue.js
                 document.body.style.overflow = "auto";
             }
-        }
+        },
+
     }
 }).mount('#app')
 

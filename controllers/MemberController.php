@@ -37,7 +37,6 @@ class MemberController extends Controller {
         }
 
         session_destroy();
-        $this->redirect("login?logout_successful");
+        $this->redirect("index?logout_successful");
     }
-
 }

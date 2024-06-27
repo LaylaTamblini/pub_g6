@@ -1,7 +1,10 @@
+// General
 @import "scss/reset";
 @import "scss/variables";
 @import "scss/mixins";
 @import "scss/base";
+
+// Main site
 @import "scss/scrollbar";
 @import "scss/marquee";
 @import "scss/hero";
@@ -16,7 +19,11 @@
 @import "scss/footer";
 @import "scss/user-interaction";
 @import "scss/form";
+
+// Login
 @import "scss/login";
 
 // Administration
-@import "scss/admin/header";
+@import "scss/admin-header";
+@import "scss/admin-main";
+@import "scss/admin-content";
