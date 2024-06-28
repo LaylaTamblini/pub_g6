@@ -5,7 +5,7 @@ createApp({
         return {
             panel: false,
             menuIcon: "menu",
-            sectAdmin: "categories"
+            section: "categories"
         }
     },
     methods: {
@@ -22,6 +22,9 @@ createApp({
                 document.body.style.overflow = "auto";
             }
         },
+        switchSection(section) {
+            this.section = section
+        }
 
     }
 }).mount('#app')

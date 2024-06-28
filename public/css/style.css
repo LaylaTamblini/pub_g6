@@ -880,7 +880,7 @@ form input[type=submit]:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary);
+  background-color: var(--gray);
   height: 100vh;
   margin: 0;
   padding: 6rem 1rem;

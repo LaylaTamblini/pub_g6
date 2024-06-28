@@ -1,6 +1,6 @@
 .login {
     @include setFlex(column, center, center);
-    background-color: var(--primary);
+    background-color: var(--gray);
     height: 100vh;
     margin: 0;
     padding: $padding-section 1rem;
