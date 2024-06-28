@@ -1,0 +1,16 @@
+.panel-admin {
+    background-color: var(--gray);
+
+    .disconnect-mobil {
+        text-decoration: underline;
+    }
+
+    .active {
+        color: var(--dark-gray);
+        pointer-events: none;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}

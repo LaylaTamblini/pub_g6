@@ -60,6 +60,7 @@ table {
   --black:#202020;
   --black-hover:#131313;
   --light-black:#404040;
+  --dark-gray:#a5a5a5;
   --gray:#DCDCDC;
   --error: #F21628;
   --success: #22C52D;
@@ -907,7 +908,7 @@ form input[type=submit]:hover {
   color: var(--black);
 }
 .header-admin nav ul li a:hover {
-  border-bottom: solid 2px var(--light-black);
+  border-bottom: solid 2px var(--black);
 }
 @media screen and (min-width: 1200px) {
   .header-admin nav ul li:not(:last-child) {
@@ -948,6 +949,13 @@ form input[type=submit]:hover {
     padding: 4rem 1rem;
   }
 }
+.header-admin .active {
+  color: var(--dark-gray);
+  pointer-events: none;
+}
+.header-admin .active:hover {
+  border-bottom: none;
+}
 
 @media screen and (min-width: 1200px) {
   .main-admin {
@@ -961,4 +969,18 @@ form input[type=submit]:hover {
     margin-left: 300px;
     padding: 1rem;
   }
+}
+
+.panel-admin {
+  background-color: var(--gray);
+}
+.panel-admin .disconnect-mobil {
+  text-decoration: underline;
+}
+.panel-admin .active {
+  color: var(--dark-gray);
+  pointer-events: none;
+}
+.panel-admin .active:hover {
+  border-bottom: none;
 }/*# sourceMappingURL=style.css.map */
