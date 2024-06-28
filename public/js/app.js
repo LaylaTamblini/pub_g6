@@ -9,31 +9,27 @@ createApp({
         }
     },
     methods: {
+        /**
+         * Permet d'ouvrir ou de fermer le menu de navigation en mobile.
+         */
         toggleMenu() {
             if(this.menuIcon == "menu") {
                 this.menuIcon = "close"
                 this.panel = true
-                // Voir alternative vue.js
                 document.body.style.overflow = "hidden";
             } else if(this.menuIcon == "close") {
                 this.menuIcon = "menu"
                 this.panel = false
-                // Voir alternative vue.js
                 document.body.style.overflow = "auto";
             }
         },
+        /**
+         * Permet de changer la section affichée dans l'administration.
+         * @param string section 
+         */
         switchSection(section) {
             this.section = section
         }
 
     }
 }).mount('#app')
-
-
-/**
- * 
- * TO-DO
- * 
- * 1. Margin top main + panneau auto with prog
- * 2. Animation panneau
- */
