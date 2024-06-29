@@ -10,13 +10,20 @@
                     Catégories
                 </a>
             </li>
+
             <li>
-                <a href="#" @click.prevent="switchSection('dishes')" :class="{active:section=='dishes'}">Plats</a>
+                <a href="#" @click.prevent="switchSection('dishes')" :class="{active:section=='dishes'}">
+                    Plats
+                </a>
             </li>
-            <!-- <li><a href="#">Sous-catégories</a></li> -->
-            <li>
-                <a href="#" @click.prevent="switchSection('staff')" :class="{active:section=='staff'}">Membres</a>
-            </li>
+
+            <?php if($_SESSION["user_role"] == "Administrateur"): ?>
+                <li>
+                    <a href="#" @click.prevent="switchSection('staff')" :class="{active:section=='staff'}">
+                        Membres
+                    </a>
+                </li>
+            <?php endif ?>
         </ul>
         
         <span class="material-icons menu-burger" @click="toggleMenu" v-cloak>
@@ -27,6 +34,7 @@
     <a class="disconnect" href="disconnect-member">Se déconnecter</a>
 </header>
 
+<!-- Menu mobile hamburger -->
 <section class="panel panel-admin" v-if="panel" v-cloak>
     <nav>
         <ul>
@@ -35,17 +43,20 @@
                     Catégories
                 </a>
             </li>
+            
             <li>
                 <a href="#" @click.prevent="toggleMenu(); switchSection('dishes')" :class="{active:section=='dishes'}">
                     Plats
                 </a>
             </li>
-            <!-- <li><a href="#" @click="toggleMenu()">Sous-catégories</a></li> -->
-            <li>
-                <a href="#" @click.prevent="toggleMenu(); switchSection('staff')" :class="{active:section=='staff'}">
-                    Membres
-                </a>
-            </li>
+
+            <?php if($_SESSION["user_role"] == "Administrateur"): ?>
+                <li>
+                    <a href="#" @click.prevent="toggleMenu(); switchSection('staff')" :class="{active:section=='staff'}">
+                        Membres
+                    </a>
+                </li>
+            <?php endif ?>
         </ul>
     </nav>
 

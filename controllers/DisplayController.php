@@ -7,6 +7,7 @@ use Bases\Controller;
 use Models\Dish;
 use Models\Category;
 use Models\Comment;
+use Models\Member;
 
 class DisplayController extends Controller {
     /**
@@ -35,6 +36,9 @@ class DisplayController extends Controller {
      */
     public function admin() {
         $this->view("admin", [
+            "dishes" => (new Dish)->allWithCategoryAndSubcategory(),
+            "categories" => (new Category)->all(),
+            "staff" => (new Member)->all(),
             "title" => "Administration"
         ]);
     }

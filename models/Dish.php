@@ -9,22 +9,22 @@ class Dish extends Model {
     
     public function allWithCategoryAndSubcategory() {
         $sql = "
-            SELECT dishes.*,
+            SELECT $this->table.*,
                 categories.name AS category_name,
                 GROUP_CONCAT(subcategories.name) AS subcategories_name
 
-            FROM dishes
+            FROM $this->table
 
             JOIN categories 
-                ON dishes.category_id = categories.id
+                ON $this->table.category_id = categories.id
 
             LEFT JOIN tags 
-                ON dishes.id = tags.dish_id
+                ON $this->table.id = tags.dish_id
 
             LEFT JOIN subcategories 
                 ON tags.subcategory_id = subcategories.id
 
-            GROUP BY dishes.id
+            GROUP BY $this->table.id
         ";
 
         $requete = $this->pdo()->prepare($sql);
