@@ -28,3 +28,16 @@
         margin-top: 1rem;
     }
 }
+
+.link-panel {
+	text-decoration: underline;
+
+	address {
+		margin-bottom: 0.8rem;
+		span {
+			&:not(:last-child) {
+				margin-bottom: 0.2rem;
+			}
+		}
+	}
+}

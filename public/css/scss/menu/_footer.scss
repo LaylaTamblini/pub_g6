@@ -72,3 +72,18 @@ footer {
         }
     }
 }
+
+.img-footer {
+	@include setFlex(column, center, center);
+	margin: 3rem 0;
+
+	.full-logo {
+		margin-bottom: 1rem;
+		width: 200px;
+	}
+
+	@media screen and (min-width: 600px) {
+		@include setFlex(column, center, flex-end);
+		margin: 0;
+	}
+}

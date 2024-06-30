@@ -1,10 +1,10 @@
-.main-admin {
+.admin-main {
+    background-color: red;
+
     @media screen and (min-width: 1200px) {
         @include setFlex(column, center, flex-start);
         width: auto;
-        min-height: 100vh;
         margin-top: 0;
         margin-left: 300px;
-        padding: 1rem;
     }
 }

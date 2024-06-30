@@ -1,0 +1,13 @@
+.btn {
+    display: block;
+    width: fit-content;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: $border-radius;
+    background-color: var(--primary);
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+        background-color: var(--primary-hover);
+    }
+}

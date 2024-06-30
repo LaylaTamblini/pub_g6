@@ -1,5 +1,5 @@
-<section class="create-category" v-if="section=='categories'">
-    <h1>Section catégories</h1>
+<section class="tab-content" v-if="section=='categories'">
+    <!-- <h2>Catégories</h2> -->
 
     <section class="list">
         <?php foreach ($categories as $category): ?>
@@ -8,10 +8,12 @@
             </article>
         <?php endforeach; ?>
     </section>
+
+    <a href="" class="btn">Ajouter une catégorie</a>
 </section>
 
-<section class="create-dish" v-if="section=='dishes'">
-    <h1>Section plat</h1>
+<section class="tab-content" v-if="section=='dishes'">
+    <!-- <h2>Plats</h2> -->
 
     <section class="list">
         <?php foreach ($dishes as $dish): ?>
@@ -20,10 +22,12 @@
             </article>
         <?php endforeach; ?>
     </section>
+
+    <a href="" class="btn">Ajouter un plat</a>
 </section>
 
-<section class="create-member" v-if="section=='staff'">
-    <h1>Section membre</h1>
+<section class="tab-content" v-if="section=='staff'">
+    <!-- <h2>Membres</h2> -->
 
     <section class="list">
         <?php foreach ($staff as $member): ?>
@@ -32,4 +36,6 @@
             </article>
         <?php endforeach; ?>
     </section>
+
+    <a href="" class="btn">Ajouter un membre</a>
 </section>

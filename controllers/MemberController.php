@@ -34,12 +34,12 @@ class MemberController extends Controller {
      * Traite la déconnexion d'un utilisateur.
      */
     public function disconnect() {
-        // Protection de la route
         if(empty($_SESSION["user_id"])) {
             $this->redirect("index");
         }
 
         session_destroy();
+
         $this->redirect("index?logout_successful");
     }
 }

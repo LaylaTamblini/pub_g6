@@ -1,0 +1,5 @@
+.medias {
+	@include setFlex(row, space-between, center);
+	font-size: 2rem;
+	width: 9rem;
+}

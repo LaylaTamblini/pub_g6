@@ -1,4 +1,4 @@
-<header class="header-admin">
+<header class="admin-header">
     <nav>
         <a href="#" class="logo">Pub G6</a>
     </nav>

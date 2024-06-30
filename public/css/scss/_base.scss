@@ -1,6 +1,6 @@
 html {
 	// scroll-behavior: smooth;
-	scroll-padding-top: 6rem;
+	scroll-padding-top: 5rem;
 	box-sizing: border-box;
 	font-size: 16px;
 	line-height: 1.5;
@@ -19,33 +19,13 @@ html {
     display: none;
 }
 
-a {
-	text-decoration: none;
-	color: var(--black);
-}
-
 main {
-    width: 100%;
     margin-top: 82px;
 }
 
-.logo {
-	font-family: "Quantico", sans-serif;
-	font-weight: 700;
-	font-size: 3rem;
-	text-transform: uppercase;
-	letter-spacing: -0.2rem;
-	color: var(--primary);
-}
-
-.medias {
-	@include setFlex(row, space-between, center);
-	font-size: 2rem;
-	width: 9rem;
-}
-
-.block {
-	display: block;
+a {
+	text-decoration: none;
+	color: var(--black);
 }
 
 h1 {
@@ -96,42 +76,10 @@ p {
 	}
 }
 
+.block {
+	display: block;
+}
+
 .bold {
 	font-weight: 800;
-}
-
-.btn {
-	display: block;
-	width: fit-content;
-	padding: 1rem 2rem;
-	border-radius: $border-radius;
-	background-color: var(--primary);
-}
-
-.link-panel {
-	text-decoration: underline;
-
-	address {
-		margin-bottom: 0.8rem;
-		span {
-			&:not(:last-child) {
-				margin-bottom: 0.2rem;
-			}
-		}
-	}
-}
-
-.img-footer {
-	@include setFlex(column, center, center);
-	margin: 3rem 0;
-
-	.full-logo {
-		margin-bottom: 1rem;
-		width: 200px;
-	}
-
-	@media screen and (min-width: 600px) {
-		@include setFlex(column, center, flex-end);
-		margin: 0;
-	}
 }

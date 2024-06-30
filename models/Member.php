@@ -18,10 +18,11 @@ class Member extends Model {
         ";
 
         $requete = $this->pdo()->prepare($sql);
+
         $requete->execute([
             ":email" => $email
         ]);
-
+        
         return $requete->fetch();
     }
 

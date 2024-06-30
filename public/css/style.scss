@@ -3,28 +3,30 @@
 @import "scss/variables";
 @import "scss/mixins";
 @import "scss/base";
-
-// Main site
+@import "scss/btn";
 @import "scss/scrollbar";
-@import "scss/marquee";
-@import "scss/hero";
-@import "scss/menu";
-@import "scss/about";
-@import "scss/history";
-@import "scss/comments";
-@import "scss/header";
-@import "scss/panel";
-@import "scss/contact";
-@import "scss/newsletter";
-@import "scss/footer";
 @import "scss/user-interaction";
 @import "scss/form";
+@import "scss/marquee";
+@import "scss/logo";
+@import "scss/medias";
+
+// Main site
+@import "scss/menu/header";
+@import "scss/menu/panel-mobile";
+@import "scss/menu/hero";
+@import "scss/menu/menu";
+@import "scss/menu/about";
+@import "scss/menu/history";
+@import "scss/menu/comments";
+@import "scss/menu/contact";
+@import "scss/menu/newsletter";
+@import "scss/menu/footer";
 
 // Login
-@import "scss/login";
+@import "scss/login/login";
 
 // Administration
-@import "scss/admin-header";
-@import "scss/admin-main";
-@import "scss/admin-content";
-@import "scss/admin-panel";
+@import "scss/administration/header";
+@import "scss/administration/panel-mobile";
+@import "scss/administration/tab-content";
