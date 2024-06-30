@@ -1,10 +1,11 @@
-<section class="tab-content" v-if="section=='categories'">
-    <!-- <h2>Catégories</h2> -->
+<section class="tab" v-if="section=='categories'">
+    <h2>Toutes les catégories</h2>
 
     <section class="list">
         <?php foreach ($categories as $category): ?>
-            <article>
-                <?= $category->name ?>
+            <article class="list-item">
+                <p><?= $category->name ?></p>
+                <i class="bi bi-pencil-square edit"></i>
             </article>
         <?php endforeach; ?>
     </section>
@@ -12,8 +13,8 @@
     <a href="" class="btn">Ajouter une catégorie</a>
 </section>
 
-<section class="tab-content" v-if="section=='dishes'">
-    <!-- <h2>Plats</h2> -->
+<section class="tab" v-if="section=='dishes'">
+    <h2>Tous les Plats</h2>
 
     <section class="list">
         <?php foreach ($dishes as $dish): ?>

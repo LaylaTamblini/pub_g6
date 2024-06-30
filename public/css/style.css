@@ -903,7 +903,7 @@ footer .admin .admin-icon a:hover {
 }
 
 .admin-header {
-  background-color: var(--gray);
+  background-color: var(--dark-gray);
 }
 .admin-header .logo {
   color: var(--black);
@@ -976,7 +976,12 @@ footer .admin .admin-icon a:hover {
 }
 
 .admin-main {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 89vh;
+  padding: 1rem;
 }
 @media screen and (min-width: 1200px) {
   .admin-main {
@@ -988,4 +993,31 @@ footer .admin .admin-icon a:hover {
     margin-top: 0;
     margin-left: 300px;
   }
+}
+.admin-main .tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.admin-main .tab h2 {
+  font-size: 2rem;
+}
+.admin-main .tab .list {
+  margin: 2rem 0;
+}
+.admin-main .tab .list .list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--gray);
+  border-radius: 0.5rem;
+}
+.admin-main .tab .list .list-item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.admin-main .tab .list .list-item .edit {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=style.css.map */
