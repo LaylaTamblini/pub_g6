@@ -5,7 +5,6 @@
     .tab {
         @include setFlex(column, center, center);
         width: 100%;
-        max-width: 600px;
 
         & div {
             @include setFlex(column, center, center);
@@ -19,23 +18,27 @@
         
 
         .list {
+            @include setFlex(column, center, center);
+            flex-wrap: wrap;
             width: 100%;
             margin: 1rem 0;
-
+            max-height: 600px; /* Hauteur maximale avant le wrap */
+        
             .list-item {
                 @include setFlex(row, space-between, center);
                 padding: 1rem;
                 background-color: var(--gray);
                 border-radius: $border-radius;
-
+                width: 400px;
+        
                 p {
                     font-size: 1.5rem;
                 }
-
+        
                 &:not(:last-child) {
                     margin-bottom: 0.5rem;
                 }
-
+        
                 .edit {
                     font-size: 1.5rem;
                 }

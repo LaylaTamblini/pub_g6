@@ -970,7 +970,6 @@ footer .admin .admin-icon a:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 600px;
 }
 .admin-main .tab div {
   display: flex;
@@ -984,8 +983,14 @@ footer .admin .admin-icon a:hover {
   margin-bottom: 1rem;
 }
 .admin-main .tab .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   margin: 1rem 0;
+  max-height: 600px; /* Hauteur maximale avant le wrap */
 }
 .admin-main .tab .list .list-item {
   display: flex;
@@ -995,6 +1000,7 @@ footer .admin .admin-icon a:hover {
   padding: 1rem;
   background-color: var(--gray);
   border-radius: 0.5rem;
+  width: 400px;
 }
 .admin-main .tab .list .list-item p {
   font-size: 1.5rem;
