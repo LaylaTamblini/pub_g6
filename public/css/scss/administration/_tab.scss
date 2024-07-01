@@ -1,30 +1,36 @@
 .admin-main {
     @include setFlex(column, flex-start, center);
-    min-height: 89vh;
     padding: 1rem;
-
-    @media screen and (min-width: 1200px) {
-        @include setFlex(column, center, flex-start);
-        width: auto;
-        margin-top: 0;
-        margin-left: 300px;
-    }
 
     .tab {
         @include setFlex(column, center, center);
-        
-        & h2 {
-            font-size: 2rem;
+        width: 100%;
+        max-width: 600px;
+
+        & div {
+            @include setFlex(column, center, center);
+            text-align: center;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
         }
+        
 
         .list {
-            margin: 2rem 0;
+            width: 100%;
+            margin: 1rem 0;
 
             .list-item {
                 @include setFlex(row, space-between, center);
                 padding: 1rem;
                 background-color: var(--gray);
                 border-radius: $border-radius;
+
+                p {
+                    font-size: 1.5rem;
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 0.5rem;

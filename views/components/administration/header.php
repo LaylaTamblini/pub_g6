@@ -1,41 +1,41 @@
 <header class="admin-header">
-    <nav>
-        <a href="#" class="logo">Pub G6</a>
-    </nav>
-
-    <nav>
-        <ul>
-            <li>
-                <a href="#" @click.prevent="switchSection('categories')" :class="{active:section=='categories'}">
-                    Catégories
-                </a>
-            </li>
-
-            <li>
-                <a href="#" @click.prevent="switchSection('dishes')" :class="{active:section=='dishes'}">
-                    Plats
-                </a>
-            </li>
-
-            <?php if($_SESSION["user_role"] == "Administrateur"): ?>
+    <div>
+        <a href="admin" class="logo">
+            PubG6
+        </a>
+    
+        <nav>
+            <ul>
                 <li>
-                    <a href="#" @click.prevent="switchSection('staff')" :class="{active:section=='staff'}">
-                        Membres
+                    <a href="#" @click.prevent="switchSection('categories')" :class="{active:section=='categories'}">
+                        Catégories
                     </a>
                 </li>
-            <?php endif ?>
-        </ul>
-        
-        <span class="material-icons menu-burger" @click="toggleMenu" v-cloak>
+    
+                <li>
+                    <a href="#" @click.prevent="switchSection('dishes')" :class="{active:section=='dishes'}">
+                        Plats
+                    </a>
+                </li>
+
+                <?php if($_SESSION["user_role"] == "Administrateur"): ?>
+                    <li>
+                        <a href="#" @click.prevent="switchSection('staff')" :class="{active:section=='staff'}">
+                            Membres
+                        </a>
+                    </li>
+                <?php endif ?>
+            </ul>
+        </nav>
+
+        <span class="material-icons burger" @click="toggleMenu">
             {{menuIcon}}
         </span>
-    </nav>
-
-    <a class="disconnect" href="disconnect-member">Se déconnecter</a>
+    </div>
 </header>
 
-<!-- Menu mobile hamburger -->
-<section class="panel panel-admin" v-if="panel" v-cloak>
+<!-- Panel menu mobile -->
+<section class="panel panel-admin" :class="{open:panel}" v-if="panel">
     <nav>
         <ul>
             <li>

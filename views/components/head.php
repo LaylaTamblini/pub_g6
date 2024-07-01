@@ -11,5 +11,5 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="public/css/style.css">
 </head>
-<div id="app">
+<div id="app" v-cloak>
 <body>

@@ -1,24 +1,25 @@
 <header>
-    <nav>
-        <a href="index" class="logo">Pub G6</a>
-    </nav>
+    <div>
+        <a href="index" class="logo">
+            PubG6
+        </a>
+    
+        <nav>
+            <ul>
+                <li><a href="index">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-    <nav>
-        <ul>
-            <li><a href="index">Accueil</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        
-        <span class="material-icons menu-burger" @click="toggleMenu" v-cloak>
+        <span class="material-icons burger" @click="toggleMenu">
             {{menuIcon}}
         </span>
-    </nav>
-
+    </div>
 </header>
 
-<section class="panel" v-if="panel" v-cloak>
+<section class="panel" :class="{open:panel}" v-if="panel">
     <nav>
         <ul>
             <li><a href="index">Accueil</a></li>

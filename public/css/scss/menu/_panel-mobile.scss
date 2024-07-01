@@ -1,5 +1,5 @@
 .panel {
-    @include setFlex(column, space-between, flex-start);
+    display: none;
     position: fixed;
     top: 82px;
     left: 0;
@@ -7,7 +7,7 @@
     height: 89vh;
     padding: 4rem 1rem;
     background-color: var(--white);
-    z-index: 998;
+    z-index: 1000;
 
     ul {
         li{
@@ -40,4 +40,8 @@
 			}
 		}
 	}
+}
+
+.open {
+    @include setFlex(column, space-between, flex-start);
 }

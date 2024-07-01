@@ -1,42 +1,65 @@
+<!-- Section catégories -->
 <section class="tab" v-if="section=='categories'">
-    <h2>Toutes les catégories</h2>
+    <div>
+        <h2>Toutes les catégories</h2>
+        <a href="" class="btn btn-icon">
+            <i class="bi bi-plus"></i>
+            Ajouter une catégorie
+        </a>
+    </div>
 
     <section class="list">
         <?php foreach ($categories as $category): ?>
             <article class="list-item">
                 <p><?= $category->name ?></p>
-                <i class="bi bi-pencil-square edit"></i>
+                <a href="">
+                    <i class="bi bi-pencil-square edit"></i>
+                </a>
             </article>
         <?php endforeach; ?>
     </section>
-
-    <a href="" class="btn">Ajouter une catégorie</a>
 </section>
 
+<!-- Section plats -->
 <section class="tab" v-if="section=='dishes'">
-    <h2>Tous les Plats</h2>
+    <div>
+        <h2>Tous les plats</h2>
+        <a href="" class="btn btn-icon">
+            <i class="bi bi-plus"></i>
+            Ajouter un plat
+        </a>
+    </div>
 
     <section class="list">
         <?php foreach ($dishes as $dish): ?>
-            <article>
-                <?= $dish->name ?>
+            <article class="list-item">
+                <p><?= $dish->name ?></p>
+                <a href="">
+                    <i class="bi bi-pencil-square edit"></i>
+                </a>
             </article>
         <?php endforeach; ?>
     </section>
-
-    <a href="" class="btn">Ajouter un plat</a>
 </section>
 
-<section class="tab-content" v-if="section=='staff'">
-    <!-- <h2>Membres</h2> -->
+<!-- Section membres -->
+<section class="tab" v-if="section=='staff'">
+    <div>
+        <h2>Tous les membres</h2>
+        <a href="" class="btn btn-icon">
+            <i class="bi bi-plus"></i>
+            Ajouter un membre
+        </a>
+    </div>
 
     <section class="list">
         <?php foreach ($staff as $member): ?>
-            <article>
-                <?= $member->firstname ?>
+            <article class="list-item">
+                <p><?= $member->firstname ?> <?= $member->lastname ?></p>
+                <a href="">
+                    <i class="bi bi-pencil-square edit"></i>
+                </a>
             </article>
         <?php endforeach; ?>
     </section>
-
-    <a href="" class="btn">Ajouter un membre</a>
 </section>

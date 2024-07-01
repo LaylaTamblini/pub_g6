@@ -92,17 +92,13 @@ html {
   display: none;
 }
 
-main {
-  margin-top: 82px;
-}
-
 a {
   text-decoration: none;
   color: var(--black);
 }
 
 h1 {
-  font-size: 5.5rem;
+  font-size: 5rem;
   font-weight: 800;
 }
 @media screen and (min-width: 1200px) {
@@ -124,7 +120,7 @@ h2 {
 h3 {
   font-family: "Quantico", sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: -0.2rem;
 }
@@ -146,10 +142,11 @@ h5 {
 
 p {
   font-size: 1.5rem;
+  letter-spacing: -0.3px;
 }
 @media screen and (min-width: 1200px) {
   p {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 
@@ -167,12 +164,23 @@ p {
   width: fit-content;
   padding: 1rem 2rem;
   font-weight: 700;
+  font-size: 1.2rem;
   border-radius: 0.5rem;
   background-color: var(--primary);
   transition: all 0.3s ease-in-out;
 }
 .btn:hover {
   background-color: var(--primary-hover);
+}
+
+.btn-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn-icon i {
+  font-size: 1.5rem;
 }
 
 ::-webkit-scrollbar {
@@ -318,9 +326,8 @@ form input[type=submit]:hover {
 .logo {
   font-family: "Quantico", sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.8rem;
   text-transform: uppercase;
-  letter-spacing: -0.2rem;
   color: var(--primary);
 }
 
@@ -336,55 +343,62 @@ form input[type=submit]:hover {
 header {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  padding: 1rem;
+}
+header div {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
   width: 100%;
-  background-color: var(--black);
-  min-height: 56px;
-  padding: 1rem;
-  box-shadow: 1px 1px 10px var(--black);
-  z-index: 999;
+  max-width: 1200px;
 }
-header nav ul {
+header div nav {
   display: none;
 }
-header nav ul li a {
-  color: var(--primary);
-  font-weight: 600;
-}
-header nav ul li a:hover {
-  border-bottom: solid 2px var(--primary);
-}
-header nav ul li:not(:last-child) {
-  margin-right: 3rem;
-}
 @media screen and (min-width: 1200px) {
-  header nav ul {
-    display: list-item;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
+  header div nav {
+    display: block;
   }
 }
-header nav .menu-burger {
+header div nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header div nav ul li a {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+header div nav ul li a:hover {
+  text-decoration: underline;
+}
+header div nav ul li:not(:last-child) {
+  margin-right: 3rem;
+}
+header div .burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 3rem;
   color: var(--primary);
 }
 @media screen and (min-width: 1200px) {
-  header nav .menu-burger {
+  header div .burger {
     display: none;
   }
 }
 
 .panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: none;
   position: fixed;
   top: 82px;
   left: 0;
@@ -392,7 +406,7 @@ header nav .menu-burger {
   height: 89vh;
   padding: 4rem 1rem;
   background-color: var(--white);
-  z-index: 998;
+  z-index: 1000;
 }
 .panel ul li {
   font-size: 2rem;
@@ -420,45 +434,36 @@ header nav .menu-burger {
   margin-bottom: 0.2rem;
 }
 
+.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 90vh;
   padding: 1rem;
+  min-height: 80vh;
   text-align: center;
+  background-color: var(--white);
 }
-.hero div {
+.hero .txt {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 600px;
+  max-width: 460px;
   height: 100%;
 }
-@media screen and (min-width: 1200px) {
-  .hero div {
-    max-width: 700px;
-  }
+.hero .txt p {
+  margin: 1rem 0;
 }
-.hero p {
-  margin: 1rem 0 2rem 0;
-}
-.hero a {
-  transition: all 0.2s ease-in-out;
-}
-.hero a:hover {
-  background-color: var(--primary-hover);
-}
-.hero .img-hero {
+.hero img {
   display: none;
-}
-@media screen and (min-width: 1200px) {
-  .hero .img-hero {
-    display: contents;
-  }
 }
 @media screen and (min-width: 1200px) {
   .hero {
@@ -470,16 +475,22 @@ header nav .menu-burger {
   }
   .hero div {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+  }
+  .hero div .txt {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    height: 100%;
+    max-width: 650px;
   }
   .hero div img {
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    display: block;
+    height: 700px;
   }
 }
 
@@ -488,83 +499,93 @@ header nav .menu-burger {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   text-align: center;
   color: var(--white);
   background-color: var(--black);
 }
-.menu .menu-category {
+.menu .category {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem 1rem;
   width: 100%;
-  padding: 6rem 0;
 }
-.menu .menu-category .items {
+.menu .category h3 {
+  margin-bottom: 3rem;
+}
+.menu .category .items {
   display: grid;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding-top: 6rem;
   grid-template-columns: 1fr;
-  gap: 5rem;
+  width: 100%;
+  gap: 3rem;
 }
-@media screen and (min-width: 1024px) {
-  .menu .menu-category .items {
+@media screen and (min-width: 680px) {
+  .menu .category .items {
     grid-template-columns: repeat(2, 1fr);
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 @media screen and (min-width: 1200px) {
-  .menu .menu-category .items {
+  .menu .category .items {
     grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    width: 100%;
   }
 }
-.menu .menu-category .items .item {
+.menu .category .items .item {
   max-width: 300px;
   margin: 0 auto;
 }
-.menu .menu-category .items .item img {
+.menu .category .items .item img {
   width: 300px;
   height: 300px;
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.menu .menu-category .items .item .pills {
+.menu .category .items .item .pills {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   margin: 1rem 0;
-  height: 5rem;
 }
-.menu .menu-category .items .item .pills p {
+.menu .category .items .item .pills .tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.menu .category .items .item .pills p {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: var(--black);
   background-color: var(--primary);
 }
-.menu .menu-category .items .item .pills p:not(:last-of-type) {
-  margin-bottom: 0.5rem;
+.menu .category .items .item .pills p:not(:last-of-type) {
+  margin-right: 0.5rem;
 }
-.menu .menu-category .items .item h4 {
-  margin-bottom: 1rem;
-  height: 40px;
+@media screen and (min-width: 680px) {
+  .menu .category .items .item h4 {
+    height: 4rem;
+  }
 }
-.menu .menu-category .items .item .description {
+.menu .category .items .item .description {
   display: none;
 }
-@media screen and (min-width: 1024px) {
-  .menu .menu-category .items .item .description {
+@media screen and (min-width: 680px) {
+  .menu .category .items .item .description {
     display: block;
     font-size: 1rem;
   }
 }
 
-.menu-category:nth-of-type(2n) {
+.category:nth-of-type(2n) {
   background-color: var(--white);
   color: var(--black);
 }
@@ -911,50 +932,11 @@ footer .admin .admin-icon a:hover {
 .admin-header nav ul li a {
   color: var(--black);
 }
-.admin-header nav ul li a:hover {
-  border-bottom: solid 2px var(--black);
-}
-@media screen and (min-width: 1200px) {
-  .admin-header nav ul li:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 5rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .admin-header nav ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-}
-.admin-header nav .menu-burger {
+.admin-header .burger {
   color: var(--black);
 }
-.admin-header .disconnect {
-  display: none;
-  text-decoration: underline;
-}
-@media screen and (min-width: 1200px) {
-  .admin-header .disconnect {
-    display: block;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .admin-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-    height: 100%;
-    padding: 4rem 1rem;
-  }
-}
 .admin-header .active {
-  color: var(--dark-gray);
+  color: var(--gray);
   pointer-events: none;
 }
 .admin-header .active:hover {
@@ -980,31 +962,30 @@ footer .admin .admin-icon a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 89vh;
   padding: 1rem;
-}
-@media screen and (min-width: 1200px) {
-  .admin-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: auto;
-    margin-top: 0;
-    margin-left: 300px;
-  }
 }
 .admin-main .tab {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 600px;
 }
-.admin-main .tab h2 {
+.admin-main .tab div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.admin-main .tab div h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .admin-main .tab .list {
-  margin: 2rem 0;
+  width: 100%;
+  margin: 1rem 0;
 }
 .admin-main .tab .list .list-item {
   display: flex;
@@ -1014,6 +995,9 @@ footer .admin .admin-icon a:hover {
   padding: 1rem;
   background-color: var(--gray);
   border-radius: 0.5rem;
+}
+.admin-main .tab .list .list-item p {
+  font-size: 1.5rem;
 }
 .admin-main .tab .list .list-item:not(:last-child) {
   margin-bottom: 0.5rem;
