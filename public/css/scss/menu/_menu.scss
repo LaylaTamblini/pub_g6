@@ -19,7 +19,7 @@
             align-items: flex-start;
             grid-template-columns: 1fr;
             width: 100%;
-            gap: 3rem;
+            gap: 2rem;
 
             @media screen and (min-width: 680px) {
                 grid-template-columns: repeat(2, 1fr);
@@ -33,18 +33,21 @@
             }
 
             .item {
-                max-width: 300px;
+                @include setFlex(column, space-between, center);
+                width: 100%;
                 margin: 0 auto;
 
                 & img {
-                    width: 300px;
+                    width: 100%;
                     height: 300px;
                     border-radius: $border-radius;
                     object-fit: cover;
+                    object-position: center;
                 }
 
                 .pills {
                     @include setFlex(row, space-between, flex-start);
+                    width: 100%;
                     margin: 1rem 0;
 
                     .tags {
@@ -66,7 +69,7 @@
 
                 h4 {
                     @media screen and (min-width: 680px) {
-                        height: 4rem;
+                        margin-bottom: 1rem;
                     }
                 }
 
@@ -75,6 +78,7 @@
 
                     @media screen and (min-width: 680px) {
                         display: block;
+                        max-width: 300px;
                         font-size: 1rem;
                     }
                 }

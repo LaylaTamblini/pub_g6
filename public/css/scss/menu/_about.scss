@@ -1,48 +1,50 @@
 .about {
-    @include setFlex(column-reverse, center, center);
-    width: 100%;
-    padding: $padding-section 1rem;
+    @include setFlex(row, center, center);
+    padding: 3rem 1rem;
     text-align: center;
     background-color: var(--primary);
 
-    & div {
-        max-width: 400px;
+    div {
+        @include setFlex(column-reverse, space-between, center);
+        width: 100%;
+        max-width: $max-width;
 
-        h2 {
-            margin: 2rem 0 1rem 0;
+        .about-title {
+            max-width: 500px;
+
+            h2 {
+                margin: 2rem 0 1rem 0;
+
+                @media screen and (min-width: 1024px) {
+                    margin: 0;
+                    margin-bottom: 1rem;
+                }
+            }
 
             @media screen and (min-width: 1200px) {
-                margin: 0 0 1rem 0;
+                max-width: 700px;
             }
         }
-
-        @media screen and (min-width: 1200px) {
-            max-width: 600px;
-        }
-    }
-
-    .about-img {
-        
-        & img {
+    
+        img {
             width: 300px;
             height: 400px;
             border-radius: $border-radius;
             object-fit: cover;
 
-            @media screen and (min-width: 1024px) {
-                margin-left: 4rem;
-            }
-
             @media screen and (min-width: 1200px) {
-                width: 400px;
-                height: 550px;
-                margin-left: 4rem;
+                width: 450px;
+                height: 600px;
             }
         }
-    }
 
-    @media screen and (min-width: 1024px) {
-        @include setFlex(row, center, center);
-        text-align: start;
+        @media screen and (min-width: 1024px) {
+            @include setFlex(row, center, center);
+            text-align: start;
+        }
+
+        @media screen and (min-width: 1200px) {
+            @include setFlex(row, space-between, center);
+        }
     }
 }
