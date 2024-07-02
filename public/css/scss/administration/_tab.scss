@@ -6,41 +6,91 @@
         @include setFlex(column, center, center);
         width: 100%;
 
-        & div {
-            @include setFlex(column, center, center);
-            text-align: center;
+        .add-mobile {
+            @include setFlex(column, space-between, center);
+            width: 100%;
 
-            h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
+            @media screen and (min-width: 1200px) {
+                display: none;
             }
         }
-        
 
         .list {
             @include setFlex(column, center, center);
-            flex-wrap: wrap;
             width: 100%;
-            margin: 1rem 0;
-            max-height: 600px; /* Hauteur maximale avant le wrap */
+            max-width: 1200px;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--gray);
+            border-radius: $border-radius;
+
+            .add-desktop {
+                @include setFlex(column, center, center);
+                width: 100%;
+                margin-bottom: 1rem;
+
+                h2 {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+
+                a {
+                    display: none;
+                }
+                
+                @media screen and (min-width: 1200px) {
+                    @include setFlex(row, space-between, center);
+                    
+                    a {
+                        display: block;
+                        @include setFlex(row, center, center);
+                    }
+                }
+            }
+
         
             .list-item {
                 @include setFlex(row, space-between, center);
-                padding: 1rem;
-                background-color: var(--gray);
-                border-radius: $border-radius;
-                width: 400px;
+                width: 100%;
+                border-bottom: 1px solid var(--black);
+                padding: 1rem 0;
+                transform: scale(0.98);
+                transition: all 0.2s ease-in-out;
+
+                article {
+                    @include setFlex(row, space-between, center);
+                    width: 100%;
+
+                    .btn-edit {
+                        @include setFlex(row, space-between, center);
+                        transition: all 0.3s ease-in-out;
+                        text-decoration: underline;
+
+                        p {
+                            display: none;
+
+                            @media screen and (min-width: 1200px) {
+                                display: block;
+                                margin-right: 0.5rem;
+                            }
+                        }
+                    }
+                }
         
                 p {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
-        
-                &:not(:last-child) {
-                    margin-bottom: 0.5rem;
-                }
-        
+                
                 .edit {
                     font-size: 1.5rem;
+
+                    @media screen and (min-width: 1200px) {
+                        font-size: 1rem;
+                    } 
+                }
+
+                &:hover {
+                    transform: scale(1);
                 }
             }
         }

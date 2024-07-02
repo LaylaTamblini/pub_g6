@@ -26,4 +26,20 @@ class Member extends Model {
         return $requete->fetch();
     }
 
+    public function insert($firstname, $lastname, $email, $password) {
+        $sql = "
+            INSERT INTO $this->table (firstname, lastname, email, password)
+            VALUES (:firstname, :lastname, :email, :password)
+        ";
+        
+        $requete = $this->pdo()->prepare($sql);
+
+        return $requete->execute([
+            ":firstname" => $firstname,
+            ":lastname" => $lastname,
+            ":email" => $email,
+            ":password" => $password
+        ]);
+    }
+
 }

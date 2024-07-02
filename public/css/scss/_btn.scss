@@ -13,14 +13,6 @@
     }
 }
 
-.btn-icon {
-    @include setFlex(row, center, center);
-
-    i {
-        font-size: 1.5rem;
-    }
-}
-
 .btn-up {
     position: fixed;
     bottom: 1rem;

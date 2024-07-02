@@ -5,7 +5,8 @@ createApp({
         return {
             panel: false,
             menuIcon: "menu",
-            section: "categories"
+            section: "categories",
+            form: ""
         }
     },
     methods: {
@@ -29,7 +30,19 @@ createApp({
          */
         switchSection(section) {
             this.section = section
-        }
+        },
+        /**
+         * Permet d'ouvrir ou de fermer un formulaire.
+         * @param string formulaire
+         */
+        toggleForm(form) {
+            this.form = form
 
+            if(this.form != "") {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "auto";
+            }
+        },
     }
 }).mount('#app')

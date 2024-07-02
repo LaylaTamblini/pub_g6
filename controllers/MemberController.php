@@ -42,4 +42,36 @@ class MemberController extends Controller {
 
         $this->redirect("index?logout_successful");
     }
+
+    /**
+     * Traite l'enregistrement d'un membre dans la base de donnée.
+     */
+    public function store() {
+        if(empty($_POST["firstname"]) ||
+           empty($_POST["lastname"]) || 
+           empty($_POST["email"]) ||
+           empty($_POST["password"])) {
+
+            $this->redirect("admin?informations_requises");
+        }
+
+        $user = (new Member)->allByEmail($_POST["email"]);
+
+        if($user) {
+            $this->redirect("admin?erreur_courriel");
+        }
+
+        $success = (new Member)->insert(
+            $_POST["firstname"],
+            $_POST["lastname"],
+            $_POST["email"],
+            password_hash($_POST["password"], PASSWORD_DEFAULT)
+        );
+
+        if(!$success) {
+            $this->redirect("admin?echec_creation");
+        }
+
+        $this->redirect("admin?succes_creation");
+    }
 }

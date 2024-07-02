@@ -58,6 +58,7 @@ table {
   --primary-hover:#e4c138;
   --white:#ECECEC;
   --black:#202020;
+  --black-opacity:#202020b0;
   --black-hover:#131313;
   --light-black:#404040;
   --dark-gray:#a5a5a5;
@@ -170,16 +171,6 @@ p {
 }
 .btn:hover {
   background-color: var(--primary-hover);
-}
-
-.btn-icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.btn-icon i {
-  font-size: 1.5rem;
 }
 
 .btn-up {
@@ -990,43 +981,154 @@ footer .admin .admin-icon a:hover {
   align-items: center;
   width: 100%;
 }
-.admin-main .tab div {
+.admin-main .tab .add-mobile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  width: 100%;
 }
-.admin-main .tab div h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+@media screen and (min-width: 1200px) {
+  .admin-main .tab .add-mobile {
+    display: none;
+  }
 }
 .admin-main .tab .list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   width: 100%;
-  margin: 1rem 0;
-  max-height: 600px; /* Hauteur maximale avant le wrap */
+  max-width: 1200px;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--gray);
+  border-radius: 0.5rem;
+}
+.admin-main .tab .list .add-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.admin-main .tab .list .add-desktop h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+.admin-main .tab .list .add-desktop a {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .admin-main .tab .list .add-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-main .tab .list .add-desktop a {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .admin-main .tab .list .list-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: var(--gray);
-  border-radius: 0.5rem;
-  width: 400px;
+  width: 100%;
+  border-bottom: 1px solid var(--black);
+  padding: 1rem 0;
+  transform: scale(0.98);
+  transition: all 0.2s ease-in-out;
+}
+.admin-main .tab .list .list-item article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.admin-main .tab .list .list-item article .btn-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+}
+.admin-main .tab .list .list-item article .btn-edit p {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .admin-main .tab .list .list-item article .btn-edit p {
+    display: block;
+    margin-right: 0.5rem;
+  }
 }
 .admin-main .tab .list .list-item p {
-  font-size: 1.5rem;
-}
-.admin-main .tab .list .list-item:not(:last-child) {
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 .admin-main .tab .list .list-item .edit {
   font-size: 1.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .admin-main .tab .list .list-item .edit {
+    font-size: 1rem;
+  }
+}
+.admin-main .tab .list .list-item:hover {
+  transform: scale(1);
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--black-opacity);
+  z-index: 998;
+}
+.add-form .content-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+}
+.add-form .content-form .close-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-form .content-form .close-form h3 {
+  font-size: 1.5rem;
+  text-align: start;
+}
+.add-form .content-form .close-form a {
+  font-size: 2rem;
+}
+.add-form .content-form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.add-form .content-form div form input {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
