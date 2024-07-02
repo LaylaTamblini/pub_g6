@@ -20,3 +20,20 @@
         font-size: 1.5rem;
     }
 }
+
+.btn-up {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 997;
+    background-color: var(--primary);
+    box-shadow: 1px 1px 10px var(--black);
+    border-radius: $border-radius;
+
+    a {
+        i {
+            font-size: 3rem;
+            color: var(--light-gray);
+        }
+    }
+}

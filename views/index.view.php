@@ -2,6 +2,7 @@
 <?php include("views/components/header.php") ?>
 
 <main>
+    <?php include("views/components/btn-up.php") ?>
     <?php include("views/components/hero.php") ?>
     <?php include("views/components/menu.php") ?>
     <?php include("views/components/about.php") ?>

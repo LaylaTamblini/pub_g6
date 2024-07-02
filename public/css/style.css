@@ -73,7 +73,6 @@ table {
  * Permet d'ajouter une bordure rouge sur un élément.
  */
 html {
-  scroll-padding-top: 5rem;
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
@@ -181,6 +180,20 @@ p {
 }
 .btn-icon i {
   font-size: 1.5rem;
+}
+
+.btn-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 997;
+  background-color: var(--primary);
+  box-shadow: 1px 1px 10px var(--black);
+  border-radius: 0.5rem;
+}
+.btn-up a i {
+  font-size: 3rem;
+  color: var(--light-gray);
 }
 
 ::-webkit-scrollbar {
@@ -603,7 +616,7 @@ header div .burger {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   text-align: center;
   background-color: var(--primary);
 }
@@ -669,68 +682,50 @@ header div .burger {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem;
 }
 .history div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  max-width: 600px;
+  width: 100%;
+  max-width: 1200px;
 }
-.history div img {
+.history div div {
+  text-align: center;
+}
+.history div div img {
   width: 300px;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.5rem;
 }
-@media screen and (min-width: 1024px) {
-  .history div img {
-    margin-right: 2rem;
-  }
+.history div div p {
+  margin-top: 1rem;
+  max-width: 500px;
 }
-@media screen and (min-width: 1200px) {
-  .history div img {
-    width: 350px;
-    height: 350px;
-  }
-}
-.history div p {
-  margin: 2rem 0;
+.history div div:not(:last-child) {
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 1024px) {
-  .history div p {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .history div {
+  .history div div {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: start;
-    max-width: 800px;
+  }
+  .history div div p {
+    margin-top: 0;
+    margin-left: 1rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .history div {
-    max-width: 1100px;
-  }
-}
-.history .no-pad p {
-  margin: 2rem 0 0 0;
-}
-@media screen and (min-width: 1024px) {
-  .history .no-pad p {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .history .no-pad {
-    margin-top: 1rem;
+  .history div div img {
+    width: 400px;
+    height: 400px;
   }
 }
 
@@ -790,26 +785,32 @@ header div .burger {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 6rem 1rem;
-  text-align: center;
+  padding: 3rem 1rem;
   background-color: var(--black);
   color: var(--primary);
 }
-.contact div p {
-  margin: 1rem 0 2rem 0;
-  max-width: 900px;
+.contact div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+.contact div h2 {
+  margin-bottom: 1rem;
 }
 .contact div iframe {
   border-radius: 0.5rem;
+  margin: 2rem 0;
 }
 @media screen and (min-width: 1200px) {
   .contact div {
-    width: 100%;
-    max-width: 1200px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     text-align: start;
   }
 }

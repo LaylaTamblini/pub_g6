@@ -1,29 +1,29 @@
 .contact {
     @include setFlex(column, center, center);
     width: 100%;
-    padding: $padding-section 1rem;
-    text-align: center;
+    padding: 3rem 1rem;
     background-color: var(--black);
     color: var(--primary);
+    
+    div {
+        @include setFlex(column, center, center);
+        width: 100%;
+        max-width: $max-width;
+        text-align: center;
 
-    & div {
-
-        p {
-            margin: 1rem 0 2rem 0;
-            max-width: 900px;
+        h2 {
+            margin-bottom:  1rem;
         }
         
         iframe {
             border-radius: $border-radius;
+            margin: 2rem 0;
         }
 
         @media screen and (min-width: 1200px) {
-            width: 100%;
-            max-width: 1200px;
+            @include setFlex(column, center, flex-start);
+            text-align: start;
          }
     }
 
-    @media screen and (min-width: 1200px) {
-        text-align: start;
-     }
 }
