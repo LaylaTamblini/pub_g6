@@ -6,19 +6,21 @@ use Bases\Controller;
 
 use Models\Member;
 
-class MemberController extends Controller {
+class MemberController extends Controller
+{
 
     /**
      * Traite la connexion d'un membre à l'administration.
      */
-    public function connect() {
-        if(empty($_POST["email"]) || empty($_POST["password"])) {
+    public function connect()
+    {
+        if (empty($_POST["email"]) || empty($_POST["password"])) {
             $this->redirect("login?required_inputs");
         }
 
         $user = (new Member)->allByEmail($_POST["email"]);
 
-        if(!$user || $_POST["password"] != password_verify($_POST["password"], $user->password) ) {
+        if (!$user || $_POST["password"] != password_verify($_POST["password"], $user->password)) {
             $this->redirect("login?invalid_information");
         }
 
@@ -33,8 +35,9 @@ class MemberController extends Controller {
     /**
      * Traite la déconnexion d'un utilisateur.
      */
-    public function disconnect() {
-        if(empty($_SESSION["user_id"])) {
+    public function disconnect()
+    {
+        if (empty($_SESSION["user_id"])) {
             $this->redirect("index");
         }
 
@@ -46,29 +49,33 @@ class MemberController extends Controller {
     /**
      * Traite l'enregistrement d'un membre dans la base de donnée.
      */
-    public function store() {
-        if(empty($_POST["firstname"]) ||
-           empty($_POST["lastname"]) || 
-           empty($_POST["email"]) ||
-           empty($_POST["password"])) {
+    public function store()
+    {
+        if (
+            empty($_POST["firstname"]) ||
+            empty($_POST["lastname"]) ||
+            empty($_POST["email"]) ||
+            empty($_POST["password"])
+        ) {
 
             $this->redirect("admin?informations_requises");
         }
 
         $user = (new Member)->allByEmail($_POST["email"]);
 
-        if($user) {
+        if ($user) {
             $this->redirect("admin?erreur_courriel");
         }
 
         $success = (new Member)->insert(
             $_POST["firstname"],
             $_POST["lastname"],
+            $_POST["role"],
             $_POST["email"],
             password_hash($_POST["password"], PASSWORD_DEFAULT)
         );
 
-        if(!$success) {
+        if (!$success) {
             $this->redirect("admin?echec_creation");
         }
 

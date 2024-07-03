@@ -8,6 +8,8 @@ use Models\Dish;
 use Models\Category;
 use Models\Comment;
 use Models\Member;
+use Models\Role;
+use Models\SubCategory;
 
 class DisplayController extends Controller {
     /**
@@ -39,6 +41,8 @@ class DisplayController extends Controller {
             "dishes" => (new Dish)->allWithCategoryAndSubcategory(),
             "categories" => (new Category)->all(),
             "staff" => (new Member)->all(),
+            "roles" => (new Role)->all(),
+            "subcategories" => (new SubCategory)->all(),
             "title" => "Administration"
         ]);
     }

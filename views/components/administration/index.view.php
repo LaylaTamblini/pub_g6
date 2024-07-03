@@ -1,4 +1,5 @@
 <!-- Section catégories -->
+
 <section class="tab" v-if="section=='categories'">
     <div class="add-mobile">
         <a href="" class="btn" @click.prevent="toggleForm('addFormCategories')">
@@ -31,6 +32,7 @@
 </section>
 
 <!-- Section plats -->
+
 <section class="tab" v-if="section=='dishes'">
     <div class="add-mobile">
         <a href="" class="btn" @click.prevent="toggleForm('addFormDishes')">
@@ -63,6 +65,7 @@
 </section>
 
 <!-- Section membres -->
+
 <section class="tab" v-if="section=='staff'">
     <div class="add-mobile">
         <a href="" class="btn" @click.prevent="toggleForm('addFormStaff')">

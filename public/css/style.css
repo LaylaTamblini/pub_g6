@@ -1081,9 +1081,6 @@ footer .admin .admin-icon a:hover {
     font-size: 1rem;
   }
 }
-.admin-main .tab .list .list-item:hover {
-  transform: scale(1);
-}
 
 .add-form {
   display: flex;

@@ -46,3 +46,6 @@ createApp({
         },
     }
 }).mount('#app')
+
+// avant dinclure verification parametre get
+// dans la vue balise script javascript prametre get inclus dans localstorage

@@ -16,18 +16,23 @@
                                 <img loading="lazy" src="<?= $dish->image ?>" alt="<?= $dish->alt ?>">
                             <?php else: ?>
                                 <img loading="lazy" src="<?= $dish->image ?>" alt="Plat du menu Pub G6">
-                            <?php endif; ?>
+                            <?php endif ?>
                         <?php else: ?>
                             <img loading="lazy" src="public/img/placeholder.png" alt="Image non disponible pour ce plat">
-                        <?php endif; ?>
+                        <?php endif ?>
 
                         <!-- Tags -->
                         <div class="pills">
                             <div class="tags">
-                                <?php $subcategories = explode(',', $dish->subcategories_name); ?>
-                                <?php foreach ($subcategories as $subcategory): ?>
-                                    <p><?= $subcategory ?></p>
-                                <?php endforeach; ?>
+                                <!-- No subcategories -->
+                                <?php if(empty($dish->subcategories_name)): ?>
+                                    <p><?= $category->name ?></p>
+                                <?php else: ?>
+                                    <?php $subcategories = explode(',', $dish->subcategories_name); ?>
+                                    <?php foreach ($subcategories as $subcategory): ?>
+                                        <p><?= $subcategory ?></p>
+                                    <?php endforeach; ?>
+                                <?php endif ?>
                             </div>
 
                             <!-- Prix -->
