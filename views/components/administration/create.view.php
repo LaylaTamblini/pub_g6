@@ -61,7 +61,7 @@
                             <?php foreach ($subcategories as $subcategory) : ?>
                                 <li>
                                     <label>
-                                        <input type="checkbox" name="subcategory" value="<?= $subcategory->id ?>">
+                                        <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>">
                                         <?= $subcategory->name ?>
                                     </label>
                                 </li>
@@ -89,7 +89,7 @@
 <section class="add-form" v-if="form=='addFormStaff'" @click="form=''">
 
     <div class="content-form" @click.stop>
-        
+
         <!-- HEADER -->
         <div class="close-form">
             <h4>Ajouter un membre</h4>
@@ -97,7 +97,7 @@
                 <i class="bi bi-x"></i>
             </a>
         </div>
-        
+
         <!-- FORMULAIRE -->
         <div>
             <form action="insert-member" method="POST">

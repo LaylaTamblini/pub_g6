@@ -97,4 +97,13 @@ class Model
             ":id" => $id
         ]);
     }
+
+    /**
+     * Retourne le dernier Id inséré
+     * 
+     * @return void
+     */
+    public function lastId() {
+        return $this->pdo()->lastInsertId();
+    }
 }

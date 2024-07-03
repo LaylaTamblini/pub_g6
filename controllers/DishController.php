@@ -5,6 +5,7 @@ namespace Controllers;
 use Bases\Controller;
 
 use Models\Dish;
+use Models\Tag;
 use Utils\Upload;
 
 class DishController extends Controller
@@ -26,12 +27,12 @@ class DishController extends Controller
         }
 
         $image = null;
-        if(!empty($_FILES["image"])) {
+        if (!empty($_FILES["image"])) {
             $image = (new Upload("image"))->placerDans("uploads");
         }
 
         $alt = null;
-        if(!empty($_POST["alt"])) {
+        if (!empty($_POST["alt"])) {
             $alt = $_POST["alt"];
         }
 
@@ -48,7 +49,18 @@ class DishController extends Controller
             $this->redirect("admin?registration_failed");
         }
 
-        
+        $dish_id = (new Dish)->lastId();
+
+        $subcategories = null;
+
+        if (!empty($_POST["subcategories"])) {
+            foreach ($_POST["subcategories"] as $subcategory_id) {
+                $success = (new Tag)->insert(
+                    $dish_id,
+                    $subcategory_id
+                );
+            }
+        }
 
         $this->redirect("admin?registration_successful");
     }
