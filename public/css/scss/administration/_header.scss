@@ -13,6 +13,18 @@
                 }
             }
         }
+
+        .index-icon, .logout-icon {
+            display: none;
+        }
+
+        @media screen and (min-width: 1200px) {
+            @include setFlex(row, center, center);
+
+            .index-icon, .logout-icon {
+                display: block;
+            }
+        }
     }
 
     .burger {

@@ -3,7 +3,7 @@
         <a href="admin" class="logo">
             PubG6
         </a>
-    
+
         <nav>
             <ul>
                 <li>
@@ -11,21 +11,34 @@
                         Catégories
                     </a>
                 </li>
-    
+
                 <li>
                     <a href="#" @click.prevent="switchSection('dishes')" :class="{active:section=='dishes'}">
                         Plats
                     </a>
                 </li>
 
-                <?php if($_SESSION["user_role"] == "Administrateur"): ?>
+                <?php if ($_SESSION["user_role"] == "Administrateur") : ?>
                     <li>
                         <a href="#" @click.prevent="switchSection('staff')" :class="{active:section=='staff'}">
                             Membres
                         </a>
                     </li>
                 <?php endif ?>
+
+                <li>
+                    <a href="index" class="index-icon">
+                        <i class="bi bi-eye-fill"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="disconnect-member" class="logout-icon">
+                        <i class="bi bi-door-closed-fill"></i>
+                    </a>
+                </li>
             </ul>
+
         </nav>
 
         <span class="material-icons burger" @click="toggleMenu">
@@ -43,14 +56,14 @@
                     Catégories
                 </a>
             </li>
-            
+
             <li>
                 <a href="#" @click.prevent="toggleMenu(); switchSection('dishes')" :class="{active:section=='dishes'}">
                     Plats
                 </a>
             </li>
 
-            <?php if($_SESSION["user_role"] == "Administrateur"): ?>
+            <?php if ($_SESSION["user_role"] == "Administrateur") : ?>
                 <li>
                     <a href="#" @click.prevent="toggleMenu(); switchSection('staff')" :class="{active:section=='staff'}">
                         Membres
@@ -60,5 +73,8 @@
         </ul>
     </nav>
 
-    <a class="disconnect-mobil" href="disconnect-member">Se déconnecter</a>
+    <div>
+        <a class="disconnect-mobil" href="index">Voir le site</a>
+        <a class="disconnect-mobil" href="disconnect-member">Se déconnecter</a>
+    </div>
 </section>

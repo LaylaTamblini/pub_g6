@@ -942,6 +942,20 @@ footer .admin .admin-icon a:hover {
 .admin-header nav ul li a {
   color: var(--black);
 }
+.admin-header nav .index-icon, .admin-header nav .logout-icon {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .admin-header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .admin-header nav .index-icon, .admin-header nav .logout-icon {
+    display: block;
+  }
+}
 .admin-header .burger {
   color: var(--black);
 }
