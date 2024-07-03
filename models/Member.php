@@ -8,7 +8,13 @@ class Member extends Model
 {
     protected $table = "staff";
 
-    public function allByEmail(string $email)
+    /**
+     * Retourne toutes les entrées sur un utilisateur en fonction de son email.
+     *
+     * @param string $email
+     * @return object|false
+     */
+    public function allByEmail(string $email): object|false
     {
         $sql = "
             SELECT *,
@@ -20,15 +26,23 @@ class Member extends Model
         ";
 
         $requete = $this->pdo()->prepare($sql);
-
         $requete->execute([
             ":email" => $email
         ]);
-
         return $requete->fetch();
     }
 
-    public function insert($firstname, $lastname, $role_id, $email, $password)
+    /**
+     * Ajoute un membre dans la base de donnée.
+     *
+     * @param string $firstname
+     * @param string $lastname
+     * @param int $role_id
+     * @param string $email
+     * @param string $password
+     * @return boolean
+     */
+    public function insert(string $firstname, string $lastname, int $role_id, string $email, string $password): bool
     {
         $sql = "
             INSERT INTO $this->table (firstname, lastname, role_id, email, password)

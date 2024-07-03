@@ -8,7 +8,12 @@ class Dish extends Model
 {
     protected $table = "dishes";
 
-    public function allWithCategoryAndSubcategory()
+    /**
+     * Retourne tous les plats (avec catégorie et sous-catégories).
+     *
+     * @return array|false
+     */
+    public function allWithCategoryAndSubcategory(): array|false
     {
         $sql = "
             SELECT $this->table.*,

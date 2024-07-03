@@ -4,10 +4,18 @@ namespace Models;
 
 use Bases\Model;
 
-class Tag extends Model {
+class Tag extends Model
+{
     protected $table = "tags";
 
-    public function insert($dish_id, $subcategory_id)
+    /**
+     * Ajoute un tag en compagnie de son plat dans la base de donnée.
+     *
+     * @param int $dish_id
+     * @param int $subcategory_id
+     * @return boolean
+     */
+    public function insert(int $dish_id, int $subcategory_id): bool
     {
         $sql = "
             INSERT INTO $this->table (dish_id, subcategory_id)
@@ -15,11 +23,9 @@ class Tag extends Model {
         ";
 
         $requete = $this->pdo()->prepare($sql);
-
         return $requete->execute([
             ":dish_id" => $dish_id,
             ":subcategory_id" => $subcategory_id
         ]);
     }
-
 }
