@@ -14,8 +14,8 @@ class Model
      */
     protected function pdo()
     {
-        if(self::$pdo == null){
-            $env = parse_ini_file(".env");            
+        if (self::$pdo == null) {
+            $env = parse_ini_file(".env");
 
             $hote = $env["HOST"];
             $username = $env["USERNAME"];
@@ -31,8 +31,8 @@ class Model
 
             // Connexion
             self::$pdo = new \PDO(
-                "mysql:host=$hote;dbname=$nom_bdd", 
-                $username, 
+                "mysql:host=$hote;dbname=$nom_bdd",
+                $username,
                 $password,
                 $options
             );
@@ -46,7 +46,8 @@ class Model
      *
      * @return array|false
      */
-    public function all() {
+    public function all()
+    {
         $sql = "SELECT *
                 FROM $this->table";
 
@@ -63,7 +64,7 @@ class Model
      * @param integer $id
      * @return object|false
      */
-    public function byId(int $id) : object|false
+    public function byId(int $id): object|false
     {
         $sql = "SELECT *
                 FROM $this->table
@@ -85,12 +86,13 @@ class Model
      * 
      * @return bool
      */
-    public function destroy(int $id) : bool {
+    public function destroy(int $id): bool
+    {
         $sql = "
             DELETE FROM $this->table
             WHERE id = :id
         ";
-        
+
         $requete = $this->pdo()->prepare($sql);
 
         return $requete->execute([
@@ -101,9 +103,10 @@ class Model
     /**
      * Retourne le dernier Id inséré
      * 
-     * @return void
+     * @return string|int
      */
-    public function lastId() {
+    public function lastId(): string|int
+    {
         return $this->pdo()->lastInsertId();
     }
 }

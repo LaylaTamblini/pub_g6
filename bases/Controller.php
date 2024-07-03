@@ -2,13 +2,15 @@
 
 namespace Bases;
 
-class Controller {
+class Controller
+{
     /**
      * Prend en charge les routes inexistantes et affiche une erreur 404
      * 
      * @return void
      */
-    public function error404() {
+    public function error404()
+    {
         $this->view("errors/404", [
             "title" => "Page introuvable"
         ]);
@@ -20,7 +22,8 @@ class Controller {
      * @param string $url
      * @return void
      */
-    protected function redirect($url) {
+    protected function redirect($url)
+    {
         header("location: $url");
         exit();
     }
@@ -28,12 +31,13 @@ class Controller {
     /**
      * Inclut la vue spécifiée
      *
-     * @param string $chemin
-     * @param array $donnees
+     * @param string $path
+     * @param array $data
      * @return void
      */
-    protected function view($chemin, $donnees = []){
-        extract($donnees);
-        include("views/$chemin.view.php");
+    protected function view($path, $data = [])
+    {
+        extract($data);
+        include("views/$path.view.php");
     }
 }
