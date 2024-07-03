@@ -14,11 +14,17 @@ class CategoryController extends Controller
      */
     public function store()
     {
-        if (empty($_POST["name"])) {
+        // Protection de la route
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
 
+        // Vérification des entrées du formulaire
+        if (empty($_POST["name"])) {
             $this->redirect("admin?required_inputs");
         }
 
+        // Insertion dans la bdd
         $success = (new Category)->insert(
             $_POST["name"]
         );
@@ -26,7 +32,7 @@ class CategoryController extends Controller
         if (!$success) {
             $this->redirect("admin?registration_failed");
         }
-
+        
         $this->redirect("admin?registration_successful");
     }
 }

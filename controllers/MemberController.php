@@ -14,16 +14,19 @@ class MemberController extends Controller
      */
     public function connect()
     {
+        // Vérification des entrées du formulaire
         if (empty($_POST["email"]) || empty($_POST["password"])) {
             $this->redirect("login?required_inputs");
         }
 
         $user = (new Member)->allByEmail($_POST["email"]);
 
+        // Vérification du mot de passe
         if (!$user || $_POST["password"] != password_verify($_POST["password"], $user->password)) {
             $this->redirect("login?invalid_information");
         }
 
+        // Récupération des données sur le membre connecté
         $_SESSION["user_id"] = $user->id;
         $_SESSION["user_firstname"] = $user->firstname;
         $_SESSION["user_lastname"] = $user->lastname;
@@ -37,10 +40,12 @@ class MemberController extends Controller
      */
     public function disconnect()
     {
+        // Protection de la route
         if (empty($_SESSION["user_id"])) {
             $this->redirect("index");
         }
 
+        // Détruit les données du membre connecté
         session_destroy();
 
         $this->redirect("index?logout_successful");
@@ -51,22 +56,29 @@ class MemberController extends Controller
      */
     public function store()
     {
+        // Protection de la route
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        // Vérification des entrées du formulaire
         if (
             empty($_POST["firstname"]) ||
             empty($_POST["lastname"]) ||
             empty($_POST["email"]) ||
             empty($_POST["password"])
         ) {
-
             $this->redirect("admin?informations_requises");
         }
 
         $user = (new Member)->allByEmail($_POST["email"]);
 
+        // Si l'adresse courriel existe déjà
         if ($user) {
             $this->redirect("admin?erreur_courriel");
         }
 
+        // Insertion dans la bdd
         $success = (new Member)->insert(
             $_POST["firstname"],
             $_POST["lastname"],
