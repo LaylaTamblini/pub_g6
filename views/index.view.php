@@ -1,4 +1,9 @@
 <?php include("views/components/head.php") ?>
+
+<?php if(!empty($_SESSION["user_id"])): ?>
+    <?php include("views/components/admin-panel.php") ?>
+<?php endif ?>
+
 <?php include("views/components/header.php") ?>
 
 <main>

@@ -74,6 +74,7 @@ table {
  * Permet d'ajouter une bordure rouge sur un élément.
  */
 html {
+  scroll-padding-block: 2.9rem;
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
@@ -342,6 +343,18 @@ form input[type=submit]:hover {
   align-items: center;
   font-size: 2rem;
   width: 9rem;
+}
+
+.admin-panel-gestion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: var(--primary);
+  z-index: 1000;
 }
 
 header {

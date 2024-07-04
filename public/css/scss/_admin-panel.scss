@@ -1,0 +1,8 @@
+.admin-panel-gestion {
+    @include setFlex(row, space-between, center);
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    background-color: var(--primary);
+    z-index: 1000;
+}
