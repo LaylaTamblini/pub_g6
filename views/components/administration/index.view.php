@@ -24,7 +24,7 @@
         </div>
 
         <?php foreach ($categories as $category): ?>
-            <a href="" class="list-item">
+            <a href="" class="list-item" @click.prevent="toggleForm('editFormCategories', <?= htmlspecialchars(json_encode($category)) ?>)">
                 <article>
                     <p><?= $category->name ?></p>
                     <div class="btn-edit">
@@ -56,7 +56,7 @@
         </div>
 
         <?php foreach ($dishes as $dish): ?>
-            <a href="" class="list-item">
+            <a href="" class="list-item" @click.prevent="toggleForm('editFormDishes', <?= htmlspecialchars(json_encode($dish), ENT_QUOTES, 'UTF-8') ?>)">
                 <article>
                     <p><?= $dish->name ?></p>
                     <div class="btn-edit">
@@ -88,15 +88,13 @@
         </div>
 
         <?php foreach ($staff as $member): ?>
-            <a href="" class="list-item">
+            <a href="" class="list-item" @click.prevent="toggleForm('editFormStaff', <?= htmlspecialchars(json_encode($member), ENT_QUOTES, 'UTF-8') ?>)">
                 <article>
                     <p><?= $member->firstname ?> <?= $member->lastname ?></p>
                     <div class="btn-edit">
                         <p>Modifier le membre</p>
 
-                        <a href="" @click.prevent="toggleForm('addFormStaff')">
-                            <i class="bi bi-pencil-square edit"></i>
-                        </a>
+                        <i class="bi bi-pencil-square edit"></i>
                     </div>
                 </article>
             </a>

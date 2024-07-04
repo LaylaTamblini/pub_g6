@@ -7,6 +7,7 @@ createApp({
       menuIcon: "menu",
       section: "categories",
       form: "",
+      currentObject: {}
     };
   },
   methods: {
@@ -37,7 +38,11 @@ createApp({
      * Permet d'ouvrir ou de fermer un formulaire.
      * @param string formulaire
      */
-    toggleForm(form) {
+    toggleForm(form, object) {
+      if(object!=null) {
+        this.currentObject = object
+        console.log(this.currentObject)
+      }
       this.form = form;
       localStorage.setItem("activeForm", form);
 
@@ -48,8 +53,10 @@ createApp({
 
         // Redirection vers un url sans paramètres
         let url = new URL(window.location);
-        url.search = ''
-        window.location.href = url.href
+        if(url.search != '') {
+          url.search = ''
+          window.location.href = url.href
+        }
       }
     },
   },

@@ -1122,7 +1122,7 @@ footer .bot-footer .admin-icon a:hover {
   }
 }
 
-.add-form {
+.add-form, .edit-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1134,7 +1134,7 @@ footer .bot-footer .admin-icon a:hover {
   background-color: var(--black-opacity);
   z-index: 998;
 }
-.add-form .content-form {
+.add-form .content-form, .edit-form .content-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1146,26 +1146,26 @@ footer .bot-footer .admin-icon a:hover {
   background-color: var(--white);
   border-radius: 0.5rem;
 }
-.add-form .content-form .close-form {
+.add-form .content-form .close-form, .edit-form .content-form .close-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.add-form .content-form .close-form h3 {
+.add-form .content-form .close-form h3, .edit-form .content-form .close-form h3 {
   font-size: 1.5rem;
   text-align: start;
 }
-.add-form .content-form .close-form a {
+.add-form .content-form .close-form a, .edit-form .content-form .close-form a {
   font-size: 2rem;
 }
-.add-form .content-form div {
+.add-form .content-form div, .edit-form .content-form div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.add-form .content-form div form input {
+.add-form .content-form div form input, .edit-form .content-form div form input {
   width: 100%;
 }/*# sourceMappingURL=style.css.map */

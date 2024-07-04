@@ -26,4 +26,18 @@ class Category extends Model
             ":name" => $name
         ]);
     }
+
+    public function edit(int $id, string $name) {
+        $sql = "
+            UPDATE $this->table
+            SET name = :name
+            WHERE id = :id
+        ";
+
+        $requete = $this->pdo()->prepare($sql);
+        return $requete->execute([
+            ":id" => $id,
+            ":name" => $name
+        ]);
+    }
 }

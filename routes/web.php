@@ -20,6 +20,8 @@ $routes = [
     "insert-member" => ["MemberController", "store"],
     // Traite l'ajout d'une catégorie
     "insert-category" => ["CategoryController", "store"],
+    // Traite la modificiation d'une catégorie
+    "edit-category" => ["CategoryController", "update"],
     // Traite l'ajout d'un plat
     "insert-dish" => ["DishController", "store"],
 ];

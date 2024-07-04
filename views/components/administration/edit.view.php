@@ -1,11 +1,11 @@
 <!-- MODIFICATION D'UNE CATÉGORIE -->
-<section class="add-form" v-if="form=='addFormCategories'" @click="form=''">
+<section class="edit-form" v-if="form=='editFormCategories'" @click="form=''">
 
     <div class="content-form" @click.stop>
 
         <!-- HEADER -->
         <div class="close-form">
-            <h4>Ajouter une catégorie</h4>
+            <h4>Modifier la catégorie</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
@@ -13,12 +13,13 @@
 
         <!-- FORMULAIRE -->
         <div>
-            <form action="insert-category" method="POST">
+            <form action="edit-category" method="POST">
                 <div class="inputs">
-                    <input type="text" name="name" placeholder="Nom de la catégorie">
+                    <input type="hidden" name="category_id" :value="currentObject.id">
+                    <input type="text" name="category_name" v-model="currentObject.name">
                 </div>
 
-                <input type="submit" value="Ajouter une catégorie">
+                <input type="submit" value="Modifier la catégorie">
             </form>
         </div>
 
@@ -27,7 +28,7 @@
 </section>
 
 <!-- MODIFICATION D'UN PLAT -->
-<section class="add-form" v-if="form=='addFormDishes'" @click="form=''">
+<section class="edit-form" v-if="form=='editFormDishes'" @click="form=''">
 
     <div class="content-form" @click.stop>
 
@@ -86,7 +87,7 @@
 </section>
 
 <!-- MODIFICATION D'UN MEMBRE -->
-<section class="add-form" v-if="form=='addFormStaff'" @click="form=''">
+<section class="edit-form" v-if="form=='editFormStaff'" @click="form=''">
 
     <div class="content-form" @click.stop>
 

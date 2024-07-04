@@ -1,6 +1,7 @@
 <?php include("views/components/head.php") ?>
 <?php include("views/components/administration/header.php") ?>
 <?php include("views/components/administration/create.view.php") ?>
+<?php include("views/components/administration/edit.view.php") ?>
 
 <main class="admin-main">
     <?php include("views/components/administration/index.view.php") ?>

@@ -65,6 +65,7 @@ class MemberController extends Controller
         if (
             empty($_POST["firstname"]) ||
             empty($_POST["lastname"]) ||
+            empty($_POST["role"]) ||
             empty($_POST["email"]) ||
             empty($_POST["password"])
         ) {

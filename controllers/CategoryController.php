@@ -32,7 +32,29 @@ class CategoryController extends Controller
         if (!$success) {
             $this->redirect("admin?insertion_failed");
         }
-        
+
         $this->redirect("admin?insertion_successful");
+    }
+
+    public function update()
+    {
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        if (empty($_POST["category_id"]) || empty($_POST["category_name"])) {
+            $this->redirect("admin?required_inputs");
+        }
+
+        $success = (new Category)->edit(
+            $_POST["category_id"],
+            $_POST["category_name"]
+        );
+
+        if (!$success) {
+            $this->redirect("admin?update_failed");
+        }
+
+        $this->redirect("admin?update_successful");
     }
 }
