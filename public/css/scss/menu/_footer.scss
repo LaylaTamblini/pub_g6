@@ -7,7 +7,7 @@ footer {
     .top-footer {
         @include setFlex(column, center, center);
         width: 100%;
-        max-width: 1000px;
+        max-width: $max-width;
 
         .nav-footer {
     
@@ -40,8 +40,10 @@ footer {
     }
 
 
-    .admin {
-        @include setFlex(row, center, center);
+    .bot-footer {
+        @include setFlex(row, space-between, center);
+        width: 100%;
+        max-width: $max-width;
 
         .copyright {
             font-size: 1.5rem;
@@ -68,7 +70,7 @@ footer {
         @media screen and (min-width: 600px) {
             @include setFlex(row, space-between, flex-start);
             width: 100%;
-            max-width: 1000px;
+            max-width: $max-width;
         }
     }
 }

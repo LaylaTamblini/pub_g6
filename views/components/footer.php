@@ -3,7 +3,7 @@
         <div class="nav-footer">
             <div>
                 <h5>Navigation</h5>
-            
+
                 <nav>
                     <ul>
                         <li><a href="index">Accueil</a></li>
@@ -13,10 +13,10 @@
                     </ul>
                 </nav>
             </div>
-        
+
             <div>
                 <h5>Nous rejoindre</h5>
-        
+
                 <div class="link-panel">
                     <address>
                         <a href="https://maps.app.goo.gl/57r7Hm2uGvza4cvk8" target="_blank">
@@ -25,12 +25,12 @@
                             <span class="block">J7Z 5A2,</span>
                         </a>
                     </address>
-        
+
                     <a href="tel:4504361531">450-436-1531</a>
                 </div>
             </div>
-        </div> 
-    
+        </div>
+
         <div class="img-footer">
             <div class="full-logo">
                 <a href="index">
@@ -42,11 +42,11 @@
                 <a href="https://www.facebook.com/" target="_blank">
                     <i class="bi bi-facebook"></i>
                 </a>
-        
+
                 <a href="https://x.com/" target="_blank">
                     <i class="bi bi-twitter-x"></i>
                 </a>
-        
+
                 <a href="https://www.instagram.com/" target="_blank">
                     <i class="bi bi-instagram"></i>
                 </a>
@@ -55,7 +55,7 @@
     </div>
 
 
-    <div class="admin">
+    <div class="bot-footer">
         <p class="copyright">PUB G6 &copy 2024</p>
 
         <div class="admin-icon">

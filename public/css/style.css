@@ -829,6 +829,11 @@ header div .burger {
   text-align: center;
   background-color: var(--primary);
 }
+@media screen and (min-width: 1200px) {
+  .newsletter p {
+    font-size: 1.5rem;
+  }
+}
 
 footer {
   display: flex;
@@ -845,7 +850,7 @@ footer .top-footer {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 footer .top-footer .nav-footer div:not(:last-child) {
   margin-bottom: 1rem;
@@ -866,19 +871,21 @@ footer .top-footer .nav-footer div nav ul li a {
     margin-bottom: 4rem;
   }
 }
-footer .admin {
+footer .bot-footer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 1200px;
 }
-footer .admin .copyright {
+footer .bot-footer .copyright {
   font-size: 1.5rem;
   font-family: "Quantico", sans-serif;
   font-weight: 700;
   margin-right: 1rem;
 }
-footer .admin .admin-icon a {
+footer .bot-footer .admin-icon a {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -889,17 +896,17 @@ footer .admin .admin-icon a {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
-footer .admin .admin-icon a:hover {
+footer .bot-footer .admin-icon a:hover {
   background-color: var(--primary-hover);
 }
 @media screen and (min-width: 600px) {
-  footer .admin {
+  footer .bot-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
   }
 }
 
