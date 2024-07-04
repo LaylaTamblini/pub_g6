@@ -1,7 +1,15 @@
 <?php if(isset($_GET["insertion_successful"])): ?>
     <div class="user-interaction success">
         <i class="bi bi-check-circle-fill"></i>
-        <p>Ajout réussie! <a href="index#menu">Voir l'ajout</a></p>
+        <p>Félicitations! L'ajout a fonctionné!</p>
+        <a href="index#menu">Voir l'ajout en cliquant ici</a>
+    </div>
+<?php endif ?>
+
+<?php if(isset($_GET["insertion_member_successful"])): ?>
+    <div class="user-interaction success">
+        <i class="bi bi-check-circle-fill"></i>
+        <p>Félicitations! L'ajout a fonctionné!</p>
     </div>
 <?php endif ?>
 

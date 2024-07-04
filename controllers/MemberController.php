@@ -92,6 +92,6 @@ class MemberController extends Controller
             $this->redirect("admin?insertion_failed");
         }
 
-        $this->redirect("admin?insertion_successful");
+        $this->redirect("admin?insertion_member_successful");
     }
 }

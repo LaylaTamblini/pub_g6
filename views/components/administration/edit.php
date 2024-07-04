@@ -21,6 +21,14 @@
 
                 <input type="submit" value="Modifier la catégorie">
             </form>
+
+            <form action="delete-category" method="POST">
+                <input type="hidden" name="category_id" :value="currentObject.id">
+        
+                <button type="submit">
+                    Supprimer la catégorie
+                </button>
+            </form>
         </div>
 
     </div>
@@ -34,7 +42,7 @@
 
         <!-- HEADER -->
         <div class="close-form">
-            <h4>Ajouter un plat</h4>
+            <h4>Modifier le plat</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
@@ -42,11 +50,11 @@
 
         <!-- FORMULAIRE -->
         <div>
-            <form action="insert-dish" method="POST" enctype="multipart/form-data">
+            <form action="edit-dish" method="POST" enctype="multipart/form-data">
                 <div class="inputs">
-                    <input type="text" name="name" placeholder="Nom du plat">
-                    <textarea name="description" cols="30" rows="10">Decription du plat</textarea>
-                    <input type="text" name="price" placeholder="Prix du plat">
+                    <input type="text" name="name" v-model="currentObject.name">
+                    <textarea name="description" cols="30" rows="10" v-model="currentObject.description"></textarea>
+                    <input type="text" name="price" v-model="currentObject.price">
 
                     <select name="category">
                         <option disabled selected>Choisir une catégorie</option>
@@ -75,10 +83,18 @@
                         <input type="file" name="image">
                     </label>
 
-                    <input type="text" name="alt" placeholder="Description de l'image">
+                    <input type="text" name="alt" v-model="currentObject.alt">
                 </div>
 
-                <input type="submit" value="Ajouter un plat">
+                <input type="submit" value="Modifier le plat">
+            </form>
+
+            <form action="delete-dish" method="POST">
+                <input type="hidden" name="dish_id" :value="currentObject.id">
+        
+                <button type="submit">
+                    Supprimer le plat
+                </button>
             </form>
         </div>
 
@@ -93,7 +109,7 @@
 
         <!-- HEADER -->
         <div class="close-form">
-            <h4>Ajouter un membre</h4>
+            <h4>Modifier un membre</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
@@ -101,10 +117,10 @@
 
         <!-- FORMULAIRE -->
         <div>
-            <form action="insert-member" method="POST">
+            <form action="edit-member" method="POST">
                 <div class="inputs">
-                    <input type="text" name="firstname" placeholder="Prénom">
-                    <input type="text" name="lastname" placeholder="Nom">
+                    <input type="text" name="firstname" v-model="currentObject.firstname">
+                    <input type="text" name="lastname" v-model="currentObject.lastname">
 
                     <select name="role">
                         <option disabled selected>Choisir un rôle</option>
@@ -115,11 +131,19 @@
                         <?php endforeach; ?>
                     </select>
 
-                    <input type="email" name="email" placeholder="Courriel">
-                    <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="email" name="email" v-model="currentObject.email">
+                    <!-- <input type="password" name="password" v-model="currentObject.password"> -->
                 </div>
 
-                <input type="submit" value="Ajouter un membre">
+                <input type="submit" value="Modifier un membre">
+            </form>
+
+            <form action="delete-member" method="POST">
+                <input type="hidden" name="member_id" :value="currentObject.id">
+        
+                <button type="submit">
+                    Supprimer le membre
+                </button>
             </form>
         </div>
 

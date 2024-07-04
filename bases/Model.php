@@ -86,7 +86,7 @@ class Model
      * 
      * @return bool
      */
-    public function destroy(int $id): bool
+    public function delete(int $id): bool
     {
         $sql = "
             DELETE FROM $this->table

@@ -7,7 +7,7 @@ createApp({
       menuIcon: "menu",
       section: "categories",
       form: "",
-      currentObject: {}
+      currentObject: {},
     };
   },
   methods: {
@@ -30,6 +30,7 @@ createApp({
      * @param string section
      */
     switchSection(section) {
+      console.log("up");
       this.section = section;
       // Enregistre la section active dans le localStorage
       localStorage.setItem("activeSection", section);
@@ -39,10 +40,11 @@ createApp({
      * @param string formulaire
      */
     toggleForm(form, object) {
-      if(object!=null) {
-        this.currentObject = object
-        console.log(this.currentObject)
+      if (object != null) {
+        this.currentObject = object;
+        console.log(this.currentObject);
       }
+
       this.form = form;
       localStorage.setItem("activeForm", form);
 
@@ -50,13 +52,17 @@ createApp({
         document.body.style.overflow = "hidden";
       } else {
         document.body.style.overflow = "auto";
-
-        // Redirection vers un url sans paramètres
-        let url = new URL(window.location);
-        if(url.search != '') {
-          url.search = ''
-          window.location.href = url.href
-        }
+        this.removeParams();
+      }
+    },
+    /**
+     * Permet de faire la redirection vers un url sans paramètres
+     */
+    removeParams() {
+      let url = new URL(window.location);
+      if (url.search != "") {
+        url.search = "";
+        window.location.href = url.href;
       }
     },
   },
@@ -64,7 +70,7 @@ createApp({
     // Récupération de l'URL actuelle
     const url = new URLSearchParams(window.location.search);
     // Cherche dans l'URL si elle comprend "registration_successful"
-    if (url.has("insertion_successful")) {
+    if (url.has("insertion_successful") || url.has("insertion_member_successful")) {
       localStorage.removeItem("activeForm");
     }
 

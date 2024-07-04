@@ -1,6 +1,5 @@
 <!-- AJOUT D'UNE CATÉGORIE -->
 <section class="add-form" v-if="form=='addFormCategories'">
-
     <div class="content-form" @click.stop>
 
         <!-- HEADER -->
@@ -15,14 +14,14 @@
         <?php if(isset($_GET["required_inputs"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Veuillez remplir tous les champs</p>
+                <p>Veuillez remplir tous les champs.</p>
             </div>
         <?php endif ?>
 
         <?php if(isset($_GET["insertion_failed"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard</p>
+                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
             </div>
         <?php endif ?>
 
@@ -38,12 +37,10 @@
         </div>
 
     </div>
-
 </section>
 
 <!-- AJOUT D'UN PLAT -->
 <section class="add-form" v-if="form=='addFormDishes'">
-
     <div class="content-form" @click.stop>
 
         <!-- HEADER -->
@@ -58,14 +55,14 @@
         <?php if(isset($_GET["required_inputs"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Veuillez remplir tous les champs</p>
+                <p>Veuillez remplir tous les champs.</p>
             </div>
         <?php endif ?>
 
         <?php if(isset($_GET["insertion_failed"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard</p>
+                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
             </div>
         <?php endif ?>
 
@@ -112,12 +109,10 @@
         </div>
 
     </div>
-
 </section>
 
 <!-- AJOUT D'UN MEMBRE -->
 <section class="add-form" v-if="form=='addFormStaff'">
-
     <div class="content-form" @click.stop>
 
         <!-- HEADER -->
@@ -132,21 +127,21 @@
         <?php if(isset($_GET["required_inputs"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Veuillez remplir tous les champs</p>
+                <p>Veuillez remplir tous les champs.</p>
             </div>
         <?php endif ?>
 
         <?php if(isset($_GET["insertion_failed"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard</p>
+                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
             </div>
         <?php endif ?>
 
         <?php if(isset($_GET["existing_email"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Le courriel existe déjà</p>
+                <p>Le courriel est déjà utilisé.</p>
             </div>
         <?php endif ?>
 
@@ -175,5 +170,4 @@
         </div>
 
     </div>
-
 </section>

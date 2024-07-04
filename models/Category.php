@@ -27,7 +27,15 @@ class Category extends Model
         ]);
     }
 
-    public function edit(int $id, string $name) {
+    /**
+     * Modifie une caétgorie dans la base de donnée.
+     *
+     * @param integer $id
+     * @param string $name
+     * @return bool
+     */
+    public function edit(int $id, string $name): bool
+    {
         $sql = "
             UPDATE $this->table
             SET name = :name

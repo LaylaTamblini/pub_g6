@@ -22,6 +22,8 @@ $routes = [
     "insert-category" => ["CategoryController", "store"],
     // Traite la modificiation d'une catégorie
     "edit-category" => ["CategoryController", "update"],
+    // Traite la modificiation d'une catégorie
+    "delete-category" => ["CategoryController", "destroy"],
     // Traite l'ajout d'un plat
     "insert-dish" => ["DishController", "store"],
 ];
