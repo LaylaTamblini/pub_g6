@@ -1,5 +1,5 @@
 <!-- AJOUT D'UNE CATÉGORIE -->
-<section class="add-form" v-if="form=='addFormCategories'" @click="form=''">
+<section class="add-form" v-if="form=='addFormCategories'">
 
     <div class="content-form" @click.stop>
 
@@ -42,7 +42,7 @@
 </section>
 
 <!-- AJOUT D'UN PLAT -->
-<section class="add-form" v-if="form=='addFormDishes'" @click="form=''">
+<section class="add-form" v-if="form=='addFormDishes'">
 
     <div class="content-form" @click.stop>
 
@@ -116,7 +116,7 @@
 </section>
 
 <!-- AJOUT D'UN MEMBRE -->
-<section class="add-form" v-if="form=='addFormStaff'" @click="form=''">
+<section class="add-form" v-if="form=='addFormStaff'">
 
     <div class="content-form" @click.stop>
 

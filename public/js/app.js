@@ -45,6 +45,11 @@ createApp({
         document.body.style.overflow = "hidden";
       } else {
         document.body.style.overflow = "auto";
+
+        // Redirection vers un url sans paramètres
+        let url = new URL(window.location);
+        url.search = ''
+        window.location.href = url.href
       }
     },
   },
