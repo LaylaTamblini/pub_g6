@@ -52,7 +52,7 @@ createApp({
     // Récupération de l'URL actuelle
     const url = new URLSearchParams(window.location.search);
     // Cherche dans l'URL si elle comprend "registration_successful"
-    if (url.has("registration_successful")) {
+    if (url.has("insertion_successful")) {
       localStorage.removeItem("activeForm");
     }
 

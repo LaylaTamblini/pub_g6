@@ -1,3 +1,10 @@
+<?php if(isset($_GET["insertion_successful"])): ?>
+    <div class="user-interaction success">
+        <i class="bi bi-check-circle-fill"></i>
+        <p>Ajout réussie! <a href="index#menu">Voir l'ajout</a></p>
+    </div>
+<?php endif ?>
+
 <!-- SECTION CATÉGORIES -->
 <section class="tab" v-if="section=='categories'">
     <div class="add-mobile">
