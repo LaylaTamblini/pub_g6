@@ -32,6 +32,12 @@ form {
                 outline: none;
             }
         }
+
+        .checkbox {
+            ul {
+                @include setFlex(row, center, center);
+            }
+        }
     }
 
     input[type=submit] {

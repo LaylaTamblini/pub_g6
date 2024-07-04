@@ -68,14 +68,14 @@ class MemberController extends Controller
             empty($_POST["email"]) ||
             empty($_POST["password"])
         ) {
-            $this->redirect("admin?informations_requises");
+            $this->redirect("admin?required_inputs");
         }
 
         $user = (new Member)->allByEmail($_POST["email"]);
 
         // Si l'adresse courriel existe déjà
         if ($user) {
-            $this->redirect("admin?erreur_courriel");
+            $this->redirect("admin?existing_email");
         }
 
         // Insertion dans la bdd
@@ -88,9 +88,9 @@ class MemberController extends Controller
         );
 
         if (!$success) {
-            $this->redirect("admin?echec_creation");
+            $this->redirect("admin?insertion_failed");
         }
 
-        $this->redirect("admin?succes_creation");
+        $this->redirect("admin?insertion_successful");
     }
 }

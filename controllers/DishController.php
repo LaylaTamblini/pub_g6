@@ -52,7 +52,7 @@ class DishController extends Controller
         );
 
         if (!$success) {
-            $this->redirect("admin?registration_failed");
+            $this->redirect("admin?insertion_failed");
         }
 
         // Retourne l'ID du dernier plat ajouté
@@ -69,11 +69,11 @@ class DishController extends Controller
                 );
 
                 if (!$success) {
-                    $this->redirect("admin?registration_failed");
+                    $this->redirect("admin?insertion_failed");
                 }
             }
         }
 
-        $this->redirect("admin?registration_successful");
+        $this->redirect("admin?insertion_successful");
     }
 }

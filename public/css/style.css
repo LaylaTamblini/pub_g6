@@ -267,6 +267,12 @@ form .inputs input[type=text]::placeholder, form .inputs input[type=email]::plac
 form .inputs input[type=text]:focus, form .inputs input[type=email]:focus, form .inputs input[type=password]:focus {
   outline: none;
 }
+form .inputs .checkbox ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 form input[type=submit] {
   padding: 1rem 2rem;
   margin-top: 2rem;

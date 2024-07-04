@@ -11,6 +11,7 @@
             </a>
         </div>
 
+        <!-- MESSAGES UTILISATEUR -->
         <?php if(isset($_GET["required_inputs"])): ?>
             <div class="user-interaction error">
                 <i class="bi bi-exclamation-triangle-fill"></i>
@@ -52,6 +53,21 @@
                 <i class="bi bi-x"></i>
             </a>
         </div>
+
+        <!-- MESSAGES UTILISATEUR -->
+        <?php if(isset($_GET["required_inputs"])): ?>
+            <div class="user-interaction error">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <p>Veuillez remplir tous les champs</p>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_GET["insertion_failed"])): ?>
+            <div class="user-interaction error">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard</p>
+            </div>
+        <?php endif ?>
 
         <!-- FORMULAIRE -->
         <div>
@@ -111,6 +127,28 @@
                 <i class="bi bi-x"></i>
             </a>
         </div>
+
+        <!-- MESSAGES UTILISATEUR -->
+        <?php if(isset($_GET["required_inputs"])): ?>
+            <div class="user-interaction error">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <p>Veuillez remplir tous les champs</p>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_GET["insertion_failed"])): ?>
+            <div class="user-interaction error">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard</p>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_GET["existing_email"])): ?>
+            <div class="user-interaction error">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <p>Le courriel existe déjà</p>
+            </div>
+        <?php endif ?>
 
         <!-- FORMULAIRE -->
         <div>
