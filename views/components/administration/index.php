@@ -1,23 +1,21 @@
+<!-- MESSAGE UTILISATEUR -->
 <?php if(isset($_GET["insertion_successful"])): ?>
-    <div class="user-interaction success">
-        <i class="bi bi-check-circle-fill"></i>
-        <p>Félicitations! L'ajout a fonctionné!</p>
+    <section class="user-interaction success">
+        <p class="info-txt"><span class="semi-bold">Félicitations!</span> L'ajout a fonctionné!</p>
         <a href="index#menu">Voir l'ajout en cliquant ici</a>
-    </div>
+    </section>
 <?php endif ?>
 
 <?php if(isset($_GET["insertion_member_successful"])): ?>
-    <div class="user-interaction success">
-        <i class="bi bi-check-circle-fill"></i>
-        <p>Félicitations! Le membre a été ajouté!</p>
-    </div>
+    <section class="user-interaction success">
+        <p class="info-txt"><span class="semi-bold">Félicitations!</span> Le membre a été ajouté!</p>
+    </section>
 <?php endif ?>
 
 <?php if(isset($_GET["deletion_successful"])): ?>
-    <div class="user-interaction success">
-        <i class="bi bi-check-circle-fill"></i>
-        <p>Félicitations! L'élément a été supprimé!</p>
-    </div>
+    <section class="user-interaction success">
+        <p class="info-txt"><span class="semi-bold">Félicitations!</span> L'élément a été supprimé!</p>
+    </section>
 <?php endif ?>
 
 <!-- SECTION CATÉGORIES -->

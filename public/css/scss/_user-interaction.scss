@@ -1,11 +1,16 @@
 .user-interaction {
-    @include setFlex(row, center, center);
+    @include setFlex(column, center, center);
     padding: 1rem;
+    margin-top: 1rem;
     border-radius: $border-radius;
     text-align: center;
 
     .info-txt {
         font-size: 1rem;
+    }
+
+    a {
+        text-decoration: underline;
     }
 }
 

@@ -5,17 +5,28 @@
     margin: 0;
     padding: $padding-section 1rem;
 
-    .full-logo {
-        width: 300px;
-        margin-bottom: 1rem;
+    div {
+        width: 100%;
+        max-width: 600px;
+
+        header {
+            @include setFlex(column, center, center);
+            margin-bottom: 1rem;
+
+            .login-logo {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
     }
 
-    a {
+    .retour {
+        @include setFlex(column, center, center);
         margin-top: 1rem;
-        text-decoration: underline;
+
+        a {
+            text-decoration: underline;
+        }
     }
 
-    & h4 {
-        text-align: center;
-    }
 }

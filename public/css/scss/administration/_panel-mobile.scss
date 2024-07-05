@@ -1,12 +1,23 @@
 .panel-admin {
-    background-color: var(--gray);
+    background-color: var(--dark-gray);
 
-    .disconnect-mobil {
-        text-decoration: underline;
+    div {
+        a {
+            @include setFlex(row, flex-start, center);
+            text-decoration: underline;
+
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+
+            i {
+                margin-right: 0.5rem;
+            }
+        }
     }
 
     .active {
-        color: var(--dark-gray);
+        color: var(--gray);
         pointer-events: none;
 
         &:hover {

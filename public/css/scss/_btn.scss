@@ -29,3 +29,31 @@
         }
     }
 }
+
+.btns-submit {
+    @include setFlex(column, space-between, center);
+    width: 100%;
+
+    input {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 600px) {
+        @include setFlex(row, center, center);
+
+        input {
+            margin: 0;
+            margin-right: 0.5rem;
+            width: fit-content;
+        }
+
+        button {
+            width: fit-content;
+        }
+    }
+}

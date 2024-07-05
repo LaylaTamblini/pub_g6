@@ -1,28 +1,26 @@
 <!-- AJOUT D'UNE CATÉGORIE -->
-<section class="add-form" v-if="form=='addFormCategories'">
-    <div class="content-form">
+<section class="admin-form" v-if="form=='addFormCategories'">
+    <section class="content-form">
 
         <!-- HEADER -->
-        <div class="close-form">
+        <header>
             <h4>Ajouter une catégorie</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
-        </div>
+        </header>
 
         <!-- MESSAGES UTILISATEUR -->
         <?php if(isset($_GET["required_inputs"])): ?>
-            <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Veuillez remplir tous les champs.</p>
-            </div>
+            <section class="user-interaction error">
+                <p class="info-txt">Veuillez remplir tous les champs.</p>
+            </section>
         <?php endif ?>
 
         <?php if(isset($_GET["insertion_failed"])): ?>
-            <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
-            </div>
+            <section class="user-interaction error">
+                <p class="info-txt">Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
+            </section>
         <?php endif ?>
 
         <!-- FORMULAIRE -->
@@ -32,37 +30,35 @@
                     <input type="text" name="name" placeholder="Nom de la catégorie">
                 </div>
 
-                <input type="submit" value="Ajouter une catégorie">
+                <input type="submit" value="Ajouter une catégorie" class="add">
             </form>
         </div>
 
-    </div>
+    </section>
 </section>
 
 <!-- AJOUT D'UN PLAT -->
-<section class="add-form" v-if="form=='addFormDishes'">
-    <div class="content-form">
+<section class="admin-form" v-if="form=='addFormDishes'">
+    <section class="content-form">
 
         <!-- HEADER -->
-        <div class="close-form">
+        <header>
             <h4>Ajouter un plat</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
-        </div>
+        </header>
 
         <!-- MESSAGES UTILISATEUR -->
         <?php if(isset($_GET["required_inputs"])): ?>
-            <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Veuillez remplir tous les champs.</p>
-            </div>
+            <section class="user-interaction error">
+                <p class="info-txt">Veuillez remplir tous les champs.</p>
+            </section>
         <?php endif ?>
 
         <?php if(isset($_GET["insertion_failed"])): ?>
             <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
+                <p class="info-txt">Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
             </div>
         <?php endif ?>
 
@@ -71,7 +67,7 @@
             <form action="insert-dish" method="POST" enctype="multipart/form-data">
                 <div class="inputs">
                     <input type="text" name="name" placeholder="Nom du plat">
-                    <textarea name="description" cols="30" rows="10">Decription du plat</textarea>
+                    <input type="text" name="description" placeholder="Description du plat">
                     <input type="text" name="price" placeholder="Prix du plat">
 
                     <select name="category">
@@ -83,20 +79,18 @@
                         <?php endforeach; ?>
                     </select>
 
-                    <div class="checkbox">
-                        <ul>
-                            <?php foreach ($subcategories as $subcategory) : ?>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>">
-                                        <?= $subcategory->name ?>
-                                    </label>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
+                    <section class="checkbox">
+                        <?php foreach ($subcategories as $subcategory) : ?>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>">
+                                <p>
+                                    <?= $subcategory->name ?>
+                                </p>
+                            </label>
+                        <?php endforeach; ?>
+                    </section>
 
-                    <label>
+                    <label class="image-file">
                         Choisir une image
                         <input type="file" name="image">
                     </label>
@@ -104,45 +98,42 @@
                     <input type="text" name="alt" placeholder="Description de l'image">
                 </div>
 
-                <input type="submit" value="Ajouter un plat">
+                <input type="submit" value="Ajouter un plat" class="add">
             </form>
         </div>
 
-    </div>
+    </section>
 </section>
 
 <!-- AJOUT D'UN MEMBRE -->
-<section class="add-form" v-if="form=='addFormStaff'">
-    <div class="content-form">
+<section class="admin-form" v-if="form=='addFormStaff'">
+    <section class="content-form">
 
         <!-- HEADER -->
-        <div class="close-form">
+        <header>
             <h4>Ajouter un membre</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
-        </div>
+        </header>
 
         <!-- MESSAGES UTILISATEUR -->
         <?php if(isset($_GET["required_inputs"])): ?>
-            <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Veuillez remplir tous les champs.</p>
-            </div>
+            <section class="user-interaction error">
+                <p class="info-txt">Veuillez remplir tous les champs.</p>
+            </section>
         <?php endif ?>
 
         <?php if(isset($_GET["insertion_failed"])): ?>
-            <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
-            </div>
+            <section class="user-interaction error">
+                <p class="info-txt">Désolé, une erreur est survenue. Essayez de nouveau plus tard.</p>
+            </section>
         <?php endif ?>
 
         <?php if(isset($_GET["existing_email"])): ?>
-            <div class="user-interaction error">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                <p>Le courriel est déjà utilisé.</p>
-            </div>
+            <section class="user-interaction error">
+                <p class="info-txt">Le courriel est déjà utilisé.</p>
+            </section>
         <?php endif ?>
 
         <!-- FORMULAIRE -->
@@ -165,9 +156,9 @@
                     <input type="password" name="password" placeholder="Mot de passe">
                 </div>
 
-                <input type="submit" value="Ajouter un membre">
+                <input type="submit" value="Ajouter un membre" class="add">
             </form>
         </div>
 
-    </div>
+    </section>
 </section>

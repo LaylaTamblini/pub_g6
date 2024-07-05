@@ -1,0 +1,18 @@
+.error404 {
+    @include setFlex(column, center, center);
+    min-height: 100vh;
+    text-align: center;
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    img {
+        width: 300px;
+        margin: 2rem 0;
+    
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+}

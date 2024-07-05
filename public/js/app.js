@@ -71,7 +71,9 @@ createApp({
     if (
       url.has("insertion_successful") ||
       url.has("insertion_member_successful") ||
-      url.has("deletion_successful")
+      url.has("deletion_successful") ||
+      url.has("update_successful")
+      
     ) {
       localStorage.removeItem("activeForm");
     }

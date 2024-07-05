@@ -1,40 +1,42 @@
 <main class="login">
+    <div>
+        <header>
+            <a href="index" class="login-logo">
+                <img src="public/img/logo.svg" alt="Logo du Pub G6 dans une boîte avec bordure et le nom du pub au centre">
+            </a>
 
-    <div class="full-logo">
-        <a href="index">
-            <img src="public/img/logo.svg" alt="Logo du Pub G6 dans une boîte avec bordure et le nom du pub au centre">
-        </a>
+            <h4>Connexion à l'administration</h4>
+        </header>
+
+        <!-- MESSAGE UTILISATEUR -->
+        <?php if (isset($_GET["required_inputs"])) : ?>
+            <section class="user-interaction error">
+                <p class="info-txt">
+                    Veuillez remplir <span class="semi-bold">tous les champs</span> pour vous connecter à l'administration.
+                </p>
+            </section>
+        <?php endif ?>
+
+        <?php if (isset($_GET["invalid_information"])) : ?>
+            <section class="user-interaction error">
+                <p class="info-txt">
+                    Oups... Vos identifiants <span class="semi-bold">ne correspondent pas.</span> Veuillez réessayer.
+                </p>
+            </section>
+        <?php endif ?>
+
+        <form action="connect-member" method="POST">
+            <div class="inputs">
+                <input type="email" name="email" placeholder="Adresse courriel">
+                <input type="password" name="password" placeholder="Mot de passe">
+            </div>
+
+            <input type="submit" value="Se connecter">
+        </form>
+
+        <section class="retour">
+            Tu es perdu?
+            <a href="index">Retourne vers le site</a>
+        </section>
     </div>
-
-    <!-- <p>
-        <span class="block bold">Vous êtes perdu? Pas de souci!</span> 
-        Cliquez <a href="index">ici</a> pour retourner à la page d'accueil et découvrir notre délicieux menu 😋
-    </p> -->
-
-    <h4>Connexion à l'administration</h4>
-
-    <?php if(isset($_GET["required_inputs"])): ?>
-        <div class="user-interaction error">
-            <i class="bi bi-exclamation-triangle-fill"></i>
-            <p>Veuillez remplir tous les champs pour vous connecter</p>
-        </div>
-    <?php endif ?>
-
-    <?php if(isset($_GET["invalid_information"])): ?>
-        <div class="user-interaction error">
-            <i class="bi bi-exclamation-triangle-fill"></i>
-            <p>Veuillez vérifier vos identifiants</p>
-        </div>
-    <?php endif ?>
-
-    <form action="connect-member" method="POST">
-        <div class="inputs">
-            <input type="email" name="email" placeholder="Adresse courriel">
-            <input type="password" name="password" placeholder="Mot de passe">
-        </div>
-
-        <input type="submit" value="Se connecter">
-    </form>
-
-    <a href="index">Retour vers le site</a>
 </main>

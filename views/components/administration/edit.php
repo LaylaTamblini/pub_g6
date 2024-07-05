@@ -1,59 +1,58 @@
 <!-- MODIFICATION D'UNE CATÉGORIE -->
-<section class="edit-form" v-if="form=='editFormCategories'">
-    <div class="content-form">
-
+<section class="admin-form" v-if="form=='editFormCategories'">
+    <section class="content-form">
         <!-- HEADER -->
-        <div class="close-form">
+        <header>
             <h4>Modifier la catégorie</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
-        </div>
+        </header>
 
         <!-- FORMULAIRE -->
         <div>
-            <form action="edit-category" method="POST">
+            <form action="edit-category" method="POST" id="edit">
                 <div class="inputs">
                     <input type="hidden" name="category_id" :value="currentObject.id">
-                    <input type="text" name="category_name" v-model="currentObject.name">
+                    <input type="text" name="category_name" v-model="currentObject.name" required>
                 </div>
-
-                <input type="submit" value="Modifier la catégorie">
             </form>
 
-            <form action="delete-category" method="POST">
+            <form action="delete-category" method="POST" id="delete">
                 <input type="hidden" name="category_id" :value="currentObject.id">
-        
-                <button type="submit">
-                    Supprimer la catégorie
-                </button>
             </form>
         </div>
 
-    </div>
+        <section class="btns-submit">
+            <input type="submit" value="Modifier la catégorie" form="edit">
+
+            <button type="submit" class="delete" form="delete">
+                Supprimer la catégorie
+            </button>
+        </section>
+    </section>
 </section>
 
 <!-- MODIFICATION D'UN PLAT -->
-<section class="edit-form" v-if="form=='editFormDishes'">
-    <div class="content-form">
-
+<section class="admin-form" v-if="form=='editFormDishes'">
+    <section class="content-form">
         <!-- HEADER -->
-        <div class="close-form">
+        <header>
             <h4>Modifier le plat</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
-        </div>
+        </header>
 
-        <!-- FORMULAIRE -->
         <div>
-            <form action="edit-dish" method="POST" enctype="multipart/form-data">
+            <!-- FORMULAIRE DE MODIFICATION -->
+            <form action="edit-dish" method="POST" enctype="multipart/form-data" id="edit">
                 <div class="inputs">
                     <input type="text" name="name" v-model="currentObject.name">
-                    <textarea name="description" cols="30" rows="10" v-model="currentObject.description"></textarea>
+                    <input type="text" name="description" v-model="currentObject.description">
                     <input type="text" name="price" v-model="currentObject.price">
 
-                    <select name="category">
+                    <select name="category" v-model="currentObject.category_id">
                         <option disabled selected>Choisir une catégorie</option>
                         <?php foreach ($categories as $category) : ?>
                             <option value="<?= $category->id ?>">
@@ -62,62 +61,62 @@
                         <?php endforeach; ?>
                     </select>
 
-                    <div class="checkbox">
-                        <ul>
-                            <?php foreach ($subcategories as $subcategory) : ?>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>">
-                                        <?= $subcategory->name ?>
-                                    </label>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
+                    <section class="checkbox">
+                        <?php foreach ($subcategories as $subcategory) : ?>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>">
+                                <p>
+                                    <?= $subcategory->name ?>
+                                </p>
+                            </label>
+                        <?php endforeach; ?>
+                    </section>
 
-                    <label>
-                        Choisir une image
+                    <label class="image-file">
+                        Modifier l'image
                         <input type="file" name="image">
                     </label>
 
                     <input type="text" name="alt" v-model="currentObject.alt">
                 </div>
-
-                <input type="submit" value="Modifier le plat">
             </form>
 
-            <form action="delete-dish" method="POST">
+            <!-- FORMULAIRE DE SUPPRESSION -->
+            <form action="delete-dish" method="POST" id="delete">
                 <input type="hidden" name="dish_id" :value="currentObject.id">
-        
-                <button type="submit">
-                    Supprimer le plat
-                </button>
             </form>
         </div>
 
-    </div>
+        <!-- BOUTON D'ENVOI -->
+        <section class="btns-submit">
+            <input type="submit" value="Modifier le plat" form="edit">
+
+            <button type="submit" class="delete" form="delete">
+                Supprimer le plat
+            </button>
+        </section>
+    </section>
 </section>
 
 <!-- MODIFICATION D'UN MEMBRE -->
-<section class="edit-form" v-if="form=='editFormStaff'">
-    <div class="content-form">
-
+<section class="admin-form" v-if="form=='editFormStaff'">
+    <section class="content-form">
         <!-- HEADER -->
-        <div class="close-form">
+        <header>
             <h4>Modifier un membre</h4>
             <a href="" @click.prevent="toggleForm('')">
                 <i class="bi bi-x"></i>
             </a>
-        </div>
+        </header>
 
-        <!-- FORMULAIRE -->
         <div>
-            <form action="edit-member" method="POST">
+            <!-- FORMULAIRE DE MODIFICATION -->
+            <form action="edit-member" method="POST" id="edit">
                 <div class="inputs">
-                    <input type="text" name="firstname" v-model="currentObject.firstname">
-                    <input type="text" name="lastname" v-model="currentObject.lastname">
+                    <input type="text" name="firstname" v-model="currentObject.firstname" required>
+                    <input type="text" name="lastname" v-model="currentObject.lastname" required>
 
-                    <select name="role">
+                    <select name="role" v-model="currentObject.role_id" required>
                         <option disabled selected>Choisir un rôle</option>
                         <?php foreach ($roles as $role) : ?>
                             <option value="<?= $role->id ?>">
@@ -126,21 +125,24 @@
                         <?php endforeach; ?>
                     </select>
 
-                    <input type="email" name="email" v-model="currentObject.email">
-                    <!-- <input type="password" name="password" v-model="currentObject.password"> -->
+                    <!-- <input type="email" name="email" v-model="currentObject.email">
+                    <input type="password" name="password" placeholder="Modifier le mot de passe"> -->
                 </div>
-
-                <input type="submit" value="Modifier un membre">
             </form>
-
-            <form action="delete-member" method="POST">
+            
+            <!-- FORMULAIRE DE SUPPRESSION -->
+            <form action="delete-member" method="POST" id="delete">
                 <input type="hidden" name="member_id" :value="currentObject.id">
-        
-                <button type="submit">
-                    Supprimer le membre
-                </button>
             </form>
         </div>
+        
+        <!-- BOUTON D'ENVOI -->
+        <section class="btns-submit">
+            <input type="submit" value="Modifier le membre" form="edit">
 
-    </div>
+            <button type="submit" class="delete" form="delete">
+                Supprimer le membre
+            </button>
+        </section>
+    </section>
 </section>

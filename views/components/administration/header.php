@@ -28,13 +28,13 @@
 
                 <li>
                     <a href="index" class="index-icon">
-                        <i class="bi bi-eye-fill"></i>
+                        <i class="bi bi-eye"></i>
                     </a>
                 </li>
 
                 <li>
                     <a href="disconnect-member" class="logout-icon">
-                        <i class="bi bi-door-closed-fill"></i>
+                        <i class="bi bi-door-closed"></i>
                     </a>
                 </li>
             </ul>
@@ -74,7 +74,14 @@
     </nav>
 
     <div>
-        <a class="disconnect-mobil" href="index">Voir le site</a>
-        <a class="disconnect-mobil" href="disconnect-member">Se déconnecter</a>
+        <a href="index">
+            <i class="bi bi-eye"></i>
+            Voir le site
+        </a>
+
+        <a href="disconnect-member">
+            <i class="bi bi-door-closed"></i>
+            Se déconnecter
+        </a>
     </div>
 </section>

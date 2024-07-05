@@ -15,7 +15,7 @@ form {
             }
         }
 
-        input[type=text], input[type=email], input[type=password] {
+        input[type=text], input[type=email], input[type=password], select, textarea, .image-file {
             padding: 1rem 2rem;
             border-radius: $border-radius;
             border: 2px solid var(--black);
@@ -49,26 +49,63 @@ form {
         }
 
         .checkbox {
-            ul {
-                @include setFlex(row, center, center);
+            @include setFlex(column, center, center);
+            flex-wrap: wrap;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 0.5rem;
+
+            .checkbox-label {
+
+                input {
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
             }
         }
-    }
 
-    input[type=submit] {
-        padding: 1rem 2rem;
-        margin-top: 2rem;
-        border: none;
-        border-radius: $border-radius;
-        font-size: 1rem;
-        background-color: var(--black);
-        color: var(--white);
-        font-family: "Plus Jakarta Sans", sans-serif;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
+        select, textarea, .image-file {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
 
-        &:hover {
-            background-color: var(--black-hover);
+        option:checked { 
+            display: none;
         }
     }
+}
+
+input[type=submit], button[type=submit] {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: var(--black-hover);
+    }
+}
+
+button[type=submit] {
+    background-color: var(--error);
+
+    &:hover {
+        background-color: var(--error-hover);
+    }
+}
+
+.add {
+    margin-top: 1rem;
 }

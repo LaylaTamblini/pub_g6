@@ -64,6 +64,7 @@ table {
   --dark-gray:#a5a5a5;
   --gray:#DCDCDC;
   --error: #F21628;
+  --error-hover: #d41525;
   --success: #22C52D;
 }
 
@@ -191,6 +192,39 @@ p {
   color: var(--light-gray);
 }
 
+.btns-submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.btns-submit input {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.btns-submit button {
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .btns-submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .btns-submit input {
+    margin: 0;
+    margin-right: 0.5rem;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .btns-submit button {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
 ::-webkit-scrollbar {
   background-color: var(--black);
 }
@@ -205,15 +239,19 @@ p {
 
 .user-interaction {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  margin-top: 1rem;
   border-radius: 0.5rem;
   text-align: center;
 }
 .user-interaction .info-txt {
   font-size: 1rem;
+}
+.user-interaction a {
+  text-decoration: underline;
 }
 
 .error {
@@ -246,7 +284,7 @@ form .inputs input {
 form .inputs input:not(:last-child) {
   margin-bottom: 0.5rem;
 }
-form .inputs input[type=text], form .inputs input[type=email], form .inputs input[type=password] {
+form .inputs input[type=text], form .inputs input[type=email], form .inputs input[type=password], form .inputs select, form .inputs textarea, form .inputs .image-file {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   border: 2px solid var(--black);
@@ -254,15 +292,15 @@ form .inputs input[type=text], form .inputs input[type=email], form .inputs inpu
   color: var(--black);
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-form .inputs input[type=text]::-moz-placeholder, form .inputs input[type=email]::-moz-placeholder, form .inputs input[type=password]::-moz-placeholder {
+form .inputs input[type=text]::-moz-placeholder, form .inputs input[type=email]::-moz-placeholder, form .inputs input[type=password]::-moz-placeholder, form .inputs select::-moz-placeholder, form .inputs textarea::-moz-placeholder, form .inputs .image-file::-moz-placeholder {
   color: var(--light-black);
   font-size: 1rem;
 }
-form .inputs input[type=text]::placeholder, form .inputs input[type=email]::placeholder, form .inputs input[type=password]::placeholder {
+form .inputs input[type=text]::placeholder, form .inputs input[type=email]::placeholder, form .inputs input[type=password]::placeholder, form .inputs select::placeholder, form .inputs textarea::placeholder, form .inputs .image-file::placeholder {
   color: var(--light-black);
   font-size: 1rem;
 }
-form .inputs input[type=text]:focus, form .inputs input[type=email]:focus, form .inputs input[type=password]:focus {
+form .inputs input[type=text]:focus, form .inputs input[type=email]:focus, form .inputs input[type=password]:focus, form .inputs select:focus, form .inputs textarea:focus, form .inputs .image-file:focus {
   outline: none;
 }
 form .inputs input:-webkit-autofill,
@@ -280,15 +318,35 @@ form .inputs select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
   font-size: 1rem;
 }
-form .inputs .checkbox ul {
+form .inputs .checkbox {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 0.5rem;
 }
-form input[type=submit] {
+form .inputs .checkbox .checkbox-label input {
+  margin: 0;
+}
+form .inputs .checkbox .checkbox-label p {
+  font-size: 0.9rem;
+}
+form .inputs .checkbox .checkbox-label:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+form .inputs select, form .inputs textarea, form .inputs .image-file {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+form .inputs option:checked {
+  display: none;
+}
+
+input[type=submit], button[type=submit] {
   padding: 1rem 2rem;
-  margin-top: 2rem;
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -298,8 +356,19 @@ form input[type=submit] {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-form input[type=submit]:hover {
+input[type=submit]:hover, button[type=submit]:hover {
   background-color: var(--black-hover);
+}
+
+button[type=submit] {
+  background-color: var(--error);
+}
+button[type=submit]:hover {
+  background-color: var(--error-hover);
+}
+
+.add {
+  margin-top: 1rem;
 }
 
 .marquee {
@@ -402,6 +471,25 @@ form input[type=submit]:hover {
     margin-right: 0.5rem;
     font-weight: 700;
   }
+}
+
+.error404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.error404 img {
+  width: 300px;
+  margin: 2rem 0;
+}
+.error404 p {
+  margin-bottom: 2rem;
 }
 
 .main-header {
@@ -1007,60 +1095,118 @@ footer .bot-footer a:hover {
   margin: 0;
   padding: 6rem 1rem;
 }
-.login .full-logo {
-  width: 300px;
+.login div {
+  width: 100%;
+  max-width: 600px;
+}
+.login div header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
 }
-.login a {
-  margin-top: 1rem;
-  text-decoration: underline;
+.login div header .login-logo {
+  width: 100%;
+  margin-bottom: 1rem;
 }
-.login h4 {
-  text-align: center;
+.login .retour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.login .retour a {
+  text-decoration: underline;
 }
 
 .admin-header {
-  background-color: var(--dark-gray);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+  padding: 1rem;
+  z-index: 999;
 }
-.admin-header .logo {
+.admin-header div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+.admin-header div .logo {
   color: var(--black);
 }
-.admin-header nav ul li a {
-  color: var(--black);
-}
-.admin-header nav .index-icon, .admin-header nav .logout-icon {
+.admin-header div nav {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  .admin-header nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .admin-header nav .index-icon, .admin-header nav .logout-icon {
+  .admin-header div nav {
     display: block;
   }
 }
-.admin-header .burger {
+.admin-header div nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-header div nav ul li a {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.admin-header div nav ul li a:hover {
+  text-decoration: underline;
+}
+.admin-header div nav ul li:not(:last-child) {
+  margin-right: 3rem;
+}
+.admin-header div .burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 3rem;
   color: var(--black);
 }
-.admin-header .active {
-  color: var(--gray);
+@media screen and (min-width: 1200px) {
+  .admin-header div .burger {
+    display: none;
+  }
+}
+.admin-header div .active {
+  color: var(--dark-gray);
   pointer-events: none;
 }
-.admin-header .active:hover {
+.admin-header div .active:hover {
   border-bottom: none;
 }
 
 .panel-admin {
-  background-color: var(--gray);
+  background-color: var(--dark-gray);
 }
-.panel-admin .disconnect-mobil {
+.panel-admin div a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   text-decoration: underline;
 }
+.panel-admin div a:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.panel-admin div a i {
+  margin-right: 0.5rem;
+}
 .panel-admin .active {
-  color: var(--dark-gray);
+  color: var(--gray);
   pointer-events: none;
 }
 .panel-admin .active:hover {
@@ -1087,6 +1233,7 @@ footer .bot-footer a:hover {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin: 1rem 0;
 }
 @media screen and (min-width: 1200px) {
   .admin-main .tab .add-mobile {
@@ -1182,7 +1329,7 @@ footer .bot-footer a:hover {
   }
 }
 
-.add-form, .edit-form {
+.admin-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1194,38 +1341,32 @@ footer .bot-footer a:hover {
   background-color: var(--black-opacity);
   z-index: 998;
 }
-.add-form .content-form, .edit-form .content-form {
+.admin-form .content-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   margin: 1rem;
-  width: 100%;
+  padding: 1rem;
+  width: calc(100% - 2rem);
   max-width: 600px;
-  background-color: var(--white);
   border-radius: 0.5rem;
+  background-color: var(--white);
 }
-.add-form .content-form .close-form, .edit-form .content-form .close-form {
+.admin-form .content-form header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
-.add-form .content-form .close-form h3, .edit-form .content-form .close-form h3 {
+.admin-form .content-form header h3 {
   font-size: 1.5rem;
   text-align: start;
 }
-.add-form .content-form .close-form a, .edit-form .content-form .close-form a {
+.admin-form .content-form header a {
   font-size: 2rem;
 }
-.add-form .content-form div, .edit-form .content-form div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.add-form .content-form div form input, .edit-form .content-form div form input {
+.admin-form .content-form div {
   width: 100%;
 }/*# sourceMappingURL=style.css.map */

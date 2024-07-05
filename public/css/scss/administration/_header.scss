@@ -1,42 +1,66 @@
 .admin-header {
-    background-color: var(--dark-gray);
+    @include setFlex(row, center, center);
+    background-color: var(--gray);
+    padding: 1rem;
+    z-index: 999;
 
-    .logo {
-        color: var(--black);
-    }
+    & div {
+        @include setFlex(row, space-between, center);
+        width: 100%;
+        max-width: $max-width;
 
-    nav {
-        ul {
-            li {
-                a {
-                    color: var(--black);
+        .logo {
+            color: var(--black);
+        }
+
+        // Nav desktop
+        nav {
+            display: none;
+
+            @media screen and (min-width: 1200px) {
+                display: block;
+            }
+
+            ul {
+                @include setFlex(row, space-between, center);
+
+                li {
+                    a {
+                        color: var(--black);
+                        font-size: 1.5rem;
+                        font-weight: 600;
+    
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+    
+                    &:not(:last-child) {
+                        margin-right: 3rem;
+                    }
                 }
             }
         }
-
-        .index-icon, .logout-icon {
-            display: none;
-        }
-
-        @media screen and (min-width: 1200px) {
-            @include setFlex(row, center, center);
-
-            .index-icon, .logout-icon {
-                display: block;
+        
+        // Icone menu mobile
+        .burger {
+            @include setFlex(column, center, center);
+            width: fit-content;
+            font-size: 3rem;
+            color: var(--black);
+    
+            @media screen and (min-width: 1200px) {
+                display: none;
             }
         }
-    }
 
-    .burger {
-        color: var(--black);
-    }
+        .active {
+            color: var(--dark-gray);
+            pointer-events: none;
 
-    .active {
-        color: var(--gray);
-        pointer-events: none;
-
-        &:hover {
-            border-bottom: none;
+            &:hover {
+                border-bottom: none;
+            }
         }
     }
 }

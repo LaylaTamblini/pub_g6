@@ -9,6 +9,7 @@
         .add-mobile {
             @include setFlex(column, space-between, center);
             width: 100%;
+            margin: 1rem 0;
 
             @media screen and (min-width: 1200px) {
                 display: none;

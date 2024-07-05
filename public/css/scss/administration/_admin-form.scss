@@ -1,0 +1,39 @@
+.admin-form {
+    @include setFlex(column, center, center);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--black-opacity);
+    z-index: 998;
+
+    // Section non transparente
+    .content-form {
+        @include setFlex(column, center, center);
+        margin: 1rem;
+        padding: 1rem;
+        width: calc(100% - 2rem);
+        max-width: 600px;
+        border-radius: $border-radius;
+        background-color: var(--white);
+
+        header {
+            @include setFlex(row, space-between, center);
+            width: 100%;
+
+            h3 {
+                font-size: 1.5rem;
+                text-align: start
+            }
+
+            a {
+                font-size: 2rem;
+            }
+        }
+
+        div {
+            width: 100%;
+        }
+        
+    }
+}
