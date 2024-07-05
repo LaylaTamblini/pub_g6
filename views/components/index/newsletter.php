@@ -39,7 +39,7 @@
                 <input type="email" name="email" placeholder="Adresse courriel">
             </div>
 
-            <input type="submit" value="Abonnez-vous">
+            <input type="submit" value="Abonnez-vous" class="btn-plus">
         </form>
     </div>
 </section>

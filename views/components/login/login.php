@@ -31,7 +31,7 @@
                 <input type="password" name="password" placeholder="Mot de passe">
             </div>
 
-            <input type="submit" value="Se connecter">
+            <input type="submit" value="Se connecter" class="btn-plus">
         </form>
 
         <section class="retour">

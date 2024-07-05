@@ -225,6 +225,10 @@ p {
   }
 }
 
+.btn-plus {
+  margin-top: 1rem;
+}
+
 ::-webkit-scrollbar {
   background-color: var(--black);
 }
