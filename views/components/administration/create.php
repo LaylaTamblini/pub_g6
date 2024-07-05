@@ -1,6 +1,6 @@
 <!-- AJOUT D'UNE CATÉGORIE -->
 <section class="add-form" v-if="form=='addFormCategories'">
-    <div class="content-form" @click.stop>
+    <div class="content-form">
 
         <!-- HEADER -->
         <div class="close-form">
@@ -41,7 +41,7 @@
 
 <!-- AJOUT D'UN PLAT -->
 <section class="add-form" v-if="form=='addFormDishes'">
-    <div class="content-form" @click.stop>
+    <div class="content-form">
 
         <!-- HEADER -->
         <div class="close-form">
@@ -113,7 +113,7 @@
 
 <!-- AJOUT D'UN MEMBRE -->
 <section class="add-form" v-if="form=='addFormStaff'">
-    <div class="content-form" @click.stop>
+    <div class="content-form">
 
         <!-- HEADER -->
         <div class="close-form">

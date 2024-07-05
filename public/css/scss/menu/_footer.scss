@@ -1,8 +1,7 @@
 footer {
     @include setFlex(column, center, center);
-    padding: $padding-section 2rem;
+    padding: 3rem 2rem;
     text-align: center;
-    height: 100%;
 
     .top-footer {
         @include setFlex(column, center, center);
@@ -10,17 +9,17 @@ footer {
         max-width: $max-width;
 
         .nav-footer {
-    
-            & div {
-                &:not(:last-child) {
-                    margin-bottom: 1rem;
+            margin-bottom: 1rem;
+            div {
+                h5 {
+                    margin-bottom: 0.5rem;
                 }
 
                 nav {
                     ul {
                         li {
                             &:not(:last-child) {
-                                margin-bottom: 0.2rem;
+                                margin-bottom: 0.3rem;
                             }
 
                             a {
@@ -29,21 +28,49 @@ footer {
                         }
                     }
                 }
+
+                div {
+                    a {
+                        text-decoration: underline;
+                    }
+
+                    address {
+                        margin-bottom: 0.5rem;
+                        max-width: 200px;
+                        line-height: 1.2rem;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .links-footer {
+            @include setFlex(column, center, center);
+            margin-bottom: 1rem;
+        
+            .full-logo {
+                width: 200px;
+                margin-bottom: 1rem;
+            }
+        
+            @media screen and (min-width: 600px) {
+                @include setFlex(column, center, flex-end);
+                margin: 0;
             }
         }
 
         @media screen and (min-width: 600px) {
             @include setFlex(row, space-between, flex-start);
             text-align: start;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
     }
 
-
     .bot-footer {
-        @include setFlex(row, space-between, center);
-        width: 100%;
-        max-width: $max-width;
+        @include setFlex(column, space-between, center);
 
         .copyright {
             font-size: 1.5rem;
@@ -52,18 +79,21 @@ footer {
             margin-right: 1rem;
         }
 
-        .admin-icon {
-            a {
-                @include setFlex(column, center, center);
-                background-color: var(--primary);
-                padding: 0.3rem;
-                border-radius: $border-radius;
-                transition: all 0.2s ease-in-out;
-                cursor: pointer;
+        a {
+            @include setFlex(column, center, center);
+            padding: 0.5rem;
+            margin-top: 1rem;
+            background-color: var(--primary);
+            border-radius: $border-radius;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
 
-                &:hover {
-                    background-color: var(--primary-hover);
-                }
+            &:hover {
+                background-color: var(--primary-hover);
+            }
+
+            @media screen and (min-width: 600px) {
+                margin-top: 0;
             }
         }
 
@@ -73,19 +103,4 @@ footer {
             max-width: $max-width;
         }
     }
-}
-
-.img-footer {
-	@include setFlex(column, center, center);
-	margin: 3rem 0;
-
-	.full-logo {
-		margin-bottom: 1rem;
-		width: 200px;
-	}
-
-	@media screen and (min-width: 600px) {
-		@include setFlex(column, center, flex-end);
-		margin: 0;
-	}
 }

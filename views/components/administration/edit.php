@@ -1,7 +1,6 @@
 <!-- MODIFICATION D'UNE CATÉGORIE -->
-<section class="edit-form" v-if="form=='editFormCategories'" @click="form=''">
-
-    <div class="content-form" @click.stop>
+<section class="edit-form" v-if="form=='editFormCategories'">
+    <div class="content-form">
 
         <!-- HEADER -->
         <div class="close-form">
@@ -32,13 +31,11 @@
         </div>
 
     </div>
-
 </section>
 
 <!-- MODIFICATION D'UN PLAT -->
-<section class="edit-form" v-if="form=='editFormDishes'" @click="form=''">
-
-    <div class="content-form" @click.stop>
+<section class="edit-form" v-if="form=='editFormDishes'">
+    <div class="content-form">
 
         <!-- HEADER -->
         <div class="close-form">
@@ -99,13 +96,11 @@
         </div>
 
     </div>
-
 </section>
 
 <!-- MODIFICATION D'UN MEMBRE -->
-<section class="edit-form" v-if="form=='editFormStaff'" @click="form=''">
-
-    <div class="content-form" @click.stop>
+<section class="edit-form" v-if="form=='editFormStaff'">
+    <div class="content-form">
 
         <!-- HEADER -->
         <div class="close-form">
@@ -148,5 +143,4 @@
         </div>
 
     </div>
-
 </section>

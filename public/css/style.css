@@ -138,7 +138,6 @@ h4 {
 
 h5 {
   font-weight: 800;
-  margin-bottom: 0.8rem;
 }
 
 p {
@@ -157,6 +156,10 @@ p {
 
 .bold {
   font-weight: 800;
+}
+
+.semi-bold {
+  font-weight: 700;
 }
 
 .btn {
@@ -203,29 +206,23 @@ p {
 .user-interaction {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-top: 2rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: var(--white);
-  text-align: start;
+  text-align: center;
 }
-.user-interaction p {
+.user-interaction .info-txt {
   font-size: 1rem;
-  font-weight: 500;
-  margin-left: 1rem;
-}
-.user-interaction i {
-  font-size: 1.5rem;
 }
 
-.error i {
-  color: var(--error);
+.error {
+  background-color: var(--error);
+  color: var(--white);
 }
 
-.success i {
-  color: var(--success);
+.success {
+  background-color: var(--success);
 }
 
 form {
@@ -233,7 +230,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
 }
 form .inputs {
@@ -245,7 +242,6 @@ form .inputs {
 }
 form .inputs input {
   width: 100%;
-  max-width: 600px;
 }
 form .inputs input:not(:last-child) {
   margin-bottom: 0.5rem;
@@ -260,12 +256,29 @@ form .inputs input[type=text], form .inputs input[type=email], form .inputs inpu
 }
 form .inputs input[type=text]::-moz-placeholder, form .inputs input[type=email]::-moz-placeholder, form .inputs input[type=password]::-moz-placeholder {
   color: var(--light-black);
+  font-size: 1rem;
 }
 form .inputs input[type=text]::placeholder, form .inputs input[type=email]::placeholder, form .inputs input[type=password]::placeholder {
   color: var(--light-black);
+  font-size: 1rem;
 }
 form .inputs input[type=text]:focus, form .inputs input[type=email]:focus, form .inputs input[type=password]:focus {
   outline: none;
+}
+form .inputs input:-webkit-autofill,
+form .inputs input:-webkit-autofill:hover,
+form .inputs input:-webkit-autofill:focus,
+form .inputs textarea:-webkit-autofill,
+form .inputs textarea:-webkit-autofill:hover,
+form .inputs textarea:-webkit-autofill:focus,
+form .inputs select:-webkit-autofill,
+form .inputs select:-webkit-autofill:hover,
+form .inputs select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--light-black);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 1rem;
 }
 form .inputs .checkbox ul {
   display: flex;
@@ -351,27 +364,56 @@ form input[type=submit]:hover {
   width: 9rem;
 }
 
-.admin-panel-gestion {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.admin-panel-index {
   position: sticky;
   top: 0;
   padding: 1rem;
   background-color: var(--primary);
   z-index: 1000;
 }
+.admin-panel-index .admin-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.admin-panel-index .admin-desktop {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .admin-panel-index .admin-mobile {
+    display: none;
+  }
+  .admin-panel-index .admin-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-panel-index .admin-desktop a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: underline;
+  }
+  .admin-panel-index .admin-desktop a i {
+    margin-right: 0.5rem;
+    font-weight: 700;
+  }
+}
 
-header {
+.main-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: var(--black);
   padding: 1rem;
+  z-index: 999;
 }
-header div {
+.main-header div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -379,32 +421,32 @@ header div {
   width: 100%;
   max-width: 1200px;
 }
-header div nav {
+.main-header div nav {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  header div nav {
+  .main-header div nav {
     display: block;
   }
 }
-header div nav ul {
+.main-header div nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-header div nav ul li a {
+.main-header div nav ul li a {
   color: var(--primary);
   font-size: 1.5rem;
   font-weight: 600;
 }
-header div nav ul li a:hover {
+.main-header div nav ul li a:hover {
   text-decoration: underline;
 }
-header div nav ul li:not(:last-child) {
+.main-header div nav ul li:not(:last-child) {
   margin-right: 3rem;
 }
-header div .burger {
+.main-header div .burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -415,7 +457,7 @@ header div .burger {
   color: var(--primary);
 }
 @media screen and (min-width: 1200px) {
-  header div .burger {
+  .main-header div .burger {
     display: none;
   }
 }
@@ -423,10 +465,9 @@ header div .burger {
 .panel {
   display: none;
   position: fixed;
-  top: 82px;
   left: 0;
   width: 100%;
-  height: 89vh;
+  height: 90vh;
   padding: 4rem 1rem;
   background-color: var(--white);
   z-index: 1000;
@@ -437,11 +478,6 @@ header div .burger {
 }
 .panel ul li:not(:last-child) {
   margin-bottom: 1.5rem;
-}
-@media screen and (min-width: 1200px) {
-  .panel {
-    display: none;
-  }
 }
 .panel .link-panel {
   margin-top: 1rem;
@@ -464,6 +500,11 @@ header div .burger {
   align-items: flex-start;
 }
 
+@media screen and (min-width: 1200px) {
+  .panel {
+    display: none;
+  }
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -573,8 +614,6 @@ header div .burger {
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 .menu .category .items .item .pills {
   display: flex;
@@ -831,14 +870,19 @@ header div .burger {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 6rem 1rem;
+  padding: 3rem 1rem;
   text-align: center;
   background-color: var(--primary);
 }
-@media screen and (min-width: 1200px) {
-  .newsletter p {
-    font-size: 1.5rem;
-  }
+.newsletter div {
+  width: 100%;
+  max-width: 600px;
+}
+.newsletter header {
+  margin-bottom: 1rem;
+}
+.newsletter header h2 {
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -846,9 +890,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
-  height: 100%;
 }
 footer .top-footer {
   display: flex;
@@ -858,14 +901,48 @@ footer .top-footer {
   width: 100%;
   max-width: 1200px;
 }
-footer .top-footer .nav-footer div:not(:last-child) {
+footer .top-footer .nav-footer {
   margin-bottom: 1rem;
 }
+footer .top-footer .nav-footer div h5 {
+  margin-bottom: 0.5rem;
+}
 footer .top-footer .nav-footer div nav ul li:not(:last-child) {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 footer .top-footer .nav-footer div nav ul li a {
   text-decoration: underline;
+}
+footer .top-footer .nav-footer div div a {
+  text-decoration: underline;
+}
+footer .top-footer .nav-footer div div address {
+  margin-bottom: 0.5rem;
+  max-width: 200px;
+  line-height: 1.2rem;
+}
+footer .top-footer .nav-footer div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+footer .top-footer .links-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+footer .top-footer .links-footer .full-logo {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 600px) {
+  footer .top-footer .links-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+  }
 }
 @media screen and (min-width: 600px) {
   footer .top-footer {
@@ -874,16 +951,14 @@ footer .top-footer .nav-footer div nav ul li a {
     justify-content: space-between;
     align-items: flex-start;
     text-align: start;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 }
 footer .bot-footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
 }
 footer .bot-footer .copyright {
   font-size: 1.5rem;
@@ -891,19 +966,25 @@ footer .bot-footer .copyright {
   font-weight: 700;
   margin-right: 1rem;
 }
-footer .bot-footer .admin-icon a {
+footer .bot-footer a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
+  margin-top: 1rem;
   background-color: var(--primary);
-  padding: 0.3rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
-footer .bot-footer .admin-icon a:hover {
+footer .bot-footer a:hover {
   background-color: var(--primary-hover);
+}
+@media screen and (min-width: 600px) {
+  footer .bot-footer a {
+    margin-top: 0;
+  }
 }
 @media screen and (min-width: 600px) {
   footer .bot-footer {
@@ -913,27 +994,6 @@ footer .bot-footer .admin-icon a:hover {
     align-items: flex-start;
     width: 100%;
     max-width: 1200px;
-  }
-}
-
-.img-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem 0;
-}
-.img-footer .full-logo {
-  margin-bottom: 1rem;
-  width: 200px;
-}
-@media screen and (min-width: 600px) {
-  .img-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 0;
   }
 }
 

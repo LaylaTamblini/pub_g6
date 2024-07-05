@@ -1,6 +1,6 @@
 form {
     @include setFlex(column, center, center);
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
     
     .inputs {
@@ -9,7 +9,6 @@ form {
 
         input {
             width: 100%;
-            max-width: 600px;
 
             &:not(:last-child) {
                 margin-bottom: 0.5rem;
@@ -26,11 +25,27 @@ form {
 
             &::placeholder {
                 color: var(--light-black);
+                font-size: 1rem;
             }
 
             &:focus {
                 outline: none;
             }
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+          -webkit-text-fill-color: var(--light-black);
+          -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+          transition: background-color 5000s ease-in-out 0s;
+          font-size: 1rem;
         }
 
         .checkbox {

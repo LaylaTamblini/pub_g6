@@ -1,4 +1,4 @@
-<header id="header">
+<header class="main-header" id="header">
     <div>
         <a href="index" class="logo">
             PubG6

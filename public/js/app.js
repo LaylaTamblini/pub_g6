@@ -1,5 +1,4 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-
 createApp({
   data() {
     return {
@@ -30,7 +29,6 @@ createApp({
      * @param string section
      */
     switchSection(section) {
-      console.log("up");
       this.section = section;
       // Enregistre la section active dans le localStorage
       localStorage.setItem("activeSection", section);
@@ -69,8 +67,12 @@ createApp({
   beforeMount() {
     // Récupération de l'URL actuelle
     const url = new URLSearchParams(window.location.search);
-    // Cherche dans l'URL si elle comprend "registration_successful"
-    if (url.has("insertion_successful") || url.has("insertion_member_successful")) {
+    // Cherche dans l'URL si elle comprend:
+    if (
+      url.has("insertion_successful") ||
+      url.has("insertion_member_successful") ||
+      url.has("deletion_successful")
+    ) {
       localStorage.removeItem("activeForm");
     }
 

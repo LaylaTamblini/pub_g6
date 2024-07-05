@@ -9,7 +9,14 @@
 <?php if(isset($_GET["insertion_member_successful"])): ?>
     <div class="user-interaction success">
         <i class="bi bi-check-circle-fill"></i>
-        <p>Félicitations! L'ajout a fonctionné!</p>
+        <p>Félicitations! Le membre a été ajouté!</p>
+    </div>
+<?php endif ?>
+
+<?php if(isset($_GET["deletion_successful"])): ?>
+    <div class="user-interaction success">
+        <i class="bi bi-check-circle-fill"></i>
+        <p>Félicitations! L'élément a été supprimé!</p>
     </div>
 <?php endif ?>
 

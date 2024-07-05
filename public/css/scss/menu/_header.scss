@@ -1,7 +1,8 @@
-header {
+.main-header {
     @include setFlex(row, center, center);
     background-color: var(--black);
     padding: 1rem;
+    z-index: 999;
 
     & div {
         @include setFlex(row, space-between, center);

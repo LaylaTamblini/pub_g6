@@ -83,9 +83,9 @@ class CategoryController extends Controller
         $succes = (new Category)->delete($_POST["category_id"]);
 
         if (!$succes) {
-            $this->redirect("admin?deletion_suppression");
+            $this->redirect("admin?deletion_failed");
         }
 
-        $this->redirect("admin?deletion_succesfull");
+        $this->redirect("admin?deletion_successful");
     }
 }

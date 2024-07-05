@@ -1,8 +1,36 @@
-.admin-panel-gestion {
-    @include setFlex(row, space-between, center);
+.admin-panel-index {
     position: sticky;
     top: 0;
     padding: 1rem;
     background-color: var(--primary);
     z-index: 1000;
+
+    .admin-mobile {
+        @include setFlex(row, space-between, center);
+        width: 100%;
+    }
+
+    .admin-desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .admin-mobile {
+            display: none;
+        }
+
+        .admin-desktop {
+            @include setFlex(row, space-between, center);
+
+            a {
+                @include setFlex(row, space-between, center);
+                text-decoration: underline;
+                
+                i {
+                    margin-right: 0.5rem;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }
