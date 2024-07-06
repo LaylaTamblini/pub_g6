@@ -27,7 +27,7 @@
         <div>
             <form action="insert-category" method="POST">
                 <div class="inputs">
-                    <input type="text" name="name" placeholder="Nom de la catégorie">
+                    <input type="text" name="name" placeholder="Nom de la catégorie" required>
                 </div>
 
                 <input type="submit" value="Ajouter une catégorie" class="add">
@@ -66,11 +66,11 @@
         <div>
             <form action="insert-dish" method="POST" enctype="multipart/form-data">
                 <div class="inputs">
-                    <input type="text" name="name" placeholder="Nom du plat">
-                    <input type="text" name="description" placeholder="Description du plat">
-                    <input type="text" name="price" placeholder="Prix du plat">
+                    <input type="text" name="name" placeholder="Nom du plat" required>
+                    <input type="text" name="description" placeholder="Description du plat" required>
+                    <input type="text" name="price" placeholder="Prix du plat" required>
 
-                    <select name="category">
+                    <select name="category" required>
                         <option disabled selected>Choisir une catégorie</option>
                         <?php foreach ($categories as $category) : ?>
                             <option value="<?= $category->id ?>">
@@ -140,10 +140,10 @@
         <div>
             <form action="insert-member" method="POST">
                 <div class="inputs">
-                    <input type="text" name="firstname" placeholder="Prénom">
-                    <input type="text" name="lastname" placeholder="Nom">
+                    <input type="text" name="firstname" placeholder="Prénom" required>
+                    <input type="text" name="lastname" placeholder="Nom" required>
 
-                    <select name="role">
+                    <select name="role" required>
                         <option disabled selected>Choisir un rôle</option>
                         <?php foreach ($roles as $role) : ?>
                             <option value="<?= $role->id ?>">
@@ -152,8 +152,8 @@
                         <?php endforeach; ?>
                     </select>
 
-                    <input type="email" name="email" placeholder="Courriel">
-                    <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="email" name="email" placeholder="Courriel" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
                 </div>
 
                 <input type="submit" value="Ajouter un membre" class="add">

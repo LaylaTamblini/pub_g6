@@ -69,6 +69,8 @@ createApp({
         }
       }
 
+      console.log(this.currentObject);
+
       this.form = form;
       localStorage.setItem("activeForm", form);
 
@@ -96,9 +98,11 @@ createApp({
     // Cherche dans l'URL si elle comprend:
     if (
       url.has("insertion_successful") ||
-      url.has("insertion_member_successful") ||
       url.has("deletion_successful") ||
-      url.has("update_successful")
+      url.has("update_successful") ||
+      url.has("insertion_member_successful") ||
+      url.has("deletion_member_successful") ||
+      url.has("update_member_successful")
     ) {
       localStorage.removeItem("activeForm");
     }

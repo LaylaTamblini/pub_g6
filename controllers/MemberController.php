@@ -94,4 +94,64 @@ class MemberController extends Controller
 
         $this->redirect("admin?insertion_member_successful");
     }
+
+    /**
+     * Traite la modification d'une catégorie dans la base de donnée.
+     */
+    public function update()
+    {
+        // Protection de la route
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        // Vérification des entrées du formulaire
+        if (
+            empty($_POST["member_id"]) ||
+            empty($_POST["firstname"]) ||
+            empty($_POST["lastname"]) ||
+            empty($_POST["role"])
+        ) {
+            $this->redirect("admin?required_inputs");
+        }
+
+        // Modification dans la bdd
+        $success = (new Member)->edit(
+            $_POST["member_id"],
+            $_POST["firstname"],
+            $_POST["lastname"],
+            $_POST["role"]
+        );
+
+        if (!$success) {
+            $this->redirect("admin?update_failed");
+        }
+
+        $this->redirect("admin?update_member_successful");
+    }
+
+    /**
+     * Traite la suppression d'un membre dans la base de donnée.
+     */
+    public function destroy()
+    {
+        // Protection de la route
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        // Vérification des entrées du formulaire
+        if (empty($_POST["member_id"])) {
+            $this->redirect("admin?not_found");
+        }
+
+        // Suppression dans la bdd
+        $succes = (new Member)->delete($_POST["member_id"]);
+
+        if (!$succes) {
+            $this->redirect("admin?deletion_failed");
+        }
+
+        $this->redirect("admin?deletion_member_successful");
+    }
 }

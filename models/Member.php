@@ -59,4 +59,32 @@ class Member extends Model
             ":password" => $password
         ]);
     }
+
+    /**
+     * Modifie un membre dans la base de donnée.
+     *
+     * @param integer $id
+     * @param string $firstname
+     * @param string $lastname
+     * @param integer $role_id
+     * @return boolean
+     */
+    public function edit(int $id, string $firstname, string $lastname, int $role_id): bool
+    {
+        $sql = "
+            UPDATE $this->table
+            SET firstname = :firstname,
+                lastname = :lastname,
+                role_id = :role_id
+            WHERE id = :id
+        ";
+
+        $requete = $this->pdo()->prepare($sql);
+        return $requete->execute([
+            ":id" => $id,
+            ":firstname" => $firstname,
+            ":lastname" => $lastname,
+            ":role_id" => $role_id,
+        ]);
+    }
 }

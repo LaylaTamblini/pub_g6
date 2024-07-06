@@ -48,11 +48,11 @@
             <!-- FORMULAIRE DE MODIFICATION -->
             <form action="edit-dish" method="POST" enctype="multipart/form-data" id="edit">
                 <div class="inputs">
-                    <input type="text" name="name" v-model="currentObject.name">
-                    <input type="text" name="description" v-model="currentObject.description">
-                    <input type="text" name="price" v-model="currentObject.price">
+                    <input type="text" name="name" v-model="currentObject.name" required>
+                    <input type="text" name="description" v-model="currentObject.description" required>
+                    <input type="text" name="price" v-model="currentObject.price" required>
 
-                    <select name="category" v-model="currentObject.category_id">
+                    <select name="category" v-model="currentObject.category_id" required>
                         <option disabled selected>Choisir une catégorie</option>
                         <?php foreach ($categories as $category) : ?>
                             <option value="<?= $category->id ?>">
@@ -113,6 +113,7 @@
             <!-- FORMULAIRE DE MODIFICATION -->
             <form action="edit-member" method="POST" id="edit">
                 <div class="inputs">
+                    <input type="hidden" name="member_id" :value="currentObject.id">
                     <input type="text" name="firstname" v-model="currentObject.firstname" required>
                     <input type="text" name="lastname" v-model="currentObject.lastname" required>
 

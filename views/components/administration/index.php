@@ -12,6 +12,18 @@
     </section>
 <?php endif ?>
 
+<?php if(isset($_GET["update_member_successful"])): ?>
+    <section class="user-interaction success">
+        <p class="info-txt"><span class="semi-bold">Félicitations!</span> Le membre a été modifié!</p>
+    </section>
+<?php endif ?>
+
+<?php if(isset($_GET["deletion_member_successful"])): ?>
+    <section class="user-interaction success">
+        <p class="info-txt"><span class="semi-bold">Félicitations!</span> Le membre a été supprimé!</p>
+    </section>
+<?php endif ?>
+
 <?php if(isset($_GET["deletion_successful"])): ?>
     <section class="user-interaction success">
         <p class="info-txt"><span class="semi-bold">Félicitations!</span> L'élément a été supprimé!</p>
