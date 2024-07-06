@@ -48,6 +48,7 @@
             <!-- FORMULAIRE DE MODIFICATION -->
             <form action="edit-dish" method="POST" enctype="multipart/form-data" id="edit">
                 <div class="inputs">
+                    <input type="hidden" name="dish_id" :value="currentObject.id">
                     <input type="text" name="name" v-model="currentObject.name" required>
                     <input type="text" name="description" v-model="currentObject.description" required>
                     <input type="text" name="price" v-model="currentObject.price" required>
@@ -72,12 +73,12 @@
                         <?php endforeach; ?>
                     </section>
 
-                    <label class="image-file">
+                    <!-- <label class="image-file">
                         Modifier l'image
                         <input type="file" name="image">
                     </label>
 
-                    <input type="text" name="alt" v-model="currentObject.alt">
+                    <input type="text" name="alt" v-model="currentObject.alt"> -->
                 </div>
             </form>
 

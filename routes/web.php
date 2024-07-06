@@ -34,4 +34,8 @@ $routes = [
 
     // Traite l'ajout d'un plat
     "insert-dish" => ["DishController", "store"],
+    // Traite la modification d'un plat
+    "edit-dish" => ["DishController", "update"],
+    // Traite la suppression d'un plat
+    "delete-dish" => ["DishController", "destroy"]
 ];

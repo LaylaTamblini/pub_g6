@@ -76,4 +76,58 @@ class DishController extends Controller
 
         $this->redirect("admin?insertion_successful");
     }
+
+    /**
+     * Traite la modification d'une catégorie dans la base de donnée.
+     */
+    public function update()
+    {
+        // Protection de la route
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        // Vérification des entrées du formulaire
+        if (
+            empty($_POST["dish_id"]) ||
+            empty($_POST["name"]) ||
+            empty($_POST["description"]) ||
+            empty($_POST["price"]) ||
+            empty($_POST["category"])
+        ) {
+            $this->redirect("admin?required_inputs");
+        }
+
+        // Modification dans la bdd
+        $success = (new Dish)->edit(
+            $_POST["dish_id"],
+            $_POST["name"],
+            $_POST["description"],
+            $_POST["price"],
+            $_POST["category"]
+        );
+
+        if (!$success) {
+            $this->redirect("admin?update_failed");
+        }
+
+        // Insertion dans la bdd si $subcategories n'est pas vide
+        if (!empty($_POST["subcategories"])) {
+
+            (new Tag)->deleteByDishId($_POST["dish_id"]);
+
+            foreach ($_POST["subcategories"] as $subcategory_id) {
+                $success = (new Tag)->insert(
+                    $_POST["dish_id"],
+                    $subcategory_id
+                );
+
+                if (!$success) {
+                    $this->redirect("admin?insertion_failed");
+                }
+            }
+        }
+
+        $this->redirect("admin?update_successful");
+    }
 }

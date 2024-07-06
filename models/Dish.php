@@ -52,4 +52,35 @@ class Dish extends Model
             ":category_id" => $category_id,
         ]);
     }
+
+    /**
+     * Modifie un plat dans la base de donnée.
+     *
+     * @param integer $id
+     * @param string $name
+     * @param string $description
+     * @param string $price
+     * @param integer $category_id
+     * @return boolean
+     */
+    public function edit(int $id, string $name, string $description, string $price, int $category_id): bool
+    {
+        $sql = "
+            UPDATE $this->table
+            SET name = :name,
+                description = :description,
+                price = :price,
+                category_id = :category_id
+            WHERE id = :id
+        ";
+
+        $requete = $this->pdo()->prepare($sql);
+        return $requete->execute([
+            ":id" => $id,
+            ":name" => $name,
+            ":description" => $description,
+            ":price" => $price,
+            ":category_id" => $category_id,
+        ]);
+    }
 }

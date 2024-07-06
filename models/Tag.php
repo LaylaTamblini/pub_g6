@@ -28,4 +28,23 @@ class Tag extends Model
             ":subcategory_id" => $subcategory_id
         ]);
     }
+
+    /**
+     * Supprime les tags par ID de plat.
+     *
+     * @param integer $dish_id
+     * @return boolean
+     */
+    public function deleteByDishId(int $dish_id): bool
+    {
+        $sql = "
+            DELETE FROM $this->table 
+            WHERE dish_id = :dish_id
+        ";
+        $requete = $this->pdo()->prepare($sql);
+
+        return $requete->execute([
+            ":dish_id" => $dish_id
+        ]);
+    }
 }
