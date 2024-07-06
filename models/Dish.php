@@ -34,7 +34,39 @@ class Dish extends Model
         return $requete->fetchAll();
     }
 
-    public function insert($name, $description, $price, $image, $alt, $category_id)
+    /**
+     * Retourne tous les plats par category_id.
+     *
+     * @param integer $category_id
+     * @return array
+     */
+    public function allByCategoryId(int $category_id): array
+    {
+        $sql = "
+            SELECT * 
+            FROM $this->table 
+            WHERE category_id = :category_id
+        ";
+
+        $requete = $this->pdo()->prepare($sql);
+        $requete->execute([
+            ":category_id" => $category_id
+        ]);
+        return $requete->fetchAll();
+    }
+
+    /**
+     * Insert un plat dans la base de donnée.
+     *
+     * @param string $name
+     * @param string $description
+     * @param string $price
+     * @param string $image
+     * @param string $alt
+     * @param integer $category_id
+     * @return void
+     */
+    public function insert(string $name, string $description, string $price, string $image, string $alt, int $category_id)
     {
         $sql = "
             INSERT INTO $this->table (name, description, price, image, alt, category_id)

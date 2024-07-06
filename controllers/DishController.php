@@ -130,4 +130,35 @@ class DishController extends Controller
 
         $this->redirect("admin?update_successful");
     }
+
+    /**
+     * Traite la suppression d'un plat dans la base de donnée.
+     */
+    public function destroy()
+    {
+        // Protection de la route
+        if (empty($_SESSION["user_id"])) {
+            $this->redirect("index");
+        }
+
+        // Vérification des entrées du formulaire
+        if (empty($_POST["dish_id"])) {
+            $this->redirect("admin?not_found");
+        }
+
+        // Suppression dans la bdd
+        $succes = (new Tag)->deleteByDishId($_POST["dish_id"]);
+
+        if (!$succes) {
+            $this->redirect("admin?deletion_failed");
+        }
+
+        $succes = (new Dish)->delete($_POST["dish_id"]);
+
+        if (!$succes) {
+            $this->redirect("admin?deletion_failed");
+        }
+
+        $this->redirect("admin?deletion_successful");
+    }
 }

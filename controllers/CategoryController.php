@@ -5,6 +5,8 @@ namespace Controllers;
 use Bases\Controller;
 
 use Models\Category;
+use Models\Dish;
+use Models\Tag;
 
 class CategoryController extends Controller
 {
@@ -77,6 +79,16 @@ class CategoryController extends Controller
         // Vérification des entrées du formulaire
         if (empty($_POST["category_id"])) {
             $this->redirect("admin?not_found");
+        }
+
+        $dishes = (new Dish)->allByCategoryId($_POST["category_id"]);
+
+        foreach ($dishes as $dish) {
+            (new Tag)->deleteByDishId($dish->id);
+        }
+
+        foreach ($dishes as $dish) {
+            (new Dish)->delete($dish->id);
         }
 
         // Suppression dans la bdd
