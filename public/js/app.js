@@ -1,4 +1,19 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+// Association des sous-catégories et de l'ID
+const subcategoriesMap = {
+  "Nos créations": 1,
+  Viande: 2,
+  Poisson: 3,
+  "À partager": 4,
+  Burger: 5,
+  Salade: 6,
+  Végé: 7,
+  Tartare: 8,
+  Chocolat: 9,
+  Caramel: 10,
+};
+
 createApp({
   data() {
     return {
@@ -40,7 +55,18 @@ createApp({
     toggleForm(form, object) {
       if (object != null) {
         this.currentObject = object;
-        console.log(this.currentObject);
+
+        // Vérification si subcategories_name existe dans l'objet
+        if (this.currentObject.subcategories_name) {
+          // Split l'array à chaque virgule et trouve l'ID correspondant
+          // au nom dans le tableau subcategoriesMap
+          this.currentObject.subcategories =
+            this.currentObject.subcategories_name
+              .split(",")
+              .map((name) => subcategoriesMap[name]);
+        } else {
+          this.currentObject.subcategories = [];
+        }
       }
 
       this.form = form;
@@ -73,7 +99,6 @@ createApp({
       url.has("insertion_member_successful") ||
       url.has("deletion_successful") ||
       url.has("update_successful")
-      
     ) {
       localStorage.removeItem("activeForm");
     }

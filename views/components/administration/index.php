@@ -2,7 +2,7 @@
 <?php if(isset($_GET["insertion_successful"])): ?>
     <section class="user-interaction success">
         <p class="info-txt"><span class="semi-bold">Félicitations!</span> L'ajout a fonctionné!</p>
-        <a href="index#menu">Voir l'ajout en cliquant ici</a>
+        <p class="info-txt">Voir l'ajout en <a href="index#menu">cliquant ici</a></p>
     </section>
 <?php endif ?>
 
@@ -15,6 +15,13 @@
 <?php if(isset($_GET["deletion_successful"])): ?>
     <section class="user-interaction success">
         <p class="info-txt"><span class="semi-bold">Félicitations!</span> L'élément a été supprimé!</p>
+    </section>
+<?php endif ?>
+
+<?php if(isset($_GET["update_successful"])): ?>
+    <section class="user-interaction success">
+        <p class="info-txt"><span class="semi-bold">Félicitations!</span> L'élément a été modifié!</p>
+        <p class="info-txt">Voir la modification en <a href="index#menu">cliquant ici</a></p>
     </section>
 <?php endif ?>
 

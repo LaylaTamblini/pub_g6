@@ -64,7 +64,7 @@
                     <section class="checkbox">
                         <?php foreach ($subcategories as $subcategory) : ?>
                             <label class="checkbox-label">
-                                <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>">
+                                <input type="checkbox" name="subcategories[]" value="<?= $subcategory->id ?>" v-model="currentObject.subcategories">
                                 <p>
                                     <?= $subcategory->name ?>
                                 </p>
